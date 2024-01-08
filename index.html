@@ -26,7 +26,28 @@
 	      transition: filter 0.7s ease;
     }
 	  .tarjeta.faded {
-				filter: opacity(0.7);
+				filter: opacity(0.7);}
+/*				carrucel*/
+		.carousel-control-prev-icon {
+		    background-image: url(https://i.ibb.co/NWfTTcY/chevron-pointing-to-the-left.png);
+		}
+		.carousel-control-next-icon {
+    background-image: url(https://i.ibb.co/4ZjjNfw/chevron-pointing-to-the-right.png);
+		}
+/*		tamaño para pantalla grande de las flechas*/
+		.carousel-control-next-icon, .carousel-control-prev-icon {
+    width: 6rem;
+    height: 6rem;
+		}
+/*		tamaño para la pantalla responsive de las flechas*/
+		@media (max-width: 767px) {
+		    .carousel-control-next-icon, .carousel-control-prev-icon {
+		        width: 2rem;
+		        height: 2rem;
+		}
+}
+
+
 
     </style>
 </head>
@@ -75,7 +96,7 @@
 	<section class="container  rounded-lg mt-4 p-2 bg-gray-100" id="inicio">
 		<article>
 			<header class="mt-12 p-4">
-				<h1 class="text-4xl text-gray-700 font-bold text-center">Bienvenido a nuestra iglesia</h1>
+				<h1 class="text-4xl text-gray-700 font-bold text-center" id="texto-prueba">Bienvenido a nuestra iglesia</h1>
 				<!-- <h1 class="bg-gradient-to-r from-gray-900 via-teal-600 to-gray-900 bg-clip-text text-4xl font-bold text-transparent sm:text-4xl text-center">Bienvenido a nuestra iglesia</h1> -->
 			</header>
 		  <img class="rounded-lg" src="imagenes/principal.jpg" alt="principal" />
@@ -96,13 +117,22 @@
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item">
-      <img src="imagenes/pastor3.jpg" class="d-block w-100" alt="deslizar 1">
+      <img src="imagenes/carrucel/imagen_1.jpeg" class="d-block w-100" alt="deslizar 1">
     </div>
     <div class="carousel-item active">
-      <img src="imagenes/servicio.jpg" class="d-block w-100" alt="deslizar 2">
+      <img src="imagenes/carrucel/imagen_2.jpeg" class="d-block w-100" alt="deslizar 2">
     </div>
     <div class="carousel-item">
-      <img src="imagenes/servicio3.jpg" class="d-block w-100" alt="deslizar 3">
+      <img src="imagenes/carrucel/imagen_3.jpeg" class="d-block w-100" alt="deslizar 3">
+    </div>
+    <div class="carousel-item">
+      <img src="imagenes/carrucel/imagen_4.jpeg" class="d-block w-100" alt="deslizar 3">
+    </div>
+    <div class="carousel-item">
+      <img src="imagenes/carrucel/imagen_5.jpeg" class="d-block w-100" alt="deslizar 3">
+    </div>
+    <div class="carousel-item">
+      <img src="imagenes/carrucel/imagen_6.jpeg" class="d-block w-100" alt="deslizar 3">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
