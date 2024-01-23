@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class=''>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,10 +17,28 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+
     <!-- tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
+		
+		<!-- tailwind archivo de configuracion-->
+	  <script>
+	    tailwind.config = {
+	    	darkMode: 'class',// activacion modo oscuro manual, 'media' por sistema
+	      theme: {
+	        extend: {
+	          colors: {
+	            prueba: '#da373d',
+	          }
+	        }
+	      }
+	    }
+	  </script>
+
     <script async defer src="https://dailyverses.net/get/random.js?language=nvi"></script>
+   
     <style>
+
     .jello-horizontal{animation:jello-horizontal .9s linear both} @keyframes jello-horizontal{0%{transform:scale3d(1,1,1)}30%{transform:scale3d(1.25,.75,1)}40%{transform:scale3d(.75,1.25,1)}50%{transform:scale3d(1.15,.85,1)}65%{transform:scale3d(.95,1.05,1)}75%{transform:scale3d(1.05,.95,1)}100%{transform:scale3d(1,1,1)}}
     .tarjeta {
 	      transition: filter 0.7s ease;
@@ -52,7 +70,7 @@
     </style>
 </head>
 
-<body>
+<body class="dark:bg-gray-800">
 
 <!-- Menu navegación -->
 <header>
@@ -89,36 +107,36 @@
 </header>
 
 <!--Progress bar-->
-<div id="header" class="bg-white fixed w-full z-20 top-20  ">
+<div id="header" class="bg-white fixed w-full z-20 top-20">
 	<div id="progress" class="h-1.5 shadow " style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>
 </div>
 
 
 <!-- Bienvenida -->
-	<section class="container  rounded-lg mt-4 p-2 bg-gray-100" id="inicio">
+	<section class="container rounded-lg mt-[92px] bg-gray-100 dark:bg-slate-600 px-10" id="inicio">
 		<article>
-			<header class="mt-12 p-4">
-				<h1 class="text-4xl text-gray-700 font-bold text-center" id="texto-prueba">Bienvenido a nuestra iglesia</h1>
+			<header>
+				<h1 class="text-4xl text-gray-700 font-bold text-center m-2 dark:text-white p-4" id="texto-prueba">Bienvenido a nuestra iglesia</h1>
 				<!-- <h1 class="bg-gradient-to-r from-gray-900 via-teal-600 to-gray-900 bg-clip-text text-4xl font-bold text-transparent sm:text-4xl text-center">Bienvenido a nuestra iglesia</h1> -->
 			</header>
 		  <img class="rounded-lg" src="imagenes/principal.jpg" alt="principal" />
-				<p class="text-justify p-4 first-letter:text-7xl first-letter:text-black first-letter:mr-3  first-letter:float-left text-lg">
+				<p class="text-justify my-4 first-letter:text-7xl first-letter:text-black first-letter:mr-3  first-letter:float-left text-lg dark:text-white dark:first-letter:text-teal-400">
 					La Iglesia Bautista del Norte en Bogotá D.C. (Colombia), comenzó a reunirse bajo el auspicio de Baptist Church en sus instalaciones ubicadas en la carrera 9 # 126-87 en Bogotá, y el domingo 23 de marzo de 1980 celebró su primer culto siendo pastor el Lic. Harold García. En esta primera reunión hubo una asistencia de 18 personas.
 					Tres años después, el 27 de marzo de 1983 la Iglesia se organizó como entidad autónoma con la colaboración de Baptist Church, siendo pastor el Rev. Bob M Polk.
 					El 1 de febrero de 1986 fue invitado para ser pastor de la iglesia por tiempo indefinido el Lic. Orosmán Rozo Amaya, quien permanece hasta hoy como pastor.
 					En el año de 1994, con el apoyo de la Baptist Foreign Mission Board, la iglesia inauguró su sede actual en la Autopista Norte # 101-33 en Bogotá D.C., lugar en el cual se congrega hasta el día de hoy.	
 				</p>
 				<div class="flex flex-wrap border-t justify-start gap-2 border-gray-300 p-2">
-          <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0">Salmo 119:160</span>
+          <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Salmo 119:160</span>
 				</div>	
 			</article>
 	</section>
 <!-- aqui comienza el carrucel -->
-<div class="main-content container border-2 mt-4 " id="servicio">
-	<div class="row col-md-12 p-3 d-flex justify-content-center">
+<div class="main-content container mt-4" id="servicio">
+	<div class="row col-md-12  d-flex justify-content-center">
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner ">
-    <div class="carousel-item">
+  <div class="carousel-inner rounded-lg">
+    <div class="carousel-item rounded-lg">
       <img src="imagenes/carrucel/imagen_1.jpeg" class="d-block w-100" alt="deslizar 1">
     </div>
     <div class="carousel-item active">
@@ -165,15 +183,15 @@
         </div>
       </div>
 
-      <div class="relative flex items-center bg-gray-100 lg:rounded-r-lg">
+      <div class="relative flex items-center bg-gray-100 lg:rounded-r-lg dark:bg-slate-600">
         <span
-          class="hidden lg:absolute lg:inset-y-0 lg:-start-16 lg:block lg:w-16 lg:bg-gray-100 rounded-l-lg"
+          class="hidden lg:absolute lg:inset-y-0 lg:-start-16 lg:block lg:w-16 lg:bg-gray-100 rounded-l-lg dark:bg-slate-600"
         ></span>
 
         <div class="p-8 sm:p-16 lg:p-14">
-          <h2 class="text-2xl sm:text-3xl text-center">Pastor</h2>
+          <h2 class="text-2xl sm:text-3xl text-center dark:text-white">Pastor</h2>
 
-          <p class="mt-4 text-gray-700 text-justify first-letter:text-7xl first-letter:text-black first-letter:mr-3  first-letter:float-left text-lg">
+          <p class="mt-4 text-gray-700 text-justify first-letter:text-7xl first-letter:text-black first-letter:mr-3  first-letter:float-left text-lg dark:text-white dark:first-letter:text-teal-400 ">
 La Iglesia Bautista su Gracia es Mayor fue fundada en 2022 en Bogotá, en la localidad de Bosa, bajo la dirección del Pastor Principal, Oscar Páez. Desde entonces, el Pastor ha liderado la iglesia enfocándose en difundir el amor de Dios y la fe en Cristo. Su rol abarca la enseñanza bíblica, el liderazgo espiritual, la atención pastoral y la administración de la iglesia. Su pasión por predicar la Palabra de Dios ha inspirado a los miembros y ha resultado en un crecimiento tanto numérico como espiritual de la congregación. La Iglesia Bautista, bajo su liderazgo, se adhiere a una declaración de fe basada en las Escrituras, creyendo en la Trinidad, la salvación por gracia mediante la fe en Cristo, la autoridad de la Biblia y la comisión de compartir el evangelio globalmente. La iglesia sigue un sistema de gobierno congregacional, donde las decisiones importantes se toman mediante votación directa de los miembros.
           </p>
         </div>
@@ -183,9 +201,9 @@ La Iglesia Bautista su Gracia es Mayor fue fundada en 2022 en Bogotá, en la loc
 </section>
 
 <!-- Galeria de imagenes -->
-<section class="main-content container border-2 mt-4 rounded-lg" id="servicio">
+<section class="main-content container border-2 mt-4 rounded-lg dark:bg-slate-600 dark:border-slate-600" id="servicio">
 	<article>
-		<h1 class="text-gray-800 text-center text-4xl p-2">Servicio</h1>
+		<h1 class="text-gray-800 text-center text-4xl p-2 dark:text-white">Servicio</h1>
 	<div class="row">
 		<div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
 			<img
@@ -231,12 +249,12 @@ La Iglesia Bautista su Gracia es Mayor fue fundada en 2022 en Bogotá, en la loc
 	</div>
 
 	<div
-	  class="bg-gray-100 rounded-lg mb-4">
+	  class="bg-gray-100 rounded-lg mb-4 dark:bg-slate-600 dark:text-white">
 	  <h3 class="text-2xl text-center p-2 "> Iglesia Bautista su Gracia es Mayor les invita al servicio de predicación todos los domingos a las 10:00am en el salón comunal Asovivir de Bosa </h3>
 	</div>
 
-	<!-- Versiculos dinamicos -->
-	<blockquote class="border-l-4 border-teal-400 italic my-8 pl-8 md:pl-12 text-lg" id="dailyVersesWrapper"></blockquote>
+<!-- Versiculos dinamicos -->
+	<blockquote class="border-l-4 border-teal-400 italic my-8 pl-8 md:pl-12 text-lg dark:text-white" id="dailyVersesWrapper"></blockquote>
 	</article>
 </section>
 
@@ -245,19 +263,19 @@ La Iglesia Bautista su Gracia es Mayor fue fundada en 2022 en Bogotá, en la loc
 <section class="text-gray-700 body-font" id="servicio">
   <div class="container px-5 py-24 mx-auto">
     <div class="flex flex-wrap w-full mb-20 flex-col items-center text-center">
-      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-800">Ministerios y servicios✝</h1>
-      <p class="lg:w-1/2 w-full leading-relaxed text-base text-justify text-lg">Los Ministerios y Servicios son fundamentales para fomentar la adoración y el crecimiento espiritual de los miembros de la iglesia. A través de diversos ministerios como la enseñanza bíblica, la adoración, la evangelización y el servicio comunitario, se busca impactar vidas y fortalecer la fe en Cristo.</p>
+      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-800 dark:text-white">Ministerios y servicios✝</h1>
+      <p class="lg:w-1/2 w-full leading-relaxed text-base text-justify text-lg dark:text-gray-400">Los Ministerios y Servicios son fundamentales para fomentar la adoración y el crecimiento espiritual de los miembros de la iglesia. A través de diversos ministerios como la enseñanza bíblica, la adoración, la evangelización y el servicio comunitario, se busca impactar vidas y fortalecer la fe en Cristo.</p>
     </div>
     <div class="flex flex-wrap -m-4 ">
     	<!-- Ministerio Varones -->
       <div class="xl:w-1/3 md:w-1/2 p-4 tarjeta hover:scale-[1.01]">
           <img class="w-430 h-270 rounded-t-lg" src="imagenes/varones.jpg" alt="ministerio varones"> 
-          <div class="border-2 border-gray-200 p-6 rounded-b-lg border-t-0 bg-gray-100">  
-          <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Varones</h2>       
-          <p class="leading-relaxed text-base mb-2 text-justify text-gray-700">Dos hombres recorriendo juntos el camino, compartiendo una amistad y un propósito: guiar al otro hacia un encuentro íntimo con Cristo. Con cada paso, sus corazones se abren, las dudas se disipan y el amor se fortalece. Unidos en esta travesía espiritual, descubren la belleza de una relación profunda con el Salvador.</p>
+          <div class="border-2 border-gray-200 p-6 rounded-b-lg border-t-0 bg-gray-100 dark:bg-slate-600 dark:border-slate-600">  
+          <h2 class="text-lg text-gray-900 font-medium title-font mb-2 dark:text-white">Varones</h2>       
+          <p class="leading-relaxed text-base mb-2 text-justify text-gray-700 dark:text-white">Dos hombres recorriendo juntos el camino, compartiendo una amistad y un propósito: guiar al otro hacia un encuentro íntimo con Cristo. Con cada paso, sus corazones se abren, las dudas se disipan y el amor se fortalece. Unidos en esta travesía espiritual, descubren la belleza de una relación profunda con el Salvador.</p>
 					<div class="flex flex-wrap border-t justify-start gap-2 border-gray-300 p-2">
-	          <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0">Salmo 1:1</span>
-	          <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0">Santiago 1:12</span>
+	          <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Salmo 1:1</span>
+	          <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Santiago 1:12</span>
 					</div>
         </div>
       </div>
@@ -265,12 +283,12 @@ La Iglesia Bautista su Gracia es Mayor fue fundada en 2022 en Bogotá, en la loc
 			<!-- Ministerio Damas -->
       <div class="xl:w-1/3 md:w-1/2 p-4 tarjeta hover:scale-[1.01]">
           <img class="w-430 h-270 rounded-t-lg" src="imagenes/damas3.jpg" alt="ministerio damas"> 
-          <div class="border-2 border-gray-200 p-6 rounded-b-lg border-t-0 bg-gray-100">  
-          <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Mujeres</h2>       
-          <p class="leading-relaxed text-base mb-2 text-justify text-gray-700">El ministerio para las mujeres es un lugar donde las líderes siervas sirven a las mujeres y al mismo tiempo, las enseñan a servir a otros de una forma bíblica. Aunque tengamos tiempos de entretenimiento, no es un club social, sino un lugar donde aprendemos a hacer todo para la gloria de Dios.</p>
+          <div class="border-2 border-gray-200 p-6 rounded-b-lg border-t-0 bg-gray-100 dark:bg-slate-600 dark:border-slate-600">  
+          <h2 class="text-lg text-gray-900 font-medium title-font mb-2 dark:text-white">Mujeres</h2>       
+          <p class="leading-relaxed text-base mb-2 text-justify text-gray-700 dark:text-white">El ministerio para las mujeres es un lugar donde las líderes siervas sirven a las mujeres y al mismo tiempo, las enseñan a servir a otros de una forma bíblica. Aunque tengamos tiempos de entretenimiento, no es un club social, sino un lugar donde aprendemos a hacer todo para la gloria de Dios.</p>
 					<div class="flex flex-wrap border-t justify-start gap-2 border-gray-300 p-2">
-	          <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0">Proverbios 31:30</span>
-	          <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0">1 Pedro 3:2-4</span>
+	          <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Proverbios 31:30</span>
+	          <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">1 Pedro 3:2-4</span>
 					</div>
         </div>
       </div>
@@ -278,14 +296,14 @@ La Iglesia Bautista su Gracia es Mayor fue fundada en 2022 en Bogotá, en la loc
 			<!-- Ministerio Niños -->
       <div class="xl:w-1/3 md:w-1/2 p-4 tarjeta hover:scale-[1.01]">
           <img class="w-430 h-270 rounded-t-lg" src="imagenes/niños.jpg" alt="ministerio ninos"> 
-          <div class="border-2 border-gray-200 p-6 rounded-b-lg border-t-0 bg-gray-100">  
-          <h2 class="text-lg text-gray-900 font-medium title-font mb-2 text-gray-700">Niños</h2>       
-          <p class="leading-relaxed text-base mb-2 text-justify">El ministerio de Niños está orientado a trabajar, educar y formar niños en el conocimiento de la Palabra de Dios; con enseñanzas y actividades de acuerdo a su edad. Es por eso que nos esforzamos por crear una atmósfera llena de diversión, risas y presencia de Dios.</p>
+          <div class="border-2 border-gray-200 p-6 rounded-b-lg border-t-0 bg-gray-100 dark:bg-slate-600 dark:border-slate-600">  
+          <h2 class="text-lg text-gray-900 font-medium title-font mb-2 text-gray-700 dark:text-white">Niños</h2>       
+          <p class="leading-relaxed text-base mb-2 text-justify dark:text-white">El ministerio de Niños está orientado a trabajar, educar y formar niños en el conocimiento de la Palabra de Dios; con enseñanzas y actividades de acuerdo a su edad. Es por eso que nos esforzamos por crear una atmósfera llena de diversión, risas y presencia de Dios.</p>
 					<div class="flex flex-wrap border-t justify-start gap-2 border-gray-300 p-2">
-	          <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0">Deuteronomio 6:6-7</span>
-	          <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0">Mateo 19:14</span>
-	        	<span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0">Proverbios 22:6</span>
-	        	<span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0">2 Timoteo 3:15</span>
+	          <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Deuteronomio 6:6-7</span>
+	          <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Mateo 19:14</span>
+	        	<span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Proverbios 22:6</span>
+	        	<span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">2 Timoteo 3:15</span>
 					</div>
         </div>
       </div>
@@ -293,13 +311,13 @@ La Iglesia Bautista su Gracia es Mayor fue fundada en 2022 en Bogotá, en la loc
 			<!-- Ministerio Misioneros -->
       <div class="xl:w-1/3 md:w-1/2 p-4 tarjeta hover:scale-[1.01]">
           <img class="w-430 h-270 rounded-t-lg" src="imagenes/misioneros.jpg" alt="misioneros"> 
-          <div class="border-2 border-gray-200 p-6 rounded-b-lg border-t-0 bg-gray-100">  
-          <h2 class="text-lg text-gray-900 font-medium title-font mb-2 text-gray-700">Misioneros</h2>       
-          <p class="leading-relaxed text-base mb-2 text-justify">Se llama misionero a aquella persona cuyo objetivo principal es el anuncio del evangelio mediante obras y palabras entre aquellos que no creen.</p>
+          <div class="border-2 border-gray-200 p-6 rounded-b-lg border-t-0 bg-gray-100 dark:bg-slate-600 dark:border-slate-600">  
+          <h2 class="text-lg text-gray-900 font-medium title-font mb-2 text-gray-700 dark:text-white">Misioneros</h2>       
+          <p class="leading-relaxed text-base mb-2 text-justify dark:text-white">Se llama misionero a aquella persona cuyo objetivo principal es el anuncio del evangelio mediante obras y palabras entre aquellos que no creen.</p>
 					<div class="flex flex-wrap border-t justify-start gap-2 border-gray-300 p-2">
-	          <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0">Romanos 10:14-15</span>
-	          <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0">Hechos 20:24</span>
-	        	<span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0">Marcos 16:15</span>
+	          <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Romanos 10:14-15</span>
+	          <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Hechos 20:24</span>
+	        	<span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Marcos 16:15</span>
 					</div>          
         </div>
       </div>
@@ -307,14 +325,14 @@ La Iglesia Bautista su Gracia es Mayor fue fundada en 2022 en Bogotá, en la loc
 			<!-- Ministerio Evangelismo -->
       <div class="xl:w-1/3 md:w-1/2 p-4 tarjeta hover:scale-[1.01]">
           <img class="w-430 h-270 rounded-t-lg" src="imagenes/evangelismo.jpg" alt="ministerio damas"> 
-          <div class="border-2 border-gray-200 p-6 rounded-b-lg border-t-0 bg-gray-100">  
-          <h2 class="text-lg text-gray-900 font-medium title-font mb-2 text-gray-700">Evangelismo</h2>       
-          <p class="leading-relaxed text-base mb-2 text-justify">Por tanto, id, y haced discípulos a todas las naciones, bautizándolos en el nombre del Padre, y del Hijo, y del Espíritu Santo; enseñándoles que guarden todas las cosas que os he mandado; y he aquí yo estoy con vosotros todos los días, hasta el fin del mundo. Amén.</p>
+          <div class="border-2 border-gray-200 p-6 rounded-b-lg border-t-0 bg-gray-100 dark:bg-slate-600 dark:border-slate-600">  
+          <h2 class="text-lg text-gray-900 font-medium title-font mb-2 text-gray-700 dark:text-white">Evangelismo</h2>       
+          <p class="leading-relaxed text-base mb-2 text-justify dark:text-white">Por tanto, id, y haced discípulos a todas las naciones, bautizándolos en el nombre del Padre, y del Hijo, y del Espíritu Santo; enseñándoles que guarden todas las cosas que os he mandado; y he aquí yo estoy con vosotros todos los días, hasta el fin del mundo. Amén.</p>
 					<div class="flex flex-wrap border-t justify-start gap-2 border-gray-300 p-2">
-	          <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0">Hechos 13:47</span>
-	          <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0">Marcos 16:15</span>
-	        	<span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0">Hechos 20:24</span>
-	        	<span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0">Salmo 105:1</span>
+	          <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Hechos 13:47</span>
+	          <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Marcos 16:15</span>
+	        	<span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Hechos 20:24</span>
+	        	<span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Salmo 105:1</span>
 					</div>
         </div>
       </div>              
@@ -322,11 +340,11 @@ La Iglesia Bautista su Gracia es Mayor fue fundada en 2022 en Bogotá, en la loc
 			<!-- Ministerio Reuniones caseras -->
       <div class="xl:w-1/3 md:w-1/2 p-4 tarjeta hover:scale-[1.01]">
           <img class="w-430 h-270 rounded-t-lg" src="imagenes/Rcaseras.jpg" alt="ministerio damas"> 
-          <div class="border-2 border-gray-200 p-6 rounded-b-lg border-t-0 bg-gray-100">  
-          <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Reuniones Caseras</h2>       
-          <p class="leading-relaxed text-base mb-2 text-justify text-gray-700">“Y perseveraban en la doctrina de los apóstoles, en la comunión unos con otros, en el partimiento del pan y en las oraciones… perseveraban unidos cada día en el templo, y partiendo el pan en las casas comían juntos con alegría y sencillez de corazón”</p>
+          <div class="border-2 border-gray-200 p-6 rounded-b-lg border-t-0 bg-gray-100 dark:bg-slate-600 dark:border-slate-600">  
+          <h2 class="text-lg text-gray-900 font-medium title-font mb-2 dark:text-white">Reuniones Caseras</h2>       
+          <p class="leading-relaxed text-base mb-2 text-justify text-gray-700 dark:text-white">“Y perseveraban en la doctrina de los apóstoles, en la comunión unos con otros, en el partimiento del pan y en las oraciones… perseveraban unidos cada día en el templo, y partiendo el pan en las casas comían juntos con alegría y sencillez de corazón”</p>
 					<div class="flex flex-wrap border-t justify-start gap-2 border-gray-300 p-2">
-	          <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0">Hechos 2:42,46</span>
+	          <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Hechos 2:42,46</span>
 					</div>
         </div>
       </div> 
@@ -334,14 +352,14 @@ La Iglesia Bautista su Gracia es Mayor fue fundada en 2022 en Bogotá, en la loc
       <!-- Jovenes -->
       <div class="xl:w-1/3 md:w-1/2 p-4 tarjeta hover:scale-[1.01]">
           <img class="w-430 h-270 rounded-t-lg" src="imagenes/jovenes.jpg" alt="ministerio damas"> 
-          <div class="border-2 border-gray-200 p-6 rounded-b-lg border-t-0 bg-gray-100">  
-          <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Jovenes</h2>       
-          <p class="leading-relaxed text-base mb-2 text-justify text-gray-700">Un ministerio de jóvenes saludable busca estar sujeto a la visión de su iglesia. Se interesa por conocer lo que Dios ha colocado en el corazón de sus pastores, quienes tienen la tarea y compromiso de guiar a la iglesia.</p>
+          <div class="border-2 border-gray-200 p-6 rounded-b-lg border-t-0 bg-gray-100 dark:bg-slate-600 dark:border-slate-600">  
+          <h2 class="text-lg text-gray-900 font-medium title-font mb-2 dark:text-white">Jovenes</h2>       
+          <p class="leading-relaxed text-base mb-2 text-justify text-gray-700 dark:text-white">Un ministerio de jóvenes saludable busca estar sujeto a la visión de su iglesia. Se interesa por conocer lo que Dios ha colocado en el corazón de sus pastores, quienes tienen la tarea y compromiso de guiar a la iglesia.</p>
 					<div class="flex flex-wrap border-t justify-start gap-2 border-gray-300 p-2">
-	          <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0">Salmos 71:5</span>
-	          <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0">1 Timoteo 4:12</span>
-	        	<span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0">Tito 1:6-8</span>
-	        	<span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0">Salmos 119:9</span>
+	          <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Salmos 71:5</span>
+	          <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">1 Timoteo 4:12</span>
+	        	<span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Tito 1:6-8</span>
+	        	<span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Salmos 119:9</span>
 					</div>
         </div>
       </div> 
