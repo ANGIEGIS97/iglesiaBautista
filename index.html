@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class=''>
+<html lang="en" class="">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -34,6 +34,7 @@
 	      }
 	    }
 	  </script>
+
 
     <script async defer src="https://dailyverses.net/get/random.js?language=nvi"></script>
    
@@ -111,9 +112,22 @@
 	<div id="progress" class="h-1.5 shadow " style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>
 </div>
 
-
 <!-- Bienvenida -->
 	<section class="container rounded-lg mt-[92px] bg-gray-100 dark:bg-slate-600 px-10" id="inicio">
+
+<!-- Boton modo oscuro con funcion anonima -->
+<button onclick="(() => document.documentElement.classList.toggle('dark'))()"
+        class="h-12 w-12 rounded-lg p-2 hover:bg-gray-200 dark:hover:bg-gray-700 float-right mt-1">
+        <svg class="fill-teal-400 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+        </svg>
+        <svg class="fill-yellow-500 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+            <path
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                fill-rule="evenodd" clip-rule="evenodd"></path>
+        </svg>
+ </button>
+
 		<article>
 			<header>
 				<h1 class="text-4xl text-gray-700 font-bold text-center m-2 dark:text-white p-4" id="texto-prueba">Bienvenido a nuestra iglesia</h1>
@@ -126,6 +140,8 @@
 					El 1 de febrero de 1986 fue invitado para ser pastor de la iglesia por tiempo indefinido el Lic. Orosmán Rozo Amaya, quien permanece hasta hoy como pastor.
 					En el año de 1994, con el apoyo de la Baptist Foreign Mission Board, la iglesia inauguró su sede actual en la Autopista Norte # 101-33 en Bogotá D.C., lugar en el cual se congrega hasta el día de hoy.	
 				</p>
+
+
 				<div class="flex flex-wrap border-t justify-start gap-2 border-gray-300 p-2">
           <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Salmo 119:160</span>
 				</div>	
@@ -370,7 +386,7 @@ La Iglesia Bautista su Gracia es Mayor fue fundada en 2022 en Bogotá, en la loc
 
 <!-- Ubicación -->
 <section class="p-4">
-      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-800 text-center">Ubicación</h1>
+      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-800 text-center dark:text-white">Ubicación</h1>
     <div class="h-80 container border-2 p-2 rounded-lg">
         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15907.669082240025!2d-74.1925392!3d4.60883!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb722505c69c6b9ee!2sSal%C3%B3n%20Comunal%20de%20Asovivir!5e0!3m2!1ses!2sco!4v1670274439288!5m2!1ses!2sco" class="w-full h-full"></iframe>
     </div>
@@ -577,8 +593,6 @@ function backToTop() {
 }
 
 </script>
-
-
 	
 </body>
 </html>
