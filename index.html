@@ -72,7 +72,7 @@
        </button>
 
   <!-- boton hamburguesa -->
-      <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
+      <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false" id="boton-prueba">
         <span class="sr-only">Abrir menu principal</span>
         <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
@@ -230,15 +230,15 @@ La Iglesia Bautista su Gracia es Mayor fue fundada en 2022 en Bogotá, en la loc
     <h1 class="text-gray-800 text-center text-4xl p-4 dark:text-white">Servicio</h1>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-8">
-      <div class="mb-4">
+      <div>
         <img src="imagenes/servicio.jpg" class="w-full shadow-1-strong rounded mb-4 hover:scale-[1.01] bg-white" alt="Servicio 1" />
-        <img src="imagenes/servicio1.jpg" class="w-full shadow-1-strong rounded mb-4 hover:scale-[1.01]" alt="Servicio 1" />
+        <img src="imagenes/servicio1.jpg" class="w-full shadow-1-strong rounded mb-4 hover:scale-[1.01]" alt="Servicio 2" />
       </div>
-      <div class="mb-4">
+      <div>
         <img src="imagenes/servicio2.jpg" class="w-full shadow-1-strong rounded mb-4 hover:scale-[1.01]" alt="Servicio 3" />
         <img src="imagenes/servicio3.jpg" class="w-full shadow-1-strong rounded mb-4 hover:scale-[1.01]" alt="Servicio 4" />
       </div>
-      <div class="mb-4">
+      <div>
         <img src="imagenes/servicio4.jpg" class="w-full shadow-1-strong rounded mb-4 hover:scale-[1.01]" alt="Servicio 5" />
         <img src="imagenes/servicio5.jpg" class="w-full shadow-1-strong rounded mb-4 hover:scale-[1.01]" alt="Servicio 6" />
       </div>
@@ -259,7 +259,7 @@ La Iglesia Bautista su Gracia es Mayor fue fundada en 2022 en Bogotá, en la loc
 <section class="text-gray-700 body-font" id="ministerios">
   <div class="container px-5 py-24 mx-auto">
     <div class="flex flex-wrap w-full mb-20 flex-col items-center text-center">
-      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-800 dark:text-white">Ministerios y servicios✝</h1>
+      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-800 dark:text-white">Ministerios y servicios</h1>
       <p class="lg:w-1/2 w-full leading-relaxed text-base text-justify text-lg dark:text-gray-400">Los Ministerios y Servicios son fundamentales para fomentar la adoración y el crecimiento espiritual de los miembros de la iglesia. A través de diversos ministerios como la enseñanza bíblica, la adoración, la evangelización y el servicio comunitario, se busca impactar vidas y fortalecer la fe en Cristo.</p>
     </div>
     <div class="flex flex-wrap -m-4 ">
@@ -426,6 +426,7 @@ La Iglesia Bautista su Gracia es Mayor fue fundada en 2022 en Bogotá, en la loc
               <li><a href="preguntas.html" class="hover:text-gray-200 hidden lg:block">Preguntas frecuentes</a></li>              
             </nav>
           </div>
+          
 
           <div class="col-span-2 md:col-span-1 pb-0 md:py-3 px-4 flex flex-col items-center sm:items-start">
             <h3 class="py-1.5 md:py-4 text-xl text-white font-bold tracking-wide">Información</h3>
@@ -570,6 +571,26 @@ function backToTop() {
 <!-- script flowbite  -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
   
+<!-- script para cerrar menu movil despues de hacer click en un link  -->  
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Obtener todos los elementos del menú
+        var menuItems = document.querySelectorAll('.nav-menu a');
+
+        // Agregar un evento clic a cada elemento del menú
+        menuItems.forEach(function(item) {
+            item.addEventListener('click', function() {
+                // Retraso de 0.5 segundos antes de simular el clic en el botón
+                setTimeout(function() {
+                    // Simular el clic en el botón por su ID
+                    var button = document.getElementById('boton-prueba');
+                    button.click();
+                }, 100); // 500 milisegundos = 0.5 segundos
+            });
+        });
+    });
+</script>
+
 </body>
 </html>
 
