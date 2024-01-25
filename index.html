@@ -6,66 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>⛪Bautista Su Gracia Es Mayor </title>
-    <!-- Estilo  -->
-	
+  
     <!-- Fuente Awesome -->
-		<link href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" rel="stylesheet"/></link>
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <!-- carrucel -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+    <link href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" rel="stylesheet"/></link>
+
+    <!-- flowbite -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+
 
     <!-- tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
-		
-		<!-- tailwind archivo de configuracion-->
-	  <script>
-	    tailwind.config = {
-	    	darkMode: 'class',// activacion modo oscuro manual, 'media' por sistema
-	      theme: {
-	        extend: {
-	          colors: {
-	            prueba: '#da373d',
-	          }
-	        }
-	      }
-	    }
-	  </script>
+    
+    <!-- tailwind archivo de configuracion-->
+    <script>
+      tailwind.config = {
+        darkMode: 'class',// activacion modo oscuro manual, 'media' por sistema
+        theme: {
+          extend: {
+            colors: {
+              prueba: '#da373d',// colores personalizados
+            }
+          }
+        }
+      }
+    </script>
 
 
     <script async defer src="https://dailyverses.net/get/random.js?language=nvi"></script>
    
     <style>
 
-    .jello-horizontal{animation:jello-horizontal .9s linear both} @keyframes jello-horizontal{0%{transform:scale3d(1,1,1)}30%{transform:scale3d(1.25,.75,1)}40%{transform:scale3d(.75,1.25,1)}50%{transform:scale3d(1.15,.85,1)}65%{transform:scale3d(.95,1.05,1)}75%{transform:scale3d(1.05,.95,1)}100%{transform:scale3d(1,1,1)}}
     .tarjeta {
-	      transition: filter 0.7s ease;
+        transition: filter 0.7s ease;
     }
-	  .tarjeta.faded {
-				filter: opacity(0.7);}
-/*				carrucel*/
-		.carousel-control-prev-icon {
-		    background-image: url(https://i.ibb.co/NWfTTcY/chevron-pointing-to-the-left.png);
-		}
-		.carousel-control-next-icon {
-    background-image: url(https://i.ibb.co/4ZjjNfw/chevron-pointing-to-the-right.png);
-		}
-/*		tamaño para pantalla grande de las flechas*/
-		.carousel-control-next-icon, .carousel-control-prev-icon {
-    width: 6rem;
-    height: 6rem;
-		}
-/*		tamaño para la pantalla responsive de las flechas*/
-		@media (max-width: 767px) {
-		    .carousel-control-next-icon, .carousel-control-prev-icon {
-		        width: 2rem;
-		        height: 2rem;
-		}
-}
-
+    .tarjeta.faded {
+        filter: opacity(0.7);}
+/*        carrucel*/
 
 
     </style>
@@ -73,120 +49,152 @@
 
 <body class="dark:bg-gray-800">
 
-<!-- Menu navegación -->
-<header>
-  <div class="fixed left-0 top-0 w-full h-20 flex bg-gray-800 z-20 bg-opacity-90 backdrop-filter backdrop-blur-sm">
-    <div class="container flex items-center m-auto justify-between md:px-2 px-4">
-        
-      <div class="flex items-center ml-2">
-        <img src="imagenes/logo34.png" alt="logo" class="h-18">
-        <span class="ml-4 text-md text-gray-200 text-center hidden md:block">Iglesia Bautista <br> Su Gracia es Mayor</span>
-      </div>
-			
-			<div class="block md:hidden" id="texto-celular">
-				<p class="text-gray-200 text-center">Iglesia Bautista <br> Su Gracia es Mayor</p>
-			</div>
-			
-      <div class="flex nav-menu md:flex hidden space-x-2 text-gray-300 jello-horizontal text-sm text-center sm:text-base">
-        <a class="cursor-pointer hover:text-teal-400" href="#inicio">Inicio</a>
-        <!-- <a class="cursor-pointer hover:text-teal-400" href="#pastor">Pastor</a> -->
-        <a class="cursor-pointer hover:text-teal-400" href="#servicio">Servicios</a>
-        <!-- <a class="cursor-pointer hover:text-teal-400" href="#ministerios">Ministerios</a> -->
-        <a class="cursor-pointer hover:text-teal-400" href="confesion.html">Confesión de fe</a>
-        <a class="cursor-pointer hover:text-teal-400" href="preguntas.html">Preguntas frecuentes</a>
-      </div>
+  <!-- Menu navegacion inicio -->
+<nav class="bg-gray-800 bg-opacity-80 backdrop-filter backdrop-blur-sm fixed w-full z-20 top-0 start-0 border-b border-gray-600 " style="list-style-type: none;">   <!-- glassmorphing en menu -->
+  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+  <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse ml-24 sm:ml-0">
+      <img src="imagenes/logo34.png" class="h-12" alt="Logo iglesia">
+      <span class="self-center text-md font-semibold whitespace-nowrap text-white text-center">Iglesia Bautista <br> Su Gracia es Mayor</span>
+  </a>
+  <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+      
+  <!-- boton modo oscuro -->
+      <button onclick="(() => document.documentElement.classList.toggle('dark'))()"
+              class="h-10 w-10 rounded-lg p-2 hover:bg-gray-200 dark:hover:bg-gray-700 float-right">
+              <svg class="fill-teal-400 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+              </svg>
+              <svg class="fill-yellow-500 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                      d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                      fill-rule="evenodd" clip-rule="evenodd"></path>
+              </svg>
+       </button>
 
-      <div class="md:hidden flex items-center space-x-4">
-        <button class="menu-btn focus:outline-none">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </div>
-    </div>
+  <!-- boton hamburguesa -->
+      <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
+        <span class="sr-only">Abrir menu principal</span>
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+        </svg>
+    </button>
+
   </div>
-</header>
+
+  <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+    <ul class="flex flex-col p-4 md:p-0 mt-10 font-medium border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 nav-menu">
+
+        <li>
+          <a href="#inicio" class="block py-2 px-3 text-white rounded md:hover:bg-transparent md:hover:text-teal-400 md:p-0 md:dark:hover:text-teal-400 hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Inicio</a>
+        </li>
+        <li>
+          <a href="#pastor" class="block py-2 px-3 text-white rounded md:hover:bg-transparent md:hover:text-teal-400 md:p-0 md:dark:hover:text-teal-400 hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Pastor</a>
+        </li>
+        <li>
+          <a href="#servicio" class="block py-2 px-3 text-white rounded md:hover:bg-transparent md:hover:text-teal-400 md:p-0 md:dark:hover:text-teal-400 hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Servicios</a>
+        </li>
+        <li>
+          <a href="#ministerios" class="block py-2 px-3 text-white rounded md:hover:bg-transparent md:hover:text-teal-400 md:p-0 md:dark:hover:text-teal-400 hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Ministerios</a>
+        </li>
+        <li>
+          <a href="confesion.html" class="block py-2 px-3 text-white rounded md:hover:bg-transparent md:hover:text-teal-400 md:p-0 md:dark:hover:text-teal-400 hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Confesion de fe</a>
+        </li>
+        <li>
+          <a href="preguntas.html" class="block py-2 px-3 text-white rounded md:hover:bg-transparent md:hover:text-teal-400 md:p-0 md:dark:hover:text-teal-400 hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Preguntas frecuentes</a>
+        </li> 
+
+    </ul>
+  </div>
+  </div>
+</nav>
+  <!-- Menu navegacion fin -->
+
 
 <!--Progress bar-->
-<div id="header" class="bg-white fixed w-full z-20 top-20">
-	<div id="progress" class="h-1.5 shadow " style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>
+<div id="header" class="bg-white/70 fixed w-full z-20 top-20">
+  <div id="progress" class="h-1.5 shadow " style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>
 </div>
 
-<!-- Bienvenida -->
-	<section class="container rounded-lg mt-[92px] bg-gray-100 dark:bg-slate-600 px-10" id="inicio">
 
-<!-- Boton modo oscuro con funcion anonima -->
-<button onclick="(() => document.documentElement.classList.toggle('dark'))()"
-        class="h-12 w-12 rounded-lg p-2 hover:bg-gray-200 dark:hover:bg-gray-700 float-right mt-1">
-        <svg class="fill-teal-400 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-        </svg>
-        <svg class="fill-yellow-500 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
-            <path
-                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                fill-rule="evenodd" clip-rule="evenodd"></path>
-        </svg>
- </button>
-
-		<article>
-			<header>
-				<h1 class="text-4xl text-gray-700 font-bold text-center m-2 dark:text-white p-4" id="texto-prueba">Bienvenido a nuestra iglesia</h1>
-				<!-- <h1 class="bg-gradient-to-r from-gray-900 via-teal-600 to-gray-900 bg-clip-text text-4xl font-bold text-transparent sm:text-4xl text-center">Bienvenido a nuestra iglesia</h1> -->
-			</header>
-		  <img class="rounded-lg" src="imagenes/principal.jpg" alt="principal" />
-				<p class="text-justify my-4 first-letter:text-7xl first-letter:text-black first-letter:mr-3  first-letter:float-left text-lg dark:text-white dark:first-letter:text-teal-400">
-					La Iglesia Bautista del Norte en Bogotá D.C. (Colombia), comenzó a reunirse bajo el auspicio de Baptist Church en sus instalaciones ubicadas en la carrera 9 # 126-87 en Bogotá, y el domingo 23 de marzo de 1980 celebró su primer culto siendo pastor el Lic. Harold García. En esta primera reunión hubo una asistencia de 18 personas.
-					Tres años después, el 27 de marzo de 1983 la Iglesia se organizó como entidad autónoma con la colaboración de Baptist Church, siendo pastor el Rev. Bob M Polk.
-					El 1 de febrero de 1986 fue invitado para ser pastor de la iglesia por tiempo indefinido el Lic. Orosmán Rozo Amaya, quien permanece hasta hoy como pastor.
-					En el año de 1994, con el apoyo de la Baptist Foreign Mission Board, la iglesia inauguró su sede actual en la Autopista Norte # 101-33 en Bogotá D.C., lugar en el cual se congrega hasta el día de hoy.	
-				</p>
+<!--Bienvenida-->
+  <section class="container rounded-lg bg-gray-100 dark:bg-slate-600 px-10 mx-auto mt-24" id="inicio"> <!--  mt-24 -->
+    <article>
+      <header>
+        <h1 class="text-4xl text-gray-700 font-bold text-center m-2 dark:text-white p-4" id="texto-prueba">Bienvenido a nuestra iglesia</h1>
+        <!-- <h1 class="bg-gradient-to-r from-gray-900 via-teal-600 to-gray-900 bg-clip-text text-4xl font-bold text-transparent sm:text-4xl text-center">Bienvenido a nuestra iglesia</h1> -->
+      </header>
+      <img class="rounded-lg" src="imagenes/principal.jpg" alt="principal" />
+        <p class="text-justify my-4 first-letter:text-7xl first-letter:text-black first-letter:mr-3  first-letter:float-left text-lg dark:text-white dark:first-letter:text-teal-400">
+          La Iglesia Bautista del Norte en Bogotá D.C. (Colombia), comenzó a reunirse bajo el auspicio de Baptist Church en sus instalaciones ubicadas en la carrera 9 # 126-87 en Bogotá, y el domingo 23 de marzo de 1980 celebró su primer culto siendo pastor el Lic. Harold García. En esta primera reunión hubo una asistencia de 18 personas.
+          Tres años después, el 27 de marzo de 1983 la Iglesia se organizó como entidad autónoma con la colaboración de Baptist Church, siendo pastor el Rev. Bob M Polk.
+          El 1 de febrero de 1986 fue invitado para ser pastor de la iglesia por tiempo indefinido el Lic. Orosmán Rozo Amaya, quien permanece hasta hoy como pastor.
+          En el año de 1994, con el apoyo de la Baptist Foreign Mission Board, la iglesia inauguró su sede actual en la Autopista Norte # 101-33 en Bogotá D.C., lugar en el cual se congrega hasta el día de hoy.  
+        </p>
 
 
-				<div class="flex flex-wrap border-t justify-start gap-2 border-gray-300 p-2">
+        <div class="flex flex-wrap border-t justify-start gap-2 border-gray-300 p-2">
           <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Salmo 119:160</span>
-				</div>	
-			</article>
-	</section>
-<!-- aqui comienza el carrucel -->
-<div class="main-content container mt-4" id="servicio">
-	<div class="row col-md-12  d-flex justify-content-center">
-<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner rounded-lg">
-    <div class="carousel-item rounded-lg">
-      <img src="imagenes/carrucel/imagen_1.jpeg" class="d-block w-100" alt="deslizar 1">
-    </div>
-    <div class="carousel-item active">
-      <img src="imagenes/carrucel/imagen_2.jpeg" class="d-block w-100" alt="deslizar 2">
-    </div>
-    <div class="carousel-item">
-      <img src="imagenes/carrucel/imagen_3.jpeg" class="d-block w-100" alt="deslizar 3">
-    </div>
-    <div class="carousel-item">
-      <img src="imagenes/carrucel/imagen_4.jpeg" class="d-block w-100" alt="deslizar 3">
-    </div>
-    <div class="carousel-item">
-      <img src="imagenes/carrucel/imagen_5.jpeg" class="d-block w-100" alt="deslizar 3">
-    </div>
-    <div class="carousel-item">
-      <img src="imagenes/carrucel/imagen_6.jpeg" class="d-block w-100" alt="deslizar 3">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-	
-</div>
-</div>
+        </div>  
+      </article>
+  </section>
 
-<!-- aqui termina el carrucel -->
+
+<!-- Carrusel Inicio-->
+
+<div id="default-carousel" class="relative w-full z-10 mt-24 container mx-auto" data-carousel="slide">
+    <!-- Carousel wrapper -->
+    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+         <!-- Item 1 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="imagenes/carrucel/imagen_1.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+        <!-- Item 2 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="imagenes/carrucel/imagen_2.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+        <!-- Item 3 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="imagenes/carrucel/imagen_3.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+        <!-- Item 4 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="imagenes/carrucel/imagen_4.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+        <!-- Item 5 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="imagenes/carrucel/imagen_5.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+    </div>
+    <!-- Indicadores slider -->
+    <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+    </div>
+    <!-- Controles slider -->
+    <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-teal-400/70 dark:bg-gray-800/30 group-hover:bg-teal-500/70 dark:group-hover:bg-gray-800/60 dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg class="w-4 h-4 text-white rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+            </svg>
+            <span class="sr-only">Anterior</span>
+        </span>
+    </button>
+    <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-teal-400/70 dark:bg-gray-800/30 group-hover:bg-teal-500/70 dark:group-hover:bg-gray-800/60 dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg class="w-4 h-4 text-white rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+            </svg>
+            <span class="sr-only">Siguiente</span>
+        </span>
+    </button>
+</div>
+<!-- Carrusel Fin-->
+
 <!-- Pastor -->
-<section class="container" id="servicio">
+<section class="container mx-auto" id="pastor">
   <div class="mx-auto max-w-screen-2xl px-4 py-16 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 lg:h-screen lg:grid-cols-2">
       <div class="relative z-10 lg:py-16">
@@ -217,151 +225,123 @@ La Iglesia Bautista su Gracia es Mayor fue fundada en 2022 en Bogotá, en la loc
 </section>
 
 <!-- Galeria de imagenes -->
-<section class="main-content container border-2 mt-4 rounded-lg dark:bg-slate-600 dark:border-slate-600" id="servicio">
-	<article>
-		<h1 class="text-gray-800 text-center text-4xl p-2 dark:text-white">Servicio</h1>
-	<div class="row">
-		<div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-			<img
-			src="imagenes/servicio.jpg"
-			class="w-100 shadow-1-strong rounded mb-4 hover:scale-[1.01] bg-white"
-			alt="Servicio 1"
-			/>
+<section class="container border-2 mt-4 rounded-lg dark:bg-slate-600 dark:border-slate-600 mx-auto" id="servicio">
+  <article>
+    <h1 class="text-gray-800 text-center text-4xl p-4 dark:text-white">Servicio</h1>
 
-			<img
-			src="imagenes/servicio1.jpg"
-			class="w-100 shadow-1-strong rounded mb-4 hover:scale-[1.01]"
-			alt="Servicio 1"
-			/>
-		</div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-8">
+      <div class="mb-4">
+        <img src="imagenes/servicio.jpg" class="w-full shadow-1-strong rounded mb-4 hover:scale-[1.01] bg-white" alt="Servicio 1" />
+        <img src="imagenes/servicio1.jpg" class="w-full shadow-1-strong rounded mb-4 hover:scale-[1.01]" alt="Servicio 1" />
+      </div>
+      <div class="mb-4">
+        <img src="imagenes/servicio2.jpg" class="w-full shadow-1-strong rounded mb-4 hover:scale-[1.01]" alt="Servicio 3" />
+        <img src="imagenes/servicio3.jpg" class="w-full shadow-1-strong rounded mb-4 hover:scale-[1.01]" alt="Servicio 4" />
+      </div>
+      <div class="mb-4">
+        <img src="imagenes/servicio4.jpg" class="w-full shadow-1-strong rounded mb-4 hover:scale-[1.01]" alt="Servicio 5" />
+        <img src="imagenes/servicio5.jpg" class="w-full shadow-1-strong rounded mb-4 hover:scale-[1.01]" alt="Servicio 6" />
+      </div>
+     </div>
 
-		<div class="col-lg-4 mb-4 mb-lg-0">
-			<img
-			src="imagenes/servicio2.jpg"
-			class="w-100 shadow-1-strong rounded mb-4 hover:scale-[1.01]"
-			alt="Servicio 3"
-			/>
-
-			<img
-			src="imagenes/servicio3.jpg"
-			class="w-100 shadow-1-strong rounded mb-4 hover:scale-[1.01]"
-			alt="Servicio 4"
-			/>
-		</div>
-
-		<div class="col-lg-4 mb-4 mb-lg-0">
-			<img
-			src="imagenes/servicio4.jpg"
-			class="w-100 shadow-1-strong rounded mb-4 hover:scale-[1.01]"
-			alt="Servicio 5"
-			/>
-
-			<img
-			src="imagenes/servicio5.jpg"
-			class="w-100 shadow-1-strong rounded mb-4 hover:scale-[1.01]"
-			alt="Servicio 6"
-			/>
-		</div>
-	</div>
-
-	<div
-	  class="bg-gray-100 rounded-lg mb-4 dark:bg-slate-600 dark:text-white">
-	  <h3 class="text-2xl text-center p-2 "> Iglesia Bautista su Gracia es Mayor les invita al servicio de predicación todos los domingos a las 10:00am en el salón comunal Asovivir de Bosa </h3>
-	</div>
+  <div
+    class="bg-gray-100 rounded-lg mb-4 dark:bg-slate-600 dark:text-white mx-8 border">
+    <h3 class="text-2xl text-center p-4 "> Iglesia Bautista su Gracia es Mayor les invita al servicio de predicación todos los domingos a las 10:00am <br> en el salón comunal Asovivir de Bosa </h3>
+  </div>
 
 <!-- Versiculos dinamicos -->
-	<blockquote class="border-l-4 border-teal-400 italic my-8 pl-8 md:pl-12 text-lg dark:text-white" id="dailyVersesWrapper"></blockquote>
-	</article>
+  <blockquote class="border-l-4 border-teal-400 italic my-8 mx-8 pl-8 md:pl-12 text-lg dark:text-white" id="dailyVersesWrapper"></blockquote>
+  </article>
 </section>
 
 
 <!-- Tarjetas -->
-<section class="text-gray-700 body-font" id="servicio">
+<section class="text-gray-700 body-font" id="ministerios">
   <div class="container px-5 py-24 mx-auto">
     <div class="flex flex-wrap w-full mb-20 flex-col items-center text-center">
       <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-800 dark:text-white">Ministerios y servicios✝</h1>
       <p class="lg:w-1/2 w-full leading-relaxed text-base text-justify text-lg dark:text-gray-400">Los Ministerios y Servicios son fundamentales para fomentar la adoración y el crecimiento espiritual de los miembros de la iglesia. A través de diversos ministerios como la enseñanza bíblica, la adoración, la evangelización y el servicio comunitario, se busca impactar vidas y fortalecer la fe en Cristo.</p>
     </div>
     <div class="flex flex-wrap -m-4 ">
-    	<!-- Ministerio Varones -->
+      <!-- Ministerio Varones -->
       <div class="xl:w-1/3 md:w-1/2 p-4 tarjeta hover:scale-[1.01]">
           <img class="w-430 h-270 rounded-t-lg" src="imagenes/varones.jpg" alt="ministerio varones"> 
           <div class="border-2 border-gray-200 p-6 rounded-b-lg border-t-0 bg-gray-100 dark:bg-slate-600 dark:border-slate-600">  
-          <h2 class="text-lg text-gray-900 font-medium title-font mb-2 dark:text-white">Varones</h2>       
+          <h2 class="text-lg text-gray-900 font-medium title-font mb-2 dark:text-white font-semibold">Varones</h2>       
           <p class="leading-relaxed text-base mb-2 text-justify text-gray-700 dark:text-white">Dos hombres recorriendo juntos el camino, compartiendo una amistad y un propósito: guiar al otro hacia un encuentro íntimo con Cristo. Con cada paso, sus corazones se abren, las dudas se disipan y el amor se fortalece. Unidos en esta travesía espiritual, descubren la belleza de una relación profunda con el Salvador.</p>
-					<div class="flex flex-wrap border-t justify-start gap-2 border-gray-300 p-2">
-	          <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Salmo 1:1</span>
-	          <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Santiago 1:12</span>
-					</div>
+          <div class="flex flex-wrap border-t justify-start gap-2 border-gray-300 p-2">
+            <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Salmo 1:1</span>
+            <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Santiago 1:12</span>
+          </div>
         </div>
       </div>
 
-			<!-- Ministerio Damas -->
+      <!-- Ministerio Damas -->
       <div class="xl:w-1/3 md:w-1/2 p-4 tarjeta hover:scale-[1.01]">
           <img class="w-430 h-270 rounded-t-lg" src="imagenes/damas3.jpg" alt="ministerio damas"> 
           <div class="border-2 border-gray-200 p-6 rounded-b-lg border-t-0 bg-gray-100 dark:bg-slate-600 dark:border-slate-600">  
-          <h2 class="text-lg text-gray-900 font-medium title-font mb-2 dark:text-white">Mujeres</h2>       
+          <h2 class="text-lg text-gray-900 font-medium title-font mb-2 dark:text-white font-semibold">Mujeres</h2>       
           <p class="leading-relaxed text-base mb-2 text-justify text-gray-700 dark:text-white">El ministerio para las mujeres es un lugar donde las líderes siervas sirven a las mujeres y al mismo tiempo, las enseñan a servir a otros de una forma bíblica. Aunque tengamos tiempos de entretenimiento, no es un club social, sino un lugar donde aprendemos a hacer todo para la gloria de Dios.</p>
-					<div class="flex flex-wrap border-t justify-start gap-2 border-gray-300 p-2">
-	          <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Proverbios 31:30</span>
-	          <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">1 Pedro 3:2-4</span>
-					</div>
+          <div class="flex flex-wrap border-t justify-start gap-2 border-gray-300 p-2">
+            <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Proverbios 31:30</span>
+            <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">1 Pedro 3:2-4</span>
+          </div>
         </div>
       </div>
 
-			<!-- Ministerio Niños -->
+      <!-- Ministerio Niños -->
       <div class="xl:w-1/3 md:w-1/2 p-4 tarjeta hover:scale-[1.01]">
           <img class="w-430 h-270 rounded-t-lg" src="imagenes/niños.jpg" alt="ministerio ninos"> 
           <div class="border-2 border-gray-200 p-6 rounded-b-lg border-t-0 bg-gray-100 dark:bg-slate-600 dark:border-slate-600">  
-          <h2 class="text-lg text-gray-900 font-medium title-font mb-2 text-gray-700 dark:text-white">Niños</h2>       
+          <h2 class="text-lg text-gray-900 font-medium title-font mb-2 text-gray-700 dark:text-white font-semibold">Niños</h2>       
           <p class="leading-relaxed text-base mb-2 text-justify dark:text-white">El ministerio de Niños está orientado a trabajar, educar y formar niños en el conocimiento de la Palabra de Dios; con enseñanzas y actividades de acuerdo a su edad. Es por eso que nos esforzamos por crear una atmósfera llena de diversión, risas y presencia de Dios.</p>
-					<div class="flex flex-wrap border-t justify-start gap-2 border-gray-300 p-2">
-	          <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Deuteronomio 6:6-7</span>
-	          <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Mateo 19:14</span>
-	        	<span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Proverbios 22:6</span>
-	        	<span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">2 Timoteo 3:15</span>
-					</div>
+          <div class="flex flex-wrap border-t justify-start gap-2 border-gray-300 p-2">
+            <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Deuteronomio 6:6-7</span>
+            <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Mateo 19:14</span>
+            <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Proverbios 22:6</span>
+            <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">2 Timoteo 3:15</span>
+          </div>
         </div>
       </div>
 
-			<!-- Ministerio Misioneros -->
+      <!-- Ministerio Misioneros -->
       <div class="xl:w-1/3 md:w-1/2 p-4 tarjeta hover:scale-[1.01]">
           <img class="w-430 h-270 rounded-t-lg" src="imagenes/misioneros.jpg" alt="misioneros"> 
           <div class="border-2 border-gray-200 p-6 rounded-b-lg border-t-0 bg-gray-100 dark:bg-slate-600 dark:border-slate-600">  
-          <h2 class="text-lg text-gray-900 font-medium title-font mb-2 text-gray-700 dark:text-white">Misioneros</h2>       
+          <h2 class="text-lg text-gray-900 font-medium title-font mb-2 text-gray-700 dark:text-white font-semibold">Misioneros</h2>       
           <p class="leading-relaxed text-base mb-2 text-justify dark:text-white">Se llama misionero a aquella persona cuyo objetivo principal es el anuncio del evangelio mediante obras y palabras entre aquellos que no creen.</p>
-					<div class="flex flex-wrap border-t justify-start gap-2 border-gray-300 p-2">
-	          <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Romanos 10:14-15</span>
-	          <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Hechos 20:24</span>
-	        	<span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Marcos 16:15</span>
-					</div>          
+          <div class="flex flex-wrap border-t justify-start gap-2 border-gray-300 p-2">
+            <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Romanos 10:14-15</span>
+            <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Hechos 20:24</span>
+            <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Marcos 16:15</span>
+          </div>          
         </div>
       </div>
 
-			<!-- Ministerio Evangelismo -->
+      <!-- Ministerio Evangelismo -->
       <div class="xl:w-1/3 md:w-1/2 p-4 tarjeta hover:scale-[1.01]">
           <img class="w-430 h-270 rounded-t-lg" src="imagenes/evangelismo.jpg" alt="ministerio damas"> 
           <div class="border-2 border-gray-200 p-6 rounded-b-lg border-t-0 bg-gray-100 dark:bg-slate-600 dark:border-slate-600">  
-          <h2 class="text-lg text-gray-900 font-medium title-font mb-2 text-gray-700 dark:text-white">Evangelismo</h2>       
+          <h2 class="text-lg text-gray-900 font-medium title-font mb-2 text-gray-700 dark:text-white font-semibold">Evangelismo</h2>       
           <p class="leading-relaxed text-base mb-2 text-justify dark:text-white">Por tanto, id, y haced discípulos a todas las naciones, bautizándolos en el nombre del Padre, y del Hijo, y del Espíritu Santo; enseñándoles que guarden todas las cosas que os he mandado; y he aquí yo estoy con vosotros todos los días, hasta el fin del mundo. Amén.</p>
-					<div class="flex flex-wrap border-t justify-start gap-2 border-gray-300 p-2">
-	          <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Hechos 13:47</span>
-	          <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Marcos 16:15</span>
-	        	<span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Hechos 20:24</span>
-	        	<span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Salmo 105:1</span>
-					</div>
+          <div class="flex flex-wrap border-t justify-start gap-2 border-gray-300 p-2">
+            <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Hechos 13:47</span>
+            <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Marcos 16:15</span>
+            <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Hechos 20:24</span>
+            <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Salmo 105:1</span>
+          </div>
         </div>
       </div>              
 
-			<!-- Ministerio Reuniones caseras -->
+      <!-- Ministerio Reuniones caseras -->
       <div class="xl:w-1/3 md:w-1/2 p-4 tarjeta hover:scale-[1.01]">
           <img class="w-430 h-270 rounded-t-lg" src="imagenes/Rcaseras.jpg" alt="ministerio damas"> 
           <div class="border-2 border-gray-200 p-6 rounded-b-lg border-t-0 bg-gray-100 dark:bg-slate-600 dark:border-slate-600">  
-          <h2 class="text-lg text-gray-900 font-medium title-font mb-2 dark:text-white">Reuniones Caseras</h2>       
+          <h2 class="text-lg text-gray-900 font-medium title-font mb-2 dark:text-white font-semibold">Reuniones Caseras</h2>       
           <p class="leading-relaxed text-base mb-2 text-justify text-gray-700 dark:text-white">“Y perseveraban en la doctrina de los apóstoles, en la comunión unos con otros, en el partimiento del pan y en las oraciones… perseveraban unidos cada día en el templo, y partiendo el pan en las casas comían juntos con alegría y sencillez de corazón”</p>
-					<div class="flex flex-wrap border-t justify-start gap-2 border-gray-300 p-2">
-	          <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Hechos 2:42,46</span>
-					</div>
+          <div class="flex flex-wrap border-t justify-start gap-2 border-gray-300 p-2">
+            <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Hechos 2:42,46</span>
+          </div>
         </div>
       </div> 
 
@@ -369,14 +349,14 @@ La Iglesia Bautista su Gracia es Mayor fue fundada en 2022 en Bogotá, en la loc
       <div class="xl:w-1/3 md:w-1/2 p-4 tarjeta hover:scale-[1.01]">
           <img class="w-430 h-270 rounded-t-lg" src="imagenes/jovenes.jpg" alt="ministerio damas"> 
           <div class="border-2 border-gray-200 p-6 rounded-b-lg border-t-0 bg-gray-100 dark:bg-slate-600 dark:border-slate-600">  
-          <h2 class="text-lg text-gray-900 font-medium title-font mb-2 dark:text-white">Jovenes</h2>       
+          <h2 class="text-lg text-gray-900 font-medium title-font mb-2 dark:text-white font-semibold">Jovenes</h2>       
           <p class="leading-relaxed text-base mb-2 text-justify text-gray-700 dark:text-white">Un ministerio de jóvenes saludable busca estar sujeto a la visión de su iglesia. Se interesa por conocer lo que Dios ha colocado en el corazón de sus pastores, quienes tienen la tarea y compromiso de guiar a la iglesia.</p>
-					<div class="flex flex-wrap border-t justify-start gap-2 border-gray-300 p-2">
-	          <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Salmos 71:5</span>
-	          <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">1 Timoteo 4:12</span>
-	        	<span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Tito 1:6-8</span>
-	        	<span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Salmos 119:9</span>
-					</div>
+          <div class="flex flex-wrap border-t justify-start gap-2 border-gray-300 p-2">
+            <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Salmos 71:5</span>
+            <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">1 Timoteo 4:12</span>
+            <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Tito 1:6-8</span>
+            <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Salmos 119:9</span>
+          </div>
         </div>
       </div> 
 
@@ -387,7 +367,7 @@ La Iglesia Bautista su Gracia es Mayor fue fundada en 2022 en Bogotá, en la loc
 <!-- Ubicación -->
 <section class="p-4">
       <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-800 text-center dark:text-white">Ubicación</h1>
-    <div class="h-80 container border-2 p-2 rounded-lg">
+    <div class="h-80 container border-2 p-2 rounded-lg mx-auto">
         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15907.669082240025!2d-74.1925392!3d4.60883!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb722505c69c6b9ee!2sSal%C3%B3n%20Comunal%20de%20Asovivir!5e0!3m2!1ses!2sco!4v1670274439288!5m2!1ses!2sco" class="w-full h-full"></iframe>
     </div>
 </section>
@@ -413,13 +393,13 @@ La Iglesia Bautista su Gracia es Mayor fue fundada en 2022 en Bogotá, en la loc
                   <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
                 </svg>
               </a>
-              	
-          	<a href="https://www.youtube.com/channel/UCZYAQXzmnW0fxiNYWglTnBw" class="ml-3 text-gray-200 hover:text-teal-400">
-			  <span class="sr-only">YouTube</span>
-			  <svg fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" class="w-6 h-6" viewBox="0 0 24 24">
-			    <path d="M21.2,7.7c-0.3-1.1-0.9-2-1.7-2.8C18.7,4.6,16.7,4,12,4S5.3,4.6,3.5,4.9C2.7,5.7,2.1,6.6,1.8,7.7C1.5,8.9,1.5,10.4,1.5,12s0,3.1,0.3,4.3c0.3,1.1,0.9,2,1.7,2.8C5.3,19.4,7.3,20,12,20s6.7-0.6,8.5-0.9c0.8-0.7,1.4-1.7,1.7-2.8c0.3-1.1,0.3-2.6,0.3-4.3s0-3.1-0.3-4.3zM9.8,15.3V8.7l5.6,3.3L9.8,15.3z"></path>
-			  </svg>
-			</a>
+                
+            <a href="https://www.youtube.com/channel/UCZYAQXzmnW0fxiNYWglTnBw" class="ml-3 text-gray-200 hover:text-teal-400">
+        <span class="sr-only">YouTube</span>
+        <svg fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" class="w-6 h-6" viewBox="0 0 24 24">
+          <path d="M21.2,7.7c-0.3-1.1-0.9-2-1.7-2.8C18.7,4.6,16.7,4,12,4S5.3,4.6,3.5,4.9C2.7,5.7,2.1,6.6,1.8,7.7C1.5,8.9,1.5,10.4,1.5,12s0,3.1,0.3,4.3c0.3,1.1,0.9,2,1.7,2.8C5.3,19.4,7.3,20,12,20s6.7-0.6,8.5-0.9c0.8-0.7,1.4-1.7,1.7-2.8c0.3-1.1,0.3-2.6,0.3-4.3s0-3.1-0.3-4.3zM9.8,15.3V8.7l5.6,3.3L9.8,15.3z"></path>
+        </svg>
+      </a>
 
 
 
@@ -436,63 +416,66 @@ La Iglesia Bautista su Gracia es Mayor fue fundada en 2022 en Bogotá, en la loc
         <div class="grid grid-cols-2 gap-5 text-gray-400">
 
           <div class="col-span-2 md:col-span-1 pb-0 md:py-3 px-4 flex flex-col items-center sm:items-start">
-            <h3 class="py-1.5 md:py-4 text-xl text-gray-400 font-bold tracking-wide">Navegación</h3>
-						<nav class="flex justify-around md:flex-col font-medium list-none ml-4 gap-2">
+            <h3 class="py-1.5 md:py-4 text-xl text-white font-bold tracking-wide">Navegación</h3>
+            <nav class="flex justify-around md:flex-col font-medium list-none ml-4 gap-2">
               <li><a href="#inicio" class="hover:text-gray-200 ">Inicio</a></li>
+              <li><a href="#pastor" class="hover:text-gray-200 ">Pastor</a></li>
               <li><a href="#servicio" class="hover:text-gray-200 ">Servicios</a></li>
-              <li><a class="cursor-pointer hover:text-teal-400" href="confesion.html">Confesión de fe</a></li>
-              <li><a class="cursor-pointer hover:text-teal-400" href="preguntas.html">Preguntas frecuentes</a></li>
+              <li><a href="#ministerios" class="hover:text-gray-200 ">Ministerios</a></li>
+              <li><a href="confesion.html" class="hover:text-gray-200 ">Confesión de fe</a></li>
+              <li><a href="preguntas.html" class="hover:text-gray-200 ">Preguntas frecuentes</a></li>
             </nav>
           </div>
 
           <div class="col-span-2 md:col-span-1 pb-0 md:py-3 px-4 flex flex-col items-center sm:items-start">
-            <h3 class="py-1.5 md:py-4 text-xl text-gray-400 font-bold tracking-wide">Información</h3>
-							<ol>
-								<li>Calle 70 Bis Sur #80-56 <br> Salon comunal Asovivir, <br> Bosa, Bogota</li><br>
-								<li></i></a> Servicios de Adoración: <br>Domingos 10:00 hs</li>
-							</ol>
+            <h3 class="py-1.5 md:py-4 text-xl text-white font-bold tracking-wide">Información</h3>
+              <ol>
+                <li>Calle 70 Bis Sur #80-56 <br> Salon comunal Asovivir, <br> Bosa, Bogota</li><br>
+                <li></i></a> Servicios de Adoración: <br>Domingos 10:00 hs</li>
+              </ol>
           </div>
 
       </div>
     </footer>
-        <!-- Boton TOP -->
-        <button class="btn btn-outline-secondary btn-floating btn-lg z-20 border-teal-400" id="btn-back-to-top" type="button" style="display: block; position:fixed;bottom: 85px;right: 20px;">
-            <i class="fas fa-cross text-teal-500"> <!-- Icono Fuente Awesome -->
-            </i>
-        </button>
+
+    <!-- Boton TOP -->
+    <button class="border-2 py-3 px-4 rounded-lg z-20 border-teal-400 hover:bg-teal-400/50 text-teal-500 hover:text-white" id="btn-back-to-top" type="button" style="display: block; position:fixed;bottom: 85px;right: 20px;">
+        <i class="fas fa-cross "> <!-- Icono Fuente Awesome -->
+        </i>
+    </button>
 
 
         <!-- Script JS -->
 <script src="js/script.js" type="text/javascript"></script>
 <script>
 /* Efecto navbar cambio color letras mediante evento scroll */
-	window.addEventListener('scroll', function() {
-	    var menuLinks = document.querySelectorAll('.nav-menu a');
-	    var scrollPosition = window.scrollY;
+  window.addEventListener('scroll', function() {
+      var menuLinks = document.querySelectorAll('.nav-menu a');
+      var scrollPosition = window.scrollY;
 
-	    menuLinks.forEach(function(link) {
-	      var sectionId = link.getAttribute('href');
-	      var section = document.querySelector(sectionId);
+      menuLinks.forEach(function(link) {
+        var sectionId = link.getAttribute('href');
+        var section = document.querySelector(sectionId);
 
-	      if (section) {
-	        var sectionTop = section.offsetTop - 200;
-	        var sectionBottom = section.offsetTop + section.offsetHeight - 200;
+        if (section) {
+          var sectionTop = section.offsetTop - 200;
+          var sectionBottom = section.offsetTop + section.offsetHeight - 200;
 
-	        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-	          link.classList.add('text-teal-400');
-	          link.classList.add('font-semibold');
+          if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+            link.classList.add('text-teal-400');
+            link.classList.add('font-bold');
 
-	        } else {
-	          link.classList.remove('text-teal-400');
-	          link.classList.remove('font-semibold');
+          } else {
+            link.classList.remove('text-teal-400');
+            link.classList.remove('font-bold');
 
-	        }
-	      }
-	    });
-	  });
+          }
+        }
+      });
+    });
 
 /* Efecto tarjetas */
-	const tarjetas = document.querySelectorAll('.tarjeta');
+  const tarjetas = document.querySelectorAll('.tarjeta');
 
     tarjetas.forEach(tarjeta => {
       tarjeta.addEventListener('mouseover', function() {
@@ -514,59 +497,49 @@ La Iglesia Bautista su Gracia es Mayor fue fundada en 2022 en Bogotá, en la loc
 
 /* Barra progreso */
 
-	var h = document.documentElement,
-		  b = document.body,
-		  st = 'scrollTop',
-		  sh = 'scrollHeight',
-		  progress = document.querySelector('#progress'),
-		  scroll;
-	var scrollpos = window.scrollY;
-	var header = document.getElementById("header");
+  var h = document.documentElement,
+      b = document.body,
+      st = 'scrollTop',
+      sh = 'scrollHeight',
+      progress = document.querySelector('#progress'),
+      scroll;
+  var scrollpos = window.scrollY;
+  var header = document.getElementById("header");
 
-	document.addEventListener('scroll', function() {
+  document.addEventListener('scroll', function() {
 
 /*Refrescar scroll % anchura*/
-		scroll = (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100;
-		progress.style.setProperty('--scroll', scroll + '%');
+    scroll = (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100;
+    progress.style.setProperty('--scroll', scroll + '%');
 
-	});
+  });
 
 /* Versiculos tooltip */
-	var refTagger = {
-		settings: {
-			bibleVersion: "RVR60",
-			tooltipStyle: 'dark',
-			libronixBibleVersion: "DEFAULT",
-			addLogosLink: false,
-			appendIconToLibLinks: false,
-			libronixLinkIcon: "dark",
-			noSearchClassNames: ["commentList"],
-			useTooltip: true,
-			noSearchTagNames: ["h1", "h2", "h3"],
-			linksOpenNewWindow: true,
-			convertHyperlinks: false,
-			caseInsensitive: false,
-			tagChapters: true
-		}
-	};
-	(function (d, t) {
-		var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
-		g.src = 'https://api.reftagger.com/v2/reftagger.es.js';
-		s.parentNode.insertBefore(g, s);
-	}(document, 'script'));
+  var refTagger = {
+    settings: {
+      bibleVersion: "RVR60",
+      tooltipStyle: 'dark',
+      libronixBibleVersion: "DEFAULT",
+      addLogosLink: false,
+      appendIconToLibLinks: false,
+      libronixLinkIcon: "dark",
+      noSearchClassNames: ["commentList"],
+      useTooltip: true,
+      noSearchTagNames: ["h1", "h2", "h3"],
+      linksOpenNewWindow: true,
+      convertHyperlinks: false,
+      caseInsensitive: false,
+      tagChapters: true
+    }
+  };
+  (function (d, t) {
+    var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+    g.src = 'https://api.reftagger.com/v2/reftagger.es.js';
+    s.parentNode.insertBefore(g, s);
+  }(document, 'script'));
 
-	const menuBtn = document.querySelector('.menu-btn');
-  const menuItems = document.querySelector('.md\\:flex');
 
-  menuBtn.addEventListener('click', toggleMenu);
-
-  function toggleMenu() {
-    var helloWorld = document.getElementById("texto-celular");
-    menuItems.classList.toggle('hidden');
-    helloWorld.classList.toggle("hidden");
-  }
-
-  //Obtener boton
+  //Obtener boton to top
 let mybutton = document.getElementById("btn-back-to-top");
 
 // Cuando el usuario se desplaza hacia abajo 20px desde la parte superior del documento, mostrar el botón
@@ -593,7 +566,10 @@ function backToTop() {
 }
 
 </script>
-	
+
+<!-- script flowbite  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+  
 </body>
 </html>
 
