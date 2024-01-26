@@ -40,9 +40,7 @@
         transition: filter 0.7s ease;
     }
     .tarjeta.faded {
-        filter: opacity(0.7);}
-/*        carrucel*/
-
+        filter: opacity(0.6);}
 
     </style>
 </head>
@@ -475,26 +473,34 @@ La Iglesia Bautista su Gracia es Mayor fue fundada en 2022 en Bogotá, en la loc
       });
     });
 
-/* Efecto tarjetas */
+  /* Efecto desvanecido tarjetas */
   const tarjetas = document.querySelectorAll('.tarjeta');
 
-    tarjetas.forEach(tarjeta => {
-      tarjeta.addEventListener('mouseover', function() {
-        tarjetas.forEach(otrasTarjetas => {
-          if (otrasTarjetas !== this) {
-            otrasTarjetas.classList.add('faded');
-          }
-        });
-      });
+  function chequearVisibilidad(elemento) {
+    const posicion = elemento.getBoundingClientRect();
+    return (
+      posicion.top >= 0 &&
+      posicion.left >= 0 &&
+      posicion.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      posicion.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
 
-      tarjeta.addEventListener('mouseout', function() {
-        tarjetas.forEach(otrasTarjetas => {
-          if (otrasTarjetas !== this) {
-            otrasTarjetas.classList.remove('faded');
-          }
-        });
-      });
+  function activarEfecto() {
+    tarjetas.forEach(tarjeta => {
+      if (chequearVisibilidad(tarjeta)) {
+        tarjeta.classList.remove('faded');
+      } else {
+        tarjeta.classList.add('faded');
+      }
     });
+  }
+
+  // Activar efecto desvanecido cuando se carga la página
+  activarEfecto();
+
+  // Activar efecto desvanecido al hacer scroll
+  window.addEventListener('scroll', activarEfecto);
 
 /* Barra progreso */
 
@@ -573,22 +579,17 @@ function backToTop() {
   
 <!-- script para cerrar menu movil despues de hacer click en un link  -->  
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // Obtener todos los elementos del menú
-        var menuItems = document.querySelectorAll('.nav-menu a');
-
-        // Agregar un evento clic a cada elemento del menú
-        menuItems.forEach(function(item) {
-            item.addEventListener('click', function() {
-                // Retraso de 0.5 segundos antes de simular el clic en el botón
-                setTimeout(function() {
-                    // Simular el clic en el botón por su ID
-                    var button = document.getElementById('boton-prueba');
-                    button.click();
-                }, 100); // 500 milisegundos = 0.5 segundos
-            });
+document.addEventListener("DOMContentLoaded", () => {
+    // Obtener todos los elementos del menú y agregar evento clic
+    document.querySelectorAll('.nav-menu a').forEach(item => {
+        item.addEventListener('click', () => {
+            setTimeout(() => {
+                // Simular clic en el botón por su ID
+                document.getElementById('boton-prueba').click();
+            }, 100); // Reducido a 100ms para una respuesta más rápida
         });
     });
+});
 </script>
 
 </body>
