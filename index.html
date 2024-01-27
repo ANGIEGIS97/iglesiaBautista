@@ -40,7 +40,8 @@
         transition: filter 0.7s ease;
     }
     .tarjeta.faded {
-        filter: opacity(0.6);}
+        filter: opacity(0.5);
+    }
 
     </style>
 </head>
@@ -115,11 +116,11 @@
 
 
 <!--Bienvenida-->
-  <section class="container rounded-lg bg-gray-100 dark:bg-slate-600 px-10 mx-auto mt-24" id="inicio"> <!--  mt-24 -->
+  <section class="container rounded-lg bg-gray-100 dark:bg-slate-600 px-10 mx-auto mt-24 pb-4" id="inicio"> <!--  mt-24 -->
     <article>
       <header>
-        <h1 class="text-3xl sm:text-4xl text-gray-700 font-bold text-center m-2 dark:text-white p-4" id="texto-prueba">Bienvenido a nuestra iglesia</h1>
-        <!-- <h1 class="bg-gradient-to-r from-gray-900 via-teal-600 to-gray-900 bg-clip-text text-4xl font-bold text-transparent sm:text-4xl text-center">Bienvenido a nuestra iglesia</h1> -->
+        <h1 class="text-3xl sm:text-4xl font-bold text-center text-gray-700  m-2 dark:text-white p-4" id="texto-prueba">Bienvenido a nuestra iglesia</h1>
+        <!-- <h1 class="text-3xl sm:text-4xl font-bold text-center m-2 p-4 bg-gradient-to-r from-gray-900 via-teal-600 to-gray-900 bg-clip-text text-transparent text-center dark:text-white">Bienvenido a nuestra iglesia</h1> -->
       </header>
       <img class="rounded-lg" src="imagenes/principal.jpg" alt="principal" />
         <p class="text-justify my-4 first-letter:text-7xl first-letter:text-black first-letter:mr-3  first-letter:float-left text-lg dark:text-white dark:first-letter:text-teal-400">
@@ -138,10 +139,10 @@
 
 
 <!-- Carrusel Inicio-->
-
-<div id="default-carousel" class="relative w-full z-10 mt-24 container mx-auto" data-carousel="slide">
+<h1 class="sm:text-3xl text-2xl font-medium text-gray-700  text-center mx-2 mt-10 dark:text-white">Anuncios</h1>
+<div id="default-carousel" class="relative w-full z-10 mt-10 container mx-auto" data-carousel="slide">
     <!-- Carousel wrapper -->
-    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+    <div class="relative h-56 overflow-hidden rounded-lg md:h-[760px]">
          <!-- Item 1 -->
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
             <img src="imagenes/carrucel/imagen_1.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
@@ -211,7 +212,7 @@
         ></span>
 
         <div class="p-8 sm:p-16 lg:p-14">
-          <h2 class="text-2xl sm:text-3xl text-center dark:text-white">Pastor</h2>
+          <h2 class="sm:text-3xl text-2xl font-medium text-center dark:text-white">Pastor</h2>
 
           <p class="mt-4 text-gray-700 text-justify first-letter:text-7xl first-letter:text-black first-letter:mr-3  first-letter:float-left text-lg dark:text-white dark:first-letter:text-teal-400 ">
 La Iglesia Bautista su Gracia es Mayor fue fundada en 2022 en Bogotá, en la localidad de Bosa, bajo la dirección del Pastor Principal, Oscar Páez. Desde entonces, el Pastor ha liderado la iglesia enfocándose en difundir el amor de Dios y la fe en Cristo. Su rol abarca la enseñanza bíblica, el liderazgo espiritual, la atención pastoral y la administración de la iglesia. Su pasión por predicar la Palabra de Dios ha inspirado a los miembros y ha resultado en un crecimiento tanto numérico como espiritual de la congregación. La Iglesia Bautista, bajo su liderazgo, se adhiere a una declaración de fe basada en las Escrituras, creyendo en la Trinidad, la salvación por gracia mediante la fe en Cristo, la autoridad de la Biblia y la comisión de compartir el evangelio globalmente. La iglesia sigue un sistema de gobierno congregacional, donde las decisiones importantes se toman mediante votación directa de los miembros.
@@ -225,7 +226,7 @@ La Iglesia Bautista su Gracia es Mayor fue fundada en 2022 en Bogotá, en la loc
 <!-- Galeria de imagenes -->
 <section class="container border-2 mt-4 rounded-lg dark:bg-slate-600 dark:border-slate-600 mx-auto" id="servicio">
   <article>
-    <h1 class="text-gray-800 text-center text-4xl p-4 dark:text-white">Servicio</h1>
+    <h1 class="text-gray-800 text-center sm:text-3xl text-2xl font-medium pt-4 dark:text-white">Servicio</h1>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-8">
       <div>
@@ -476,15 +477,16 @@ La Iglesia Bautista su Gracia es Mayor fue fundada en 2022 en Bogotá, en la loc
   /* Efecto desvanecido tarjetas */
   const tarjetas = document.querySelectorAll('.tarjeta');
 
-  function chequearVisibilidad(elemento) {
-    const posicion = elemento.getBoundingClientRect();
-    return (
-      posicion.top >= 0 &&
-      posicion.left >= 0 &&
-      posicion.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-      posicion.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-  }
+function chequearVisibilidad(elemento) {
+  const posicion = elemento.getBoundingClientRect();
+  const buffer = 100;
+  return (
+    posicion.top >= -buffer &&
+    posicion.left >= 0 &&
+    posicion.bottom <= (window.innerHeight || document.documentElement.clientHeight) + buffer &&
+    posicion.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
 
   function activarEfecto() {
     tarjetas.forEach(tarjeta => {
