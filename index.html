@@ -84,22 +84,22 @@
     <ul class="flex flex-col p-4 md:p-0 mt-10 font-medium border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 nav-menu">
 
         <li>
-          <a href="#inicio" class="block py-2 px-3 text-white rounded md:hover:bg-transparent md:hover:text-teal-400 md:p-0 md:dark:hover:text-teal-400 hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Inicio</a>
+          <a href="#inicio" class="ease-in duration-150 block py-2 px-3 text-white rounded md:hover:bg-transparent md:hover:text-teal-400 md:p-0 md:dark:hover:text-teal-400 hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Inicio</a>
         </li>
         <li>
-          <a href="#pastor" class="block py-2 px-3 text-white rounded md:hover:bg-transparent md:hover:text-teal-400 md:p-0 md:dark:hover:text-teal-400 hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Pastor</a>
+          <a href="#pastor" class="ease-in duration-150 block py-2 px-3 text-white rounded md:hover:bg-transparent md:hover:text-teal-400 md:p-0 md:dark:hover:text-teal-400 hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Pastor</a>
         </li>
         <li>
-          <a href="#servicio" class="block py-2 px-3 text-white rounded md:hover:bg-transparent md:hover:text-teal-400 md:p-0 md:dark:hover:text-teal-400 hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Servicios</a>
+          <a href="#servicio" class="ease-in duration-150 eblock py-2 px-3 text-white rounded md:hover:bg-transparent md:hover:text-teal-400 md:p-0 md:dark:hover:text-teal-400 hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Servicios</a>
         </li>
         <li>
-          <a href="#ministerios" class="block py-2 px-3 text-white rounded md:hover:bg-transparent md:hover:text-teal-400 md:p-0 md:dark:hover:text-teal-400 hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Ministerios</a>
+          <a href="#ministerios" class="ease-in duration-150 block py-2 px-3 text-white rounded md:hover:bg-transparent md:hover:text-teal-400 md:p-0 md:dark:hover:text-teal-400 hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Ministerios</a>
         </li>
         <li>
-          <a href="confesion.html" class="block py-2 px-3 text-white rounded md:hover:bg-transparent md:hover:text-teal-400 md:p-0 md:dark:hover:text-teal-400 hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Confesion de fe</a>
+          <a href="confesion.html" class="ease-in duration-150 block py-2 px-3 text-white rounded md:hover:bg-transparent md:hover:text-teal-400 md:p-0 md:dark:hover:text-teal-400 hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Confesion de fe</a>
         </li>
         <li>
-          <a href="preguntas.html" class="block py-2 px-3 text-white rounded md:hover:bg-transparent md:hover:text-teal-400 md:p-0 md:dark:hover:text-teal-400 hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Preguntas frecuentes</a>
+          <a href="preguntas.html" class="ease-in duration-150 block py-2 px-3 text-white rounded md:hover:bg-transparent md:hover:text-teal-400 md:p-0 md:dark:hover:text-teal-400 hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Preguntas frecuentes</a>
         </li> 
 
     </ul>
@@ -198,11 +198,14 @@
     <div class="grid grid-cols-1 lg:h-screen lg:grid-cols-2">
       <div class="relative z-10 lg:py-16">
         <div class="relative h-64 sm:h-80 lg:h-full">
-          <img
-            alt="Pastor"
-            src="imagenes/pastor2.jpg"
-            class="absolute inset-0 h-full w-full object-cover rounded-lg"
-          />
+          <img alt="Pastor" src="imagenes/pastor2.jpg" class="absolute inset-0 h-full w-full object-cover rounded-lg"/>
+            
+            <!-- Sobreponer otra imagen o texto -->
+            <div class="absolute inset-0 bg-teal-400 opacity-0 hover:opacity-100 rounded-lg transition-opacity duration-300 flex justify-center items-center">
+              <img src="imagenes/servicio2.jpg" class="w-full shadow-1-strong rounded mb-4" alt="Servicio 3" />
+            </div>
+            <!-- Fin -->
+
         </div>
       </div>
 
@@ -230,7 +233,7 @@ La Iglesia Bautista su Gracia es Mayor fue fundada en 2022 en Bogotá, en la loc
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-8">
       <div>
-        <img src="imagenes/servicio.jpg" class="w-full shadow-1-strong rounded mb-4 hover:scale-[1.01] bg-white" alt="Servicio 1" />
+        <img src="imagenes/servicio.jpg" class="w-full shadow-1-strong rounded mb-4 hover:scale-[1.01]" alt="Servicio 1" />
         <img src="imagenes/servicio1.jpg" class="w-full shadow-1-strong rounded mb-4 hover:scale-[1.01]" alt="Servicio 2" />
       </div>
       <div>
@@ -265,99 +268,148 @@ La Iglesia Bautista su Gracia es Mayor fue fundada en 2022 en Bogotá, en la loc
       <!-- Ministerio Varones -->
       <div class="xl:w-1/3 md:w-1/2 p-4 tarjeta hover:scale-[1.01]">
           <img class="w-430 h-270 rounded-t-lg" src="imagenes/varones.jpg" alt="ministerio varones"> 
-          <div class="border-2 border-gray-200 p-6 rounded-b-lg border-t-0 bg-gray-100 dark:bg-slate-600 dark:border-slate-600">  
-          <h2 class="text-lg text-gray-900 font-medium title-font mb-2 dark:text-white font-semibold">Varones</h2>       
-          <p class="leading-relaxed text-base mb-2 text-justify text-gray-700 dark:text-white">Dos hombres recorriendo juntos el camino, compartiendo una amistad y un propósito: guiar al otro hacia un encuentro íntimo con Cristo. Con cada paso, sus corazones se abren, las dudas se disipan y el amor se fortalece. Unidos en esta travesía espiritual, descubren la belleza de una relación profunda con el Salvador.</p>
-          <div class="flex flex-wrap border-t justify-start gap-2 border-gray-300 p-2">
-            <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Salmo 1:1</span>
-            <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Santiago 1:12</span>
+        <div class=" dark:p-0.5 dark:pt-0 dark:border-0 border-2 border-gray-200 rounded-b-lg border-t-0 bg-gray-100 dark:bg-gradient-to-tr from-teal-400 to-teal-800 dark:border-slate-600"> <!-- Capa gradiente activa en modo oscuro --> 
+
+          <div class="h-full w-full dark:bg-slate-600/90 rounded-b-md"> <!-- Capa que cubre con color gris el gradiente -->
+            <div class="p-6">
+              <h2 class="text-lg text-gray-900 font-medium title-font mb-2 dark:text-white font-semibold">Varones</h2>       
+              <p class="leading-relaxed text-base mb-2 text-justify text-gray-700 dark:text-white">Dos hombres recorriendo juntos el camino, compartiendo una amistad y un propósito: guiar al otro hacia un encuentro íntimo con Cristo. Con cada paso, sus corazones se abren, las dudas se disipan y el amor se fortalece. Unidos en esta travesía espiritual, descubren la belleza de una relación profunda con el Salvador.</p>
+                <div class="flex flex-wrap border-t justify-start gap-2 border-gray-300 p-2">
+                  <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Salmo 1:1</span>
+                  <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Santiago 1:12</span>
+                </div>
+
+            </div>
           </div>
+
         </div>
       </div>
 
       <!-- Ministerio Damas -->
       <div class="xl:w-1/3 md:w-1/2 p-4 tarjeta hover:scale-[1.01]">
-          <img class="w-430 h-270 rounded-t-lg" src="imagenes/damas3.jpg" alt="ministerio damas"> 
-          <div class="border-2 border-gray-200 p-6 rounded-b-lg border-t-0 bg-gray-100 dark:bg-slate-600 dark:border-slate-600">  
-          <h2 class="text-lg text-gray-900 font-medium title-font mb-2 dark:text-white font-semibold">Mujeres</h2>       
-          <p class="leading-relaxed text-base mb-2 text-justify text-gray-700 dark:text-white">El ministerio para las mujeres es un lugar donde las líderes siervas sirven a las mujeres y al mismo tiempo, las enseñan a servir a otros de una forma bíblica. Aunque tengamos tiempos de entretenimiento, no es un club social, sino un lugar donde aprendemos a hacer todo para la gloria de Dios.</p>
-          <div class="flex flex-wrap border-t justify-start gap-2 border-gray-300 p-2">
-            <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Proverbios 31:30</span>
-            <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">1 Pedro 3:2-4</span>
+          <img class="w-430 h-270 rounded-t-lg" src="imagenes/damas3.jpg" alt="ministerio varones"> 
+        <div class=" dark:p-0.5 dark:pt-0 dark:border-0 border-2 border-gray-200 rounded-b-lg border-t-0 bg-gray-100 dark:bg-gradient-to-tr from-teal-400 to-teal-800 dark:border-slate-600"> <!-- Capa gradiente activa en modo oscuro --> 
+
+          <div class="h-full w-full dark:bg-slate-600/90 rounded-b-md"> <!-- Capa que cubre con color gris el gradiente -->
+            <div class="p-6">
+              <h2 class="text-lg text-gray-900 font-medium title-font mb-2 dark:text-white font-semibold">Mujeres</h2>       
+              <p class="leading-relaxed text-base mb-2 text-justify text-gray-700 dark:text-white">El ministerio para las mujeres es un lugar donde las líderes siervas sirven a las mujeres y al mismo tiempo, las enseñan a servir a otros de una forma bíblica. Aunque tengamos tiempos de entretenimiento, no es un club social, sino un lugar donde aprendemos a hacer todo para la gloria de Dios.</p>
+                <div class="flex flex-wrap border-t justify-start gap-2 border-gray-300 p-2">
+                  <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Proverbios 31:30</span>
+                  <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">1 Pedro 3:2-4</span>
+                </div>
+
+            </div>
           </div>
+
         </div>
       </div>
 
       <!-- Ministerio Niños -->
       <div class="xl:w-1/3 md:w-1/2 p-4 tarjeta hover:scale-[1.01]">
-          <img class="w-430 h-270 rounded-t-lg" src="imagenes/niños.jpg" alt="ministerio ninos"> 
-          <div class="border-2 border-gray-200 p-6 rounded-b-lg border-t-0 bg-gray-100 dark:bg-slate-600 dark:border-slate-600">  
-          <h2 class="text-lg text-gray-900 font-medium title-font mb-2 text-gray-700 dark:text-white font-semibold">Niños</h2>       
-          <p class="leading-relaxed text-base mb-2 text-justify dark:text-white">El ministerio de Niños está orientado a trabajar, educar y formar niños en el conocimiento de la Palabra de Dios; con enseñanzas y actividades de acuerdo a su edad. Es por eso que nos esforzamos por crear una atmósfera llena de diversión, risas y presencia de Dios.</p>
-          <div class="flex flex-wrap border-t justify-start gap-2 border-gray-300 p-2">
-            <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Deuteronomio 6:6-7</span>
-            <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Mateo 19:14</span>
-            <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Proverbios 22:6</span>
-            <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">2 Timoteo 3:15</span>
+          <img class="w-430 h-270 rounded-t-lg" src="imagenes/niños.jpg" alt="ministerio varones"> 
+        <div class=" dark:p-0.5 dark:pt-0 dark:border-0 border-2 border-gray-200 rounded-b-lg border-t-0 bg-gray-100 dark:bg-gradient-to-tr from-teal-400 to-teal-800 dark:border-slate-600"> <!-- Capa gradiente activa en modo oscuro --> 
+
+          <div class="h-full w-full dark:bg-slate-600/90 rounded-b-md"> <!-- Capa que cubre con color gris el gradiente -->
+            <div class="p-6">
+              <h2 class="text-lg text-gray-900 font-medium title-font mb-2 dark:text-white font-semibold">Niños</h2>       
+              <p class="leading-relaxed text-base mb-2 text-justify text-gray-700 dark:text-white">El ministerio de Niños está orientado a trabajar, educar y formar niños en el conocimiento de la Palabra de Dios; con enseñanzas y actividades de acuerdo a su edad. Es por eso que nos esforzamos por crear una atmósfera llena de diversión, risas y presencia de Dios.</p>
+            <div class="flex flex-wrap border-t justify-start gap-2 border-gray-300 p-2">
+              <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Deuteronomio 6:6-7</span>
+              <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Mateo 19:14</span>
+              <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Proverbios 22:6</span>
+              <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">2 Timoteo 3:15</span>
+            </div>
+
+            </div>
           </div>
+
         </div>
       </div>
 
       <!-- Ministerio Misioneros -->
       <div class="xl:w-1/3 md:w-1/2 p-4 tarjeta hover:scale-[1.01]">
-          <img class="w-430 h-270 rounded-t-lg" src="imagenes/misioneros.jpg" alt="misioneros"> 
-          <div class="border-2 border-gray-200 p-6 rounded-b-lg border-t-0 bg-gray-100 dark:bg-slate-600 dark:border-slate-600">  
-          <h2 class="text-lg text-gray-900 font-medium title-font mb-2 text-gray-700 dark:text-white font-semibold">Misioneros</h2>       
-          <p class="leading-relaxed text-base mb-2 text-justify dark:text-white">Se llama misionero a aquella persona cuyo objetivo principal es el anuncio del evangelio mediante obras y palabras entre aquellos que no creen.</p>
-          <div class="flex flex-wrap border-t justify-start gap-2 border-gray-300 p-2">
-            <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Romanos 10:14-15</span>
-            <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Hechos 20:24</span>
-            <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Marcos 16:15</span>
-          </div>          
+          <img class="w-430 h-270 rounded-t-lg" src="imagenes/misioneros.jpg" alt="ministerio varones"> 
+        <div class=" dark:p-0.5 dark:pt-0 dark:border-0 border-2 border-gray-200 rounded-b-lg border-t-0 bg-gray-100 dark:bg-gradient-to-tr from-teal-400 to-teal-800 dark:border-slate-600"> <!-- Capa gradiente activa en modo oscuro --> 
+
+          <div class="h-full w-full dark:bg-slate-600/90 rounded-b-md"> <!-- Capa que cubre con color gris el gradiente -->
+            <div class="p-6">
+              <h2 class="text-lg text-gray-900 font-medium title-font mb-2 dark:text-white font-semibold">Misioneros</h2>       
+              <p class="leading-relaxed text-base mb-2 text-justify text-gray-700 dark:text-white">Se llama misionero a aquella persona cuyo objetivo principal es el anuncio del evangelio mediante obras y palabras entre aquellos que no creen.</p>
+            <div class="flex flex-wrap border-t justify-start gap-2 border-gray-300 p-2">
+              <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Romanos 10:14-15</span>
+              <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Hechos 20:24</span>
+              <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Marcos 16:15</span>
+            </div>  
+
+            </div>
+          </div>
+
         </div>
-      </div>
+      </div>      
 
       <!-- Ministerio Evangelismo -->
       <div class="xl:w-1/3 md:w-1/2 p-4 tarjeta hover:scale-[1.01]">
-          <img class="w-430 h-270 rounded-t-lg" src="imagenes/evangelismo.jpg" alt="ministerio damas"> 
-          <div class="border-2 border-gray-200 p-6 rounded-b-lg border-t-0 bg-gray-100 dark:bg-slate-600 dark:border-slate-600">  
-          <h2 class="text-lg text-gray-900 font-medium title-font mb-2 text-gray-700 dark:text-white font-semibold">Evangelismo</h2>       
-          <p class="leading-relaxed text-base mb-2 text-justify dark:text-white">Por tanto, id, y haced discípulos a todas las naciones, bautizándolos en el nombre del Padre, y del Hijo, y del Espíritu Santo; enseñándoles que guarden todas las cosas que os he mandado; y he aquí yo estoy con vosotros todos los días, hasta el fin del mundo. Amén.</p>
-          <div class="flex flex-wrap border-t justify-start gap-2 border-gray-300 p-2">
-            <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Hechos 13:47</span>
-            <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Marcos 16:15</span>
-            <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Hechos 20:24</span>
-            <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Salmo 105:1</span>
-          </div>
-        </div>
-      </div>              
+          <img class="w-430 h-270 rounded-t-lg" src="imagenes/evangelismo.jpg" alt="ministerio varones"> 
+        <div class=" dark:p-0.5 dark:pt-0 dark:border-0 border-2 border-gray-200 rounded-b-lg border-t-0 bg-gray-100 dark:bg-gradient-to-tr from-teal-400 to-teal-800 dark:border-slate-600"> <!-- Capa gradiente activa en modo oscuro --> 
 
-      <!-- Ministerio Reuniones caseras -->
-      <div class="xl:w-1/3 md:w-1/2 p-4 tarjeta hover:scale-[1.01]">
-          <img class="w-430 h-270 rounded-t-lg" src="imagenes/Rcaseras.jpg" alt="ministerio damas"> 
-          <div class="border-2 border-gray-200 p-6 rounded-b-lg border-t-0 bg-gray-100 dark:bg-slate-600 dark:border-slate-600">  
-          <h2 class="text-lg text-gray-900 font-medium title-font mb-2 dark:text-white font-semibold">Reuniones Caseras</h2>       
-          <p class="leading-relaxed text-base mb-2 text-justify text-gray-700 dark:text-white">“Y perseveraban en la doctrina de los apóstoles, en la comunión unos con otros, en el partimiento del pan y en las oraciones… perseveraban unidos cada día en el templo, y partiendo el pan en las casas comían juntos con alegría y sencillez de corazón”</p>
-          <div class="flex flex-wrap border-t justify-start gap-2 border-gray-300 p-2">
-            <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Hechos 2:42,46</span>
+          <div class="h-full w-full dark:bg-slate-600/90 rounded-b-md"> <!-- Capa que cubre con color gris el gradiente -->
+            <div class="p-6">
+              <h2 class="text-lg text-gray-900 font-medium title-font mb-2 dark:text-white font-semibold">Evangelismo</h2>       
+              <p class="leading-relaxed text-base mb-2 text-justify text-gray-700 dark:text-white">Por tanto, id, y haced discípulos a todas las naciones, bautizándolos en el nombre del Padre, y del Hijo, y del Espíritu Santo; enseñándoles que guarden todas las cosas que os he mandado; y he aquí yo estoy con vosotros todos los días, hasta el fin del mundo. Amén.</p>
+              <div class="flex flex-wrap border-t justify-start gap-2 border-gray-300 p-2">
+                <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Hechos 13:47</span>
+                <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Marcos 16:15</span>
+                <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Hechos 20:24</span>
+                <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Salmo 105:1</span>
+              </div>
+
+            </div>
           </div>
+
         </div>
-      </div> 
+      </div>      
+
+       <!-- Ministerio Reuniones caseras -->
+      <div class="xl:w-1/3 md:w-1/2 p-4 tarjeta hover:scale-[1.01]">
+          <img class="w-430 h-270 rounded-t-lg" src="imagenes/Rcaseras.jpg" alt="ministerio varones"> 
+        <div class=" dark:p-0.5 dark:pt-0 dark:border-0 border-2 border-gray-200 rounded-b-lg border-t-0 bg-gray-100 dark:bg-gradient-to-tr from-teal-400 to-teal-800 dark:border-slate-600"> <!-- Capa gradiente activa en modo oscuro --> 
+
+          <div class="h-full w-full dark:bg-slate-600/90 rounded-b-md"> <!-- Capa que cubre con color gris el gradiente -->
+            <div class="p-6">
+              <h2 class="text-lg text-gray-900 font-medium title-font mb-2 dark:text-white font-semibold">Reuniones Caseras</h2>       
+              <p class="leading-relaxed text-base mb-2 text-justify text-gray-700 dark:text-white">“Y perseveraban en la doctrina de los apóstoles, en la comunión unos con otros, en el partimiento del pan y en las oraciones… perseveraban unidos cada día en el templo, y partiendo el pan en las casas comían juntos con alegría y sencillez de corazón”</p>
+              <div class="flex flex-wrap border-t justify-start gap-2 border-gray-300 p-2">
+                <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Hechos 2:42,46</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>             
 
       <!-- Jovenes -->
       <div class="xl:w-1/3 md:w-1/2 p-4 tarjeta hover:scale-[1.01]">
-          <img class="w-430 h-270 rounded-t-lg" src="imagenes/jovenes.jpg" alt="ministerio damas"> 
-          <div class="border-2 border-gray-200 p-6 rounded-b-lg border-t-0 bg-gray-100 dark:bg-slate-600 dark:border-slate-600">  
-          <h2 class="text-lg text-gray-900 font-medium title-font mb-2 dark:text-white font-semibold">Jovenes</h2>       
-          <p class="leading-relaxed text-base mb-2 text-justify text-gray-700 dark:text-white">Un ministerio de jóvenes saludable busca estar sujeto a la visión de su iglesia. Se interesa por conocer lo que Dios ha colocado en el corazón de sus pastores, quienes tienen la tarea y compromiso de guiar a la iglesia.</p>
-          <div class="flex flex-wrap border-t justify-start gap-2 border-gray-300 p-2">
-            <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Salmos 71:5</span>
-            <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">1 Timoteo 4:12</span>
-            <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Tito 1:6-8</span>
-            <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Salmos 119:9</span>
+          <img class="w-430 h-270 rounded-t-lg" src="imagenes/jovenes.jpg" alt="ministerio varones"> 
+        <div class=" dark:p-0.5 dark:pt-0 dark:border-0 border-2 border-gray-200 rounded-b-lg border-t-0 bg-gray-100 dark:bg-gradient-to-tr from-teal-400 to-teal-800 dark:border-slate-600"> <!-- Capa gradiente activa en modo oscuro --> 
+
+          <div class="h-full w-full dark:bg-slate-600/90 rounded-b-md"> <!-- Capa que cubre con color gris el gradiente -->
+            <div class="p-6">
+              <h2 class="text-lg text-gray-900 font-medium title-font mb-2 dark:text-white font-semibold">Jovenes</h2>       
+              <p class="leading-relaxed text-base mb-2 text-justify text-gray-700 dark:text-white">Un ministerio de jóvenes saludable busca estar sujeto a la visión de su iglesia. Se interesa por conocer lo que Dios ha colocado en el corazón de sus pastores, quienes tienen la tarea y compromiso de guiar a la iglesia.</p>
+             
+              <div class="flex flex-wrap border-t justify-start gap-2 border-gray-300 p-2">
+                <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Salmos 71:5</span>
+                <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">1 Timoteo 4:12</span>
+                <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Tito 1:6-8</span>
+                <span class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400">Salmos 119:9</span>
+              </div>
+
+            </div>
           </div>
+
         </div>
-      </div> 
+      </div>     
 
     </div>
   </div>
