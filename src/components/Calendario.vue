@@ -30,7 +30,7 @@
         :breakpoints="{
           '420': {
             slidesPerView: 2,
-            spaceBetween: 20,
+            spaceBetween: 7,
           },
           '768': {
             slidesPerView: 3,
@@ -62,7 +62,7 @@
                 </div>
               </div>
             </div>
-            <h3 class="text-md sm:text-xl font-semibold mb-2">
+            <h3 class="font-semibold mb-2 text-xl sm:text-[18px] xl:text-xl">
               {{ evento.titulo }}
             </h3>
             <p class="text-sm text-gray-600 mb-2 flex items-center">
@@ -186,14 +186,16 @@ export default {
         }
         const datos = await respuesta.json();
         const hoy = new Date();
-        hoy.setHours(0, 0, 0, 0);
+        hoy.setUTCHours(0, 0, 0, 0);
+
         eventos.value = datos
           .map((evento) => {
             const [year, month, day] = evento.fecha.split("-").map(Number);
-            const fechaEvento = new Date(Date.UTC(year, month - 1, day));
-            const diasRestantes = Math.max(
-              0,
-              Math.floor((fechaEvento - hoy) / (1000 * 60 * 60 * 24))
+            const fechaEvento = new Date(
+              Date.UTC(year, month - 1, day, 0, 0, 0, 0)
+            );
+            const diasRestantes = Math.ceil(
+              (fechaEvento - hoy) / (1000 * 60 * 60 * 24)
             );
             return {
               ...evento,
