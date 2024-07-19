@@ -1,7 +1,7 @@
 <!-- src/App.vue -->
 <template>
   <nav
-    class="bg-gray-800 bg-opacity-80 backdrop-filter backdrop-blur-sm fixed w-full z-20 top-0 start-0 border-b border-gray-600"
+    class="bg-gray-800 bg-opacity-80 backdrop-filter backdrop-blur-sm fixed w-full z-20 top-0 start-0 border-b border-gray-600 navbar"
     style="list-style-type: none"
   >
     <!-- glassmorphing en menu -->

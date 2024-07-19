@@ -1,7 +1,6 @@
 <template>
   <div>
     <MenuInicio />
-    <BarraProgreso />
     <Bienvenida />
     <Calendario />
     <CarruselAnuncios />
@@ -16,7 +15,6 @@
 
 <script>
 import PieDePagina from "./PieDePagina.vue";
-import BarraProgreso from "./BarraProgreso.vue";
 import Ubicacion from "./Ubicacion.vue";
 import Servicios from "./Servicios.vue";
 import Pastor from "./Pastor.vue";
@@ -30,7 +28,6 @@ import BotonTop from "./BotonTop.vue";
 export default {
   components: {
     PieDePagina,
-    BarraProgreso,
     Ubicacion,
     Ministerios,
     Servicios,

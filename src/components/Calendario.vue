@@ -22,7 +22,7 @@
       <swiper
         :modules="modulos"
         :slides-per-view="2"
-        :space-between="30"
+        :space-between="7"
         :pagination="{ clickable: true }"
         :navigation="false"
         :grab-cursor="true"
@@ -32,13 +32,13 @@
             slidesPerView: 2,
             spaceBetween: 20,
           },
-          '640': {
-            slidesPerView: 2,
+          '768': {
+            slidesPerView: 3,
             spaceBetween: 20,
           },
-          '768': {
+          '1020': {
             slidesPerView: 4,
-            spaceBetween: 30,
+            spaceBetween: 20,
           },
         }"
       >
