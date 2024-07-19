@@ -174,8 +174,7 @@ export default {
         "Viernes",
         "Sábado",
       ];
-      const date = new Date(fecha);
-      return dias[date.getDay()];
+      return dias[fecha.getUTCDay()];
     };
 
     onMounted(async () => {
@@ -187,12 +186,11 @@ export default {
         }
         const datos = await respuesta.json();
         const hoy = new Date();
-        hoy.setHours(0, 0, 0, 0); // Establece la hora a 00:00:00
-
+        hoy.setHours(0, 0, 0, 0);
         eventos.value = datos
           .map((evento) => {
-            const fechaEvento = new Date(evento.fecha);
-            fechaEvento.setHours(0, 0, 0, 0); // Establece la hora a 00:00:00
+            const [year, month, day] = evento.fecha.split("-").map(Number);
+            const fechaEvento = new Date(Date.UTC(year, month - 1, day));
             const diasRestantes = Math.max(
               0,
               Math.floor((fechaEvento - hoy) / (1000 * 60 * 60 * 24))
@@ -200,15 +198,18 @@ export default {
             return {
               ...evento,
               fecha: fechaEvento,
-              dia: fechaEvento.getDate().toString().padStart(2, "0"),
-              mes: fechaEvento.toLocaleString("es", { month: "long" }),
+              dia: fechaEvento.getUTCDate().toString().padStart(2, "0"),
+              mes: fechaEvento.toLocaleString("es", {
+                month: "long",
+                timeZone: "UTC",
+              }),
               diasRestantes: diasRestantes,
-              diaSemana: obtenerDiaSemana(fechaEvento), // Se agrega el dia de la semana
+              diaSemana: obtenerDiaSemana(fechaEvento),
             };
           })
           .filter((evento) => evento.fecha >= hoy)
           .sort((a, b) => a.fecha - b.fecha)
-          .slice(0, 10); // Limita a los 10 primeros eventos
+          .slice(0, 10);
       } catch (err) {
         console.error("Error al cargar los eventos:", err);
         error.value =

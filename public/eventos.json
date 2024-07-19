@@ -1,6 +1,6 @@
 [
   {
-    "fecha": "2024-07-28",
+    "fecha": "2024-07-30",
     "titulo": "Servicio",
     "hora": "10:00 am — 12:30 pm",
     "lugar": "Salón Comunal Asovivir",
@@ -30,6 +30,13 @@
   {
     "fecha": "2024-08-25",
     "titulo": "Servicio",
+    "hora": "10:00 am — 12:30 pm",
+    "lugar": "Salón Comunal Asovivir",
+    "descripcion": "Servicio dominical semanal."
+  },
+  {
+    "fecha": "2024-08-03",
+    "titulo": "Reunion varones",
     "hora": "10:00 am — 12:30 pm",
     "lugar": "Salón Comunal Asovivir",
     "descripcion": "Servicio dominical semanal."
