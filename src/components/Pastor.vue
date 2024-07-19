@@ -6,7 +6,7 @@
           <div class="relative h-64 sm:h-80 lg:h-full">
             <img
               alt="Pastor"
-              src="src/images/pastor/pastor2.jpg"
+              src="https://i.ibb.co/3ByrqHS/pastor2.jpg"
               class="absolute inset-0 h-full w-full object-cover rounded-lg"
             />
           </div>

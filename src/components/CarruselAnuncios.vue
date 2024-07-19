@@ -39,12 +39,12 @@ export default {
     return {
       modules: [Navigation, Pagination],
       images: [
-        "src/images/carrusel/imagen_1.jpeg",
-        "src/images/carrusel/imagen_2.jpeg",
-        "src/images/carrusel/imagen_3.jpeg",
-        "src/images/carrusel/imagen_4.jpeg",
-        "src/images/carrusel/imagen_5.jpeg",
-        "src/images/carrusel/imagen_6.jpeg",
+        "https://i.ibb.co/RzRrTRX/1.jpg",
+        "https://i.ibb.co/bKfVw1Y/2.jpg",
+        "https://i.ibb.co/k8SpDdf/3.jpg",
+        "https://i.ibb.co/q0378j2/4.jpg",
+        "https://i.ibb.co/HFh8qjT/5.jpg",
+        "https://i.ibb.co/gP4F0Mn/6.jpg",
       ],
     };
   },

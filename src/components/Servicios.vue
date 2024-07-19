@@ -13,36 +13,36 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-8">
         <div>
           <img
-            src="src/images/servicio/servicio.jpg"
+            src="https://i.ibb.co/z4bPJTy/servicio.jpg"
             class="w-full shadow-1-strong rounded mb-4 hover:scale-[1.01]"
             alt="Servicio 1"
           />
           <img
-            src="src/images/servicio/servicio1.jpg"
+            src="https://i.ibb.co/12HCWmc/servicio1.jpg"
             class="w-full shadow-1-strong rounded mb-4 hover:scale-[1.01]"
             alt="Servicio 2"
           />
         </div>
         <div>
           <img
-            src="src/images/servicio/servicio2.jpg"
+            src="https://i.ibb.co/qjtDbck/servicio2.jpg"
             class="w-full shadow-1-strong rounded mb-4 hover:scale-[1.01]"
             alt="Servicio 3"
           />
           <img
-            src="src/images/servicio/servicio3.jpg"
+            src="https://i.ibb.co/k29KtQn/servicio3.jpg"
             class="w-full shadow-1-strong rounded mb-4 hover:scale-[1.01]"
             alt="Servicio 4"
           />
         </div>
         <div>
           <img
-            src="src/images/servicio/servicio4.jpg"
+            src="https://i.ibb.co/2jH8Tsq/servicio4.jpg"
             class="w-full shadow-1-strong rounded mb-4 hover:scale-[1.01]"
             alt="Servicio 5"
           />
           <img
-            src="src/images/servicio/servicio5.jpg"
+            src="https://i.ibb.co/bJ1QPqL/servicio5.jpg"
             class="w-full shadow-1-strong rounded mb-4 hover:scale-[1.01]"
             alt="Servicio 6"
           />
