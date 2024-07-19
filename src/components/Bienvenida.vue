@@ -15,11 +15,7 @@
         </h1>
         <!-- <h1 class="text-3xl sm:text-4xl font-bold text-center m-2 p-4 bg-gradient-to-r from-gray-900 via-teal-600 to-gray-900 bg-clip-text text-transparent text-center dark:text-white">Bienvenido a nuestra iglesia</h1> -->
       </header>
-      <img
-        class="rounded-lg"
-        src="https://i.ibb.co/LDyhY5M/principal.jpg"
-        alt="principal"
-      />
+      <img class="rounded-lg" src="https://ibb.co/NgqntSX" alt="principal" />
       <p
         class="text-justify my-4 first-letter:text-7xl first-letter:text-black first-letter:mr-3 first-letter:float-left text-lg dark:text-white dark:first-letter:text-teal-400"
       >
