@@ -17,7 +17,7 @@
       </header>
       <img
         class="rounded-lg"
-        src="public/images/principal.jpg"
+        src="https://i.ibb.co/LDyhY5M/principal.jpg"
         alt="principal"
       />
       <p
