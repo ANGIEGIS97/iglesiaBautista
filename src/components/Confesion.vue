@@ -5,7 +5,7 @@
     >
       Confesión de fe
     </h1>
-    <p class="text-lg mb-4 dark:text-white">Averigüe qué puede esperar</p>
+    <p class="text-lg mb-4 dark:text-white">Descubra qué esperar al visitarnos</p>
     <p class="text-gray-600 mb-4 dark:text-white">
       Conozca más sobre nuestros valores y nuestra historia como iglesia
       visitando la página sobre nosotros.

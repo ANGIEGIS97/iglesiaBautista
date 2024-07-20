@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from "astro:transitions";
 import PreguntasFrecuentes from "../../components/PreguntasFrecuentes.vue";
 import MenuInicio from "../../components/MenuInicio.vue";
 ---
@@ -9,7 +10,8 @@ import MenuInicio from "../../components/MenuInicio.vue";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Iglesia</title>
+    <title>Preguntas frecuentes</title>
+    <ViewTransitions />
   </head>
   <body class="dark:bg-gray-800">
     <MenuInicio client:load />

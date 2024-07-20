@@ -5,7 +5,7 @@
     >
       Preguntas frecuentes
     </h1>
-    <p class="text-lg mb-4 dark:text-white">Averigüe qué puede esperar</p>
+    <p class="text-lg mb-4 dark:text-white">Descubra qué esperar al visitarnos</p>
     <p class="text-gray-600 mb-4 dark:text-white">
       Conozca más sobre nuestros valores y nuestra historia como iglesia
       visitando la página sobre nosotros.
@@ -65,7 +65,7 @@ export default {
         {
           pregunta: "1. ¿Cómo se alcanza la salvación?",
           respuesta:
-            "La salvación es un don de la gracia de Dios, no es por obras religiosas que podamos hacer. Debemos creer en Jesucristo y recibirlo como nuestro salvador. (Ef.1:8-10; Hch.13:48; Tit. 3:4-7)",
+            "La salvación es un don de la gracia de Dios, no es por obras religiosas que podamos hacer. Debemos creer en Jesucristo y recibirlo como nuestro salvador. (Ef.1:8-10; Hch.13:48; Tit. 3:4-7  Efesios 2:8-10)",
           isOpen: false,
         },
         {
@@ -89,7 +89,7 @@ export default {
         {
           pregunta: "5. Creen en la virgen María?",
           respuesta:
-            "Sí, pero según la enseñanza de la Biblia. María fue el vaso de honra que Dios usó para la encarnación de su Hijo, pero en ningún momento fue nombrada mediadora entre Dios y los hombres. (1 Ti.2:5-6; Lc.1:46-48)",
+            "Sí, pero según la enseñanza de la Biblia. María fue el vaso de honra que Dios usó para la encarnación de su Hijo, pero en ningún momento fue nombrada mediadora entre Dios y los hombres, respetamos su memoria pero no es objeto de adoración. (1 Ti.2:5-6; Lc.1:46-48)",
           isOpen: false,
         },
         {
@@ -102,14 +102,14 @@ export default {
           pregunta:
             "7.¿Tienen una sede y/o un líder mundial como otras religiones?",
           respuesta:
-            "No. Nuestra sede es el local donde nos congregamos y nuestro único jefe es el señor Jesucristo y nuestros guías son los pastores que Él ha designado para representarlo. (Ef.4:11-16)",
+            "No. Nuestra sede es el local donde nos congregamos y nuestro único jefe es el Señor Jesucristo, y nuestros guías son los pastores que Él ha designado para representarlo (Ef. 4:11-16). Hacemos parte de la Federación de Iglesias Bautistas de Colombia, pero como iglesia local somos autónomos en todo.",
           isOpen: false,
         },
         {
           pregunta:
             " 8. Se dice que ustedes los bautistas no creen en el poder actual del Espíritu Santo ¿por qué?",
           respuesta:
-            "Es falso. Necesitamos de la obra del Espíritu Santo para ser regenerados, sin esta obra poderosa y milagrosa nadie puede llegar a ser cristiano. Además el Espíritu Santo actúa en los creyentes, santificándolos diariamente.(Ro.8:9; 2 Ts.2:13)",
+            "Es falso. Necesitamos de la obra del Espíritu Santo para ser regenerados, sin esta obra poderosa y milagrosa nadie puede llegar a ser cristiano. Además, el Espíritu Santo actúa en los creyentes, santificándolos diariamente (Ro. 8:9; 2 Ts. 2:13). El cuerpo del creyente es templo del Espíritu Santo (1 Corintios 3:16).",
           isOpen: false,
         },
         {
@@ -121,14 +121,14 @@ export default {
         {
           pregunta: "10. ¿El diezmo es obligatorio?",
           respuesta:
-            "No, es voluntario en respuesta a la gracia de Dios. Hay suficientes pasajes bíblicos que nos enseñan su práctica aún antes de ser dada la ley. Además como judío, Jesús lo practicó. (Gn.14:18-20; Mt.23:23)",
+            "No, el diezmo no es obligatorio, es voluntario en respuesta a la gracia de Dios. Hay suficientes pasajes bíblicos que nos enseñan su práctica. La ley mosaica lo establecía sobre los frutos de la tierra y el ganado (Levítico 27:30-35) y era entregado a los levitas para el sustento de ellos (Números 18:21). En Malaquías 3 vemos que era para que hubiera comida para los necesitados. En tiempos del Señor Jesucristo también se aplicaba (Lucas 11:42; Lucas 18:12). Sin embargo, no fue prescrito a la iglesia por el Señor Jesucristo ni por los apóstoles como una norma. Bajo la economía de la gracia, se espera que todo creyente aporte de corazón dispuesto (2 Corintios 9:7), no por norma impuesta, sino presentando el ejemplo del Señor Jesucristo (2 Corintios 8:9). Si fuera por norma, deberíamos dar en muchos casos más de la décima parte (1 Corintios 16:2, ofrenda para los santos).",
           isOpen: false,
         },
         {
           pregunta:
             "11. Hay muchos pastores millonarios ¿la religión es un negocio?",
           respuesta:
-            "No debería serlo. Lamentablemente muchos pastores han convertido la Iglesia en una empresa lucrativa y un negocio para sí mismos.  Por otra parte, las iglesias deben ser responsables de sostener generosamente a sus pastores. (2 P.2:1-3; 1 Ti.5:17-18)",
+            "No debería serlo. Lamentablemente, muchos pastores han convertido la Iglesia en una empresa lucrativa y un negocio para sí mismos. No son iglesias del Señor Jesucristo quienes lo hacen. Por otra parte, las iglesias deben ser responsables de sostener generosamente a sus pastores (2 P. 2:1-3; 1 Ti. 5:17-18).",
           isOpen: false,
         },
       ],
