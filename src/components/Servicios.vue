@@ -3,7 +3,7 @@
     class="container border-2 mt-4 rounded-lg dark:bg-slate-700 dark:border-slate-600 mx-auto transition duration-300 ease-in-out"
     id="servicio"
   >
-    <article class="p-4">
+    <article>
       <h1
         class="text-gray-800 text-center text-2xl sm:text-3xl font-medium dark:text-white flex items-center justify-center"
       >

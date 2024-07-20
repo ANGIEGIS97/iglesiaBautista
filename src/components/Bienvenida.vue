@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!-- Hero Section -->
+    <!-- Hero -->
     <div class="relative h-screen overflow-hidden">
       <div
         ref="parallaxBackground"
@@ -10,8 +10,10 @@
       <div class="absolute inset-0 bg-black opacity-50"></div>
       <div class="relative h-full flex items-center justify-center z-10">
         <div class="text-center text-white p-5">
-          <h1 class="text-5xl font-bold mb-4">Bienvenido a nuestra iglesia</h1>
-          <p class="text-2xl">
+          <h1 class="text-4xl sm:text-5xl font-bold mb-4">
+            Bienvenido a nuestra iglesia
+          </h1>
+          <p class="text-xl sm:text-2xl">
             Un lugar de fe, comunidad y crecimiento espiritual
           </p>
         </div>
