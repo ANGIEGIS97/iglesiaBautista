@@ -1,6 +1,6 @@
 <template>
   <div
-    class="container mx-auto sm:p-16 bg-gray-100 rounded-b-xl dark:bg-slate-600 transition duration-300 ease-in-out"
+    class="container mx-auto sm:p-16 bg-gray-100 rounded-t-xl dark:bg-slate-600 transition duration-300 ease-in-out"
   >
     <swiper
       :slides-per-view="1"

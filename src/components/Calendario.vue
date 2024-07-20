@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-gray-100 dark:bg-slate-600 px-2 sm:px-20 py-6 container mx-auto transition duration-300 ease-in-out rounded-t-lg"
+    class="bg-gray-100 dark:bg-slate-600 px-2 sm:px-20 py-6 container mx-auto transition duration-300 ease-in-out rounded-b-lg"
   >
     <div class="flex justify-between items-center mb-8">
       <h2 class="text-2xl font-bold dark:text-white sm:-ml-8">

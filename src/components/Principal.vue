@@ -3,8 +3,9 @@
     <MenuInicio />
     <Bienvenida />
     <SobreNosotros />
-    <Calendario />
+
     <CarruselAnuncios />
+    <Calendario />
     <Pastor />
     <Servicios />
     <Ministerios />
