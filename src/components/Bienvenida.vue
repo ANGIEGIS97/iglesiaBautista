@@ -9,7 +9,7 @@
       ></div>
       <div class="absolute inset-0 bg-black opacity-50"></div>
       <div class="relative h-full flex items-center justify-center z-10">
-        <div class="text-center text-white p-5">
+        <div class="text-center text-white p-5 selection:bg-teal-500">
           <h1 class="text-4xl sm:text-5xl font-bold mb-4">
             Bienvenido a nuestra iglesia
           </h1>

@@ -53,7 +53,7 @@
                   <span
                     v-for="verse in ministerio.versiculos"
                     :key="verse"
-                    class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400"
+                    class="border-2 border-teal-600 rounded-lg text-sm px-3 py-1 flex-shrink-0 text-teal-600 dark:text-teal-white dark:text-white dark:border-teal-400 hover:bg-teal-600 hover:text-white transition duration-300 cursor-pointer"
                   >
                     {{ verse }}
                   </span>

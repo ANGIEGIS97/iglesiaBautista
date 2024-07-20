@@ -1,6 +1,6 @@
 <template>
   <section
-    class="container rounded-t-lg bg-white dark:bg-slate-600 px-6 sm:px-10 mx-auto py-12 transition duration-300 ease-in-out mt-14 shadow-md"
+    class="container px-6 sm:px-10 mx-auto py-12 transition duration-300 ease-in-out mt-14"
     id="inicio"
   >
     <article>
@@ -30,7 +30,7 @@
         class="flex flex-wrap border-t justify-start gap-2 border-gray-300 dark:border-gray-600 p-4 mt-6"
       >
         <span
-          class="border-2 border-teal-600 rounded-lg text-sm px-3 py-1 flex-shrink-0 text-teal-600 dark:text-teal-400 dark:border-teal-400 hover:bg-teal-600 hover:text-white transition duration-300 cursor-pointer"
+          class="border-2 border-teal-600 rounded-lg text-sm px-3 py-1 flex-shrink-0 text-teal-600 dark:text-teal-white dark:border-teal-400 dark:text-white hover:bg-teal-600 hover:text-white transition duration-300 cursor-pointer"
           >Salmo 119:160</span
         >
       </div>

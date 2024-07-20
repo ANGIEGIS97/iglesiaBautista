@@ -9,6 +9,12 @@
       :pagination="{ clickable: true }"
       :modules="modules"
       :grab-cursor="true"
+      :autoplay="{
+        delay: 3000,
+        disableOnInteraction: false,
+      }"
+      :effect="'fade'"
+      :fade-effect="{ crossFade: true }"
       class="mySwiper custom-swiper rounded-lg overflow-hidden"
     >
       <swiper-slide v-for="(image, index) in images" :key="index">
@@ -24,11 +30,12 @@
 
 <script>
 import { Swiper, SwiperSlide } from "swiper/vue";
-import { Navigation, Pagination } from "swiper/modules";
-
+import { Navigation, Pagination, Autoplay, EffectFade } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import "swiper/css/autoplay";
+import "swiper/css/effect-fade";
 
 export default {
   components: {
@@ -37,7 +44,7 @@ export default {
   },
   data() {
     return {
-      modules: [Navigation, Pagination],
+      modules: [Navigation, Pagination, Autoplay, EffectFade],
       images: [
         "https://i.ibb.co/RzRrTRX/1.jpg",
         "https://i.ibb.co/bKfVw1Y/2.jpg",
@@ -57,18 +64,15 @@ export default {
   .swiper-button-prev {
     @apply text-teal-500;
   }
-
   .swiper-button-next:hover,
   .swiper-button-prev:hover {
     @apply text-teal-400;
   }
-
   .swiper-pagination-bullet {
     @apply bg-teal-400;
     width: 10px;
     height: 10px;
   }
-
   .swiper-pagination-bullet-active {
     @apply bg-teal-500;
     width: 10px;

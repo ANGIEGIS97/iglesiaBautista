@@ -120,7 +120,7 @@
           </li>
           <li>
             <a
-              href="preguntas.html"
+              href="/preguntas"
               class="ease-in duration-150 block py-2 px-3 text-white rounded md:hover:bg-transparent md:hover:text-teal-400 md:p-0 md:dark:hover:text-teal-400 hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >Preguntas frecuentes</a
             >
