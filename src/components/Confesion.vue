@@ -3,7 +3,7 @@
     <h1
       class="text-3xl text-center sm:text-left sm:text-4xl font-serif mb-4 dark:text-white"
     >
-      Preguntas frecuentes
+      Confesión de fe
     </h1>
     <p class="text-lg mb-4 dark:text-white">Averigüe qué puede esperar</p>
     <p class="text-gray-600 mb-4 dark:text-white">
@@ -96,39 +96,6 @@ export default {
           pregunta: "6. ¿Por qué no se confiesan?",
           respuesta:
             "Nuestra confesión de pecados es directamente a Dios por medio de Jesucristo nuestro único mediador y salvador. (Heb.4:14-16)",
-          isOpen: false,
-        },
-        {
-          pregunta:
-            "7.¿Tienen una sede y/o un líder mundial como otras religiones?",
-          respuesta:
-            "No. Nuestra sede es el local donde nos congregamos y nuestro único jefe es el señor Jesucristo y nuestros guías son los pastores que Él ha designado para representarlo. (Ef.4:11-16)",
-          isOpen: false,
-        },
-        {
-          pregunta:
-            " 8. Se dice que ustedes los bautistas no creen en el poder actual del Espíritu Santo ¿por qué?",
-          respuesta:
-            "Es falso. Necesitamos de la obra del Espíritu Santo para ser regenerados, sin esta obra poderosa y milagrosa nadie puede llegar a ser cristiano. Además el Espíritu Santo actúa en los creyentes, santificándolos diariamente.(Ro.8:9; 2 Ts.2:13)",
-          isOpen: false,
-        },
-        {
-          pregunta: "9. ¿Cuál es su posición frente al celibato?",
-          respuesta:
-            "La Biblia enseña que los pastores pueden casarse y tener hijos. El apóstol Pablo enseñó que el abstenerse de mujer y quedarse soltero es un don especial (1 Co.7:7-9)",
-          isOpen: false,
-        },
-        {
-          pregunta: "10. ¿El diezmo es obligatorio?",
-          respuesta:
-            "No, es voluntario en respuesta a la gracia de Dios. Hay suficientes pasajes bíblicos que nos enseñan su práctica aún antes de ser dada la ley. Además como judío, Jesús lo practicó. (Gn.14:18-20; Mt.23:23)",
-          isOpen: false,
-        },
-        {
-          pregunta:
-            "11. Hay muchos pastores millonarios ¿la religión es un negocio?",
-          respuesta:
-            "No debería serlo. Lamentablemente muchos pastores han convertido la Iglesia en una empresa lucrativa y un negocio para sí mismos.  Por otra parte, las iglesias deben ser responsables de sostener generosamente a sus pastores. (2 P.2:1-3; 1 Ti.5:17-18)",
           isOpen: false,
         },
       ],
