@@ -2,9 +2,17 @@
   <div
     class="bg-gray-100 dark:bg-slate-600 px-2 sm:px-20 py-6 container mx-auto transition duration-300 ease-in-out"
   >
-    <h2 class="text-2xl font-bold mb-8 dark:text-white sm:-ml-8">
-      Próximos eventos
-    </h2>
+    <div class="flex justify-between items-center mb-8">
+      <h2 class="text-2xl font-bold dark:text-white sm:-ml-8">
+        Próximos eventos
+      </h2>
+      <button
+        @click="toggleView"
+        class="text-2xl text-gray-700 dark:text-teal-500"
+      >
+        <i :class="isCarouselView ? 'fas fa-list' : 'fas fa-th'"></i>
+      </button>
+    </div>
 
     <!-- Estado de carga -->
     <div v-if="cargando" class="flex flex-col justify-center items-center h-64">
@@ -18,81 +26,200 @@
     </div>
 
     <!-- Contenido principal -->
-    <div v-else class="relative">
-      <swiper
-        :modules="modulos"
-        :slides-per-view="2"
-        :space-between="7"
-        :pagination="{ clickable: true }"
-        :navigation="false"
-        :grab-cursor="true"
-        class="mySwiper custom-swiper rounded-lg overflow-hidden"
-        :breakpoints="{
-          '420': {
-            slidesPerView: 2,
-            spaceBetween: 7,
-          },
-          '768': {
-            slidesPerView: 3,
-            spaceBetween: 20,
-          },
-          '1020': {
-            slidesPerView: 4,
-            spaceBetween: 20,
-          },
-        }"
-      >
-        <swiper-slide v-for="evento in eventos" :key="evento.fecha">
-          <div
-            class="bg-white py-4 px-3 sm:px-6 rounded-lg shadow mx-auto mb-10"
-          >
-            <div class="flex items-center justify-center p-4">
-              <div
-                class="relative text-3xl font-bold text-black border py-2 px-6 rounded-md shadow-md"
+    <div v-else>
+      <!-- Vista de carrusel -->
+      <div v-if="isCarouselView" class="relative">
+        <swiper
+          :modules="modulos"
+          :slides-per-view="2"
+          :space-between="7"
+          :pagination="{ clickable: true }"
+          :navigation="false"
+          :grab-cursor="true"
+          class="mySwiper custom-swiper rounded-lg overflow-hidden"
+          :breakpoints="{
+            '420': {
+              slidesPerView: 2,
+              spaceBetween: 7,
+            },
+            '768': {
+              slidesPerView: 3,
+              spaceBetween: 20,
+            },
+            '1020': {
+              slidesPerView: 4,
+              spaceBetween: 20,
+            },
+          }"
+        >
+          <swiper-slide v-for="evento in eventos" :key="evento.fecha">
+            <div
+              class="bg-white py-4 px-3 sm:px-6 rounded-lg shadow mx-auto mb-10"
+            >
+              <div class="flex items-center justify-center p-4">
+                <div
+                  class="relative text-3xl font-bold text-black border py-2 px-6 rounded-md shadow-md"
+                >
+                  <div
+                    class="absolute top-1 left-3 w-1.5 h-1.5 bg-black rounded-full"
+                  ></div>
+                  <div
+                    class="absolute top-1 right-3 w-1.5 h-1.5 bg-black rounded-full"
+                  ></div>
+                  <div class="text-center">{{ evento.dia }}</div>
+                  <div class="text-sm text-gray-600 text-center">
+                    {{ evento.mes }}
+                  </div>
+                </div>
+              </div>
+              <h3 class="font-semibold mb-2 text-[18px] xl:text-xl">
+                {{ evento.titulo }}
+              </h3>
+              <p class="text-sm text-gray-600 mb-2 flex items-center">
+                <i class="fas fa-clock mr-2"></i
+                >{{ obtenerDiaSemana(evento.fecha) }}, {{ evento.hora }}
+              </p>
+              <p class="text-sm text-gray-600 mb-2 flex items-center">
+                <i class="fas fa-map-marker-alt mr-2"></i> {{ evento.lugar }}
+              </p>
+              <p
+                class="text-sm font-semibold text-gray-600 mb-4 dark:text-teal-600"
               >
-                <div
-                  class="absolute top-1 left-3 w-1.5 h-1.5 bg-black rounded-full"
-                ></div>
-                <div
-                  class="absolute top-1 right-3 w-1.5 h-1.5 bg-black rounded-full"
-                ></div>
+                <i class="fas fa-calendar-plus mr-2"></i>
+                {{
+                  evento.diasRestantes === 0
+                    ? "Hoy"
+                    : evento.diasRestantes === 1
+                      ? "1 día restante"
+                      : `${evento.diasRestantes} días restantes`
+                }}
+              </p>
+              <button
+                @click="abrirModal(evento)"
+                class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition duration-300 dark:bg-teal-500 dark:hover:bg-teal-700"
+              >
+                Leer más
+              </button>
+            </div>
+          </swiper-slide>
+        </swiper>
+      </div>
+
+      <!-- Vista de lista -->
+      <div v-else class="grid grid-cols-1 md:grid-cols-7 gap-4">
+        <!-- Evento próximo destacado -->
+        <div
+          class="md:col-span-4 bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+        >
+          <div
+            class="flex flex-col md:flex-row items-start md:items-center mb-4"
+          >
+            <div
+              class="text-5xl font-bold text-black border py-3 px-8 rounded-md shadow-md mr-6 mb-4 md:mb-0"
+            >
+              <div class="text-center">{{ proximoEvento.dia }}</div>
+              <div class="text-lg text-gray-600 text-center">
+                {{ proximoEvento.mes }}
+              </div>
+            </div>
+            <div class="flex-grow">
+              <h2 class="font-bold text-xl md:text-2xl mb-2 text-gray-700">
+                {{ proximoEvento.titulo }}
+              </h2>
+              <p
+                class="text-base md:text-lg text-gray-600 flex items-center mb-2"
+              >
+                <i class="fas fa-calendar-alt mr-2"></i>
+                {{ obtenerDiaSemana(proximoEvento.fecha) }},
+                {{ proximoEvento.hora }}
+              </p>
+              <p
+                class="text-base md:text-lg text-gray-600 flex items-center mb-2"
+              >
+                <i class="fas fa-map-marker-alt mr-2"></i>
+                {{ proximoEvento.lugar }}
+              </p>
+              <p class="text-base md:text-lg my-2 text-gray-700 line-clamp-2">
+                {{ proximoEvento.descripcion }}
+              </p>
+
+              <!-- Leer mas -->
+              <a href="#" class="text-blue-600 hover:text-blue-800 text-sm"
+                >Leer más</a
+              >
+              <p
+                class="text-base md:text-lg font-semibold text-red-600 mt-4 dark:text-teal-600 flex items-center"
+              >
+                <i class="fas fa-hourglass-half mr-2"></i>
+                {{
+                  proximoEvento.diasRestantes === 0
+                    ? "Hoy"
+                    : proximoEvento.diasRestantes === 1
+                      ? "1 día restante"
+                      : `${proximoEvento.diasRestantes} días restantes`
+                }}
+              </p>
+            </div>
+          </div>
+          <!-- Organizador -->
+          <!-- <div class="mt-4 flex items-center">
+            <img
+              src="https://i.ibb.co/z4bPJTy/servicio.jpg"
+              alt="Organizador"
+              class="w-10 h-10 rounded-full mr-2"
+            />
+            <div>
+              <p class="font-semibold text-sm">Organizado por</p>
+              <p class="text-gray-600 text-sm">Nombre del Organizador</p>
+            </div>
+          </div> -->
+
+          <!-- compartir asistentes -->
+          <!-- <div class="mt-4 flex justify-between items-center">
+            <button
+              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out flex items-center"
+            >
+              <i class="fas fa-calendar-plus mr-2"></i> Añadir al calendario
+            </button>
+            <span class="text-gray-600">
+              <i class="fas fa-users mr-2"></i> 42 asistentes
+            </span>
+          </div> -->
+        </div>
+
+        <!-- Lista de eventos adicionales -->
+        <div class="md:col-span-3 space-y-4">
+          <div
+            v-for="evento in eventosAdicionales"
+            :key="evento.fecha"
+            class="bg-white p-4 rounded-lg shadow flex items-center justify-between"
+          >
+            <div class="flex items-center">
+              <div
+                class="text-2xl font-bold text-black border py-2 px-4 rounded-md shadow-md mr-4"
+              >
                 <div class="text-center">{{ evento.dia }}</div>
-                <div class="text-sm text-gray-600 text-center">
+                <div class="text-xs text-gray-600 text-center">
                   {{ evento.mes }}
                 </div>
               </div>
+              <div>
+                <h3 class="font-semibold">{{ evento.titulo }}</h3>
+                <p class="text-sm text-gray-600">
+                  {{ obtenerDiaSemana(evento.fecha) }}, {{ evento.hora }} -
+                  {{ evento.lugar }}
+                </p>
+              </div>
             </div>
-            <h3 class="font-semibold mb-2 text-[18px] xl:text-xl">
-              {{ evento.titulo }}
-            </h3>
-            <p class="text-sm text-gray-600 mb-2 flex items-center">
-              <i class="fas fa-clock mr-2"></i
-              >{{ obtenerDiaSemana(evento.fecha) }}, {{ evento.hora }}
-            </p>
-            <p class="text-sm text-gray-600 mb-2 flex items-center">
-              <i class="fas fa-map-marker-alt mr-2"></i> {{ evento.lugar }}
-            </p>
-            <p
-              class="text-sm font-semibold text-red-600 mb-4 dark:text-teal-600"
-            >
-              <i class="fas fa-calendar-plus mr-2"></i>
-              {{
-                evento.diasRestantes === 0
-                  ? "Hoy"
-                  : evento.diasRestantes === 1
-                    ? "1 día restante"
-                    : `${evento.diasRestantes} días restantes`
-              }}
-            </p>
             <button
               @click="abrirModal(evento)"
-              class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition duration-300 dark:bg-teal-500 dark:hover:bg-teal-700"
+              class="bg-red-500 dark:bg-teal-500 text-white px-3 py-1 rounded-lg hover:bg-red-700 transition duration-300 text-sm"
             >
               Leer más
             </button>
           </div>
-        </swiper-slide>
-      </swiper>
+        </div>
+      </div>
     </div>
 
     <!-- Modal -->
@@ -138,7 +265,7 @@
 </template>
 
 <script>
-import { ref, onMounted } from "vue";
+import { ref, computed, onMounted } from "vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
@@ -155,6 +282,11 @@ export default {
     const eventoSeleccionado = ref(null);
     const cargando = ref(true);
     const error = ref(null);
+    const isCarouselView = ref(true);
+
+    const toggleView = () => {
+      isCarouselView.value = !isCarouselView.value;
+    };
 
     const abrirModal = (evento) => {
       eventoSeleccionado.value = evento;
@@ -177,6 +309,14 @@ export default {
       return dias[fecha.getUTCDay()];
     };
 
+    const proximoEvento = computed(() => {
+      return eventos.value[0] || null;
+    });
+
+    const eventosAdicionales = computed(() => {
+      return eventos.value.slice(1, 4);
+    });
+
     onMounted(async () => {
       try {
         cargando.value = true;
@@ -187,7 +327,6 @@ export default {
         const datos = await respuesta.json();
         const hoy = new Date();
         hoy.setUTCHours(0, 0, 0, 0);
-
         eventos.value = datos
           .map((evento) => {
             const [year, month, day] = evento.fecha.split("-").map(Number);
@@ -230,12 +369,16 @@ export default {
       cargando,
       error,
       obtenerDiaSemana,
+      isCarouselView,
+      toggleView,
+      proximoEvento,
+      eventosAdicionales,
     };
   },
 };
 </script>
+
 <style scoped>
-/* El loader se consigue en https://css-loaders.com/spinner/ */
 .loader {
   width: 50px;
   padding: 8px;
@@ -254,7 +397,6 @@ export default {
     transform: rotate(1turn);
   }
 }
-/* Fin del loader */
 
 .custom-swiper {
   .swiper-button-next,

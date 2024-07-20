@@ -1,13 +1,13 @@
 <template>
   <section
-    class="container border-2 mt-4 rounded-lg dark:bg-slate-600 dark:border-slate-600 mx-auto transition duration-300 ease-in-out"
+    class="container border-2 mt-4 rounded-lg dark:bg-slate-700 dark:border-slate-600 mx-auto transition duration-300 ease-in-out"
     id="servicio"
   >
-    <article>
+    <article class="p-4">
       <h1
-        class="text-gray-800 text-center sm:text-3xl text-2xl font-medium pt-4 dark:text-white"
+        class="text-gray-800 text-center text-2xl sm:text-3xl font-medium dark:text-white flex items-center justify-center"
       >
-        Servicio
+        <i class="fas fa-church mr-2"></i> Servicio
       </h1>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-8">
@@ -50,27 +50,36 @@
       </div>
 
       <div
-        class="bg-gray-100 rounded-lg mb-4 dark:bg-slate-600 dark:text-white mx-8 border"
+        class="bg-gray-100 rounded-lg my-8 dark:bg-slate-600 dark:text-white border p-6"
       >
-        <h3 class="text-2xl text-center p-4">
+        <h3
+          class="text-xl md:text-2xl text-center flex items-center justify-center"
+        >
+          <i class="fas fa-calendar-alt mr-2"></i>
           Iglesia Bautista su Gracia es Mayor les invita al servicio de
-          predicación todos los domingos a las 10:00am <br />
-          en el salón comunal Asovivir de Bosa
+          predicación todos los domingos a las 10:00am
         </h3>
+        <p class="text-lg text-center mt-4 flex items-center justify-center">
+          <i class="fas fa-map-marker-alt mr-2"></i>
+          En el salón comunal Asovivir de Bosa
+        </p>
       </div>
 
-      <!-- Versiculos dinamicos -->
       <blockquote
-        class="border-l-4 border-teal-400 italic my-8 mx-8 pl-8 md:pl-12 text-lg dark:text-white"
-        id="dailyVersesWrapper"
-      ></blockquote>
+        class="border-l-4 border-teal-400 italic my-8 pl-6 text-lg dark:text-white bg-gray-50 dark:bg-slate-800 p-4 rounded-r-lg shadow flex items-start"
+      >
+        <i class="fas fa-quote-left text-teal-400 mr-4 text-2xl"></i>
+        <div id="dailyVersesWrapper"></div>
+      </blockquote>
     </article>
   </section>
 </template>
+
 <script>
 export default {
   mounted() {
     this.loadDailyVerseScript();
+    this.loadFontAwesome();
   },
   methods: {
     loadDailyVerseScript() {
@@ -79,6 +88,13 @@ export default {
       script.async = true;
       script.defer = true;
       document.body.appendChild(script);
+    },
+    loadFontAwesome() {
+      const link = document.createElement("link");
+      link.href =
+        "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css";
+      link.rel = "stylesheet";
+      document.head.appendChild(link);
     },
   },
 };

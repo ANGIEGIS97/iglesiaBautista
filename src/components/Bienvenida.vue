@@ -1,51 +1,86 @@
 <template>
-  <!--Bienvenida-->
-  <section
-    class="container rounded-t-lg bg-gray-100 dark:bg-slate-600 px-10 mx-auto mt-24 pb-4 transition duration-300 ease-in-out"
-    id="inicio"
-  >
-    <!--  mt-24 -->
-    <article>
-      <header>
-        <h1
-          class="text-3xl sm:text-4xl font-bold text-center text-gray-700 m-2 dark:text-white p-4"
-          id="texto-prueba"
-        >
-          Bienvenido a nuestra iglesia
-        </h1>
-        <!-- <h1 class="text-3xl sm:text-4xl font-bold text-center m-2 p-4 bg-gradient-to-r from-gray-900 via-teal-600 to-gray-900 bg-clip-text text-transparent text-center dark:text-white">Bienvenido a nuestra iglesia</h1> -->
-      </header>
-      <img
-        class="rounded-lg"
-        src="https://i.ibb.co/vCWvVYb/principal.jpg"
-        alt="principal"
-      />
-      <p
-        class="text-justify my-4 first-letter:text-7xl first-letter:text-black first-letter:mr-3 first-letter:float-left text-lg dark:text-white dark:first-letter:text-teal-400"
-      >
-        La Iglesia Bautista del Norte en Bogotá D.C. (Colombia), comenzó a
-        reunirse bajo el auspicio de Baptist Church en sus instalaciones
-        ubicadas en la carrera 9 # 126-87 en Bogotá, y el domingo 23 de marzo de
-        1980 celebró su primer culto siendo pastor el Lic. Harold García. En
-        esta primera reunión hubo una asistencia de 18 personas. Tres años
-        después, el 27 de marzo de 1983 la Iglesia se organizó como entidad
-        autónoma con la colaboración de Baptist Church, siendo pastor el Rev.
-        Bob M Polk. El 1 de febrero de 1986 fue invitado para ser pastor de la
-        iglesia por tiempo indefinido el Lic. Orosmán Rozo Amaya, quien
-        permanece hasta hoy como pastor. En el año de 1994, con el apoyo de la
-        Baptist Foreign Mission Board, la iglesia inauguró su sede actual en la
-        Autopista Norte # 101-33 en Bogotá D.C., lugar en el cual se congrega
-        hasta el día de hoy.
-      </p>
-
+  <div>
+    <!-- Hero Section -->
+    <div class="relative h-screen overflow-hidden">
       <div
-        class="flex flex-wrap border-t justify-start gap-2 border-gray-300 p-2"
-      >
-        <span
-          class="border-2 border-gray-600 rounded-lg text-sm px-2 flex-shrink-0 dark:text-white dark:border-gray-400"
-          >Salmo 119:160</span
-        >
+        ref="parallaxBackground"
+        class="absolute top-0 left-0 w-full h-full bg-cover bg-center"
+        :style="{ backgroundImage: `url(${heroImage})` }"
+      ></div>
+      <div class="absolute inset-0 bg-black opacity-50"></div>
+      <div class="relative h-full flex items-center justify-center z-10">
+        <div class="text-center text-white p-5">
+          <h1 class="text-5xl font-bold mb-4">Bienvenido a nuestra iglesia</h1>
+          <p class="text-2xl">
+            Un lugar de fe, comunidad y crecimiento espiritual
+          </p>
+        </div>
       </div>
-    </article>
-  </section>
+
+      <!-- Scroll Indicator -->
+      <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20">
+        <div class="scroll-indicator">
+          <span class="text-white text-sm mb-2">Bajar</span>
+          <div class="w-6 h-10 border-2 border-white rounded-full p-1">
+            <div
+              class="w-1 h-3 bg-white rounded-full animate-bounce mx-auto"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      heroImage: "https://i.ibb.co/vCWvVYb/principal.jpg",
+    };
+  },
+  mounted() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  beforeUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  },
+  methods: {
+    handleScroll() {
+      const parallaxBackground = this.$refs.parallaxBackground;
+      if (parallaxBackground) {
+        const scrollPosition = window.pageYOffset;
+        const limit = parallaxBackground.offsetHeight;
+        if (scrollPosition <= limit) {
+          parallaxBackground.style.transform = `translateY(${
+            scrollPosition * 0.5
+          }px)`;
+        }
+      }
+    },
+  },
+};
+</script>
+
+<style scoped>
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.scroll-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeInOut 2s infinite;
+}
+
+@keyframes fadeInOut {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+</style>

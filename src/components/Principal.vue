@@ -2,6 +2,7 @@
   <div>
     <MenuInicio />
     <Bienvenida />
+    <SobreNosotros />
     <Calendario />
     <CarruselAnuncios />
     <Pastor />
@@ -24,6 +25,7 @@ import Calendario from "./Calendario.vue";
 import CarruselAnuncios from "./CarruselAnuncios.vue";
 import Ministerios from "./Ministerios.vue";
 import BotonTop from "./BotonTop.vue";
+import SobreNosotros from "./SobreNosotros.vue";
 
 export default {
   components: {
@@ -35,7 +37,7 @@ export default {
     CarruselAnuncios,
     Bienvenida,
     MenuInicio,
-
+    SobreNosotros,
     Calendario,
     BotonTop,
   },
