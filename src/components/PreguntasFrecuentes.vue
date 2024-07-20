@@ -1,6 +1,8 @@
 <template>
   <div class="container mx-auto px-4 py-8 mt-20">
-    <h1 class="text-4xl font-serif mb-4 dark:text-white">
+    <h1
+      class="text-3xl text-center sm:text-left sm:text-4xl font-serif mb-4 dark:text-white"
+    >
       Preguntas frecuentes
     </h1>
     <p class="text-lg mb-4 dark:text-white">Averigüe qué puede esperar</p>
@@ -27,7 +29,7 @@
           @click="toggleItem(index)"
           class="w-full text-left flex justify-between items-center p-4 bg-white dark:bg-gray-800 focus:outline-none"
         >
-          <span class="text-lg font-medium dark:text-white">{{
+          <span class="text-sm sm:text-lg font-medium dark:text-white">{{
             item.pregunta
           }}</span>
           <svg
