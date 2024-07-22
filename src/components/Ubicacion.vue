@@ -1,5 +1,7 @@
 <template>
-  <section class="p-4">
+  <section
+    class="px-4 sm:px-44 lg:px-80 py-10 selection:bg-teal-500 selection:text-white"
+  >
     <h1
       class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-800 text-center dark:text-white"
     >

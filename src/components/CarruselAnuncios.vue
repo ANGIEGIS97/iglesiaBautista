@@ -1,6 +1,6 @@
 <template>
   <div
-    class="container mx-auto sm:p-16 bg-gray-100 rounded-t-xl dark:bg-slate-600 transition duration-300 ease-in-out"
+    class="mx-auto px-4 sm:px-44 lg:px-80 py-10 bg-gray-100 dark:bg-slate-600 transition duration-300 ease-in-out"
   >
     <swiper
       :slides-per-view="1"
@@ -15,7 +15,7 @@
       }"
       :effect="'fade'"
       :fade-effect="{ crossFade: true }"
-      class="mySwiper custom-swiper rounded-lg overflow-hidden"
+      class="custom-swiper rounded-lg overflow-hidden"
     >
       <swiper-slide v-for="(image, index) in images" :key="index">
         <img

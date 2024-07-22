@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="w-full py-5 sm:py-10 px-4 relative bg-cover bg-center bg-no-repeat text-gray-200"
+    class="w-full py-5 sm:py-10 px-4 relative bg-cover bg-center bg-no-repeat text-gray-200 selection:bg-teal-500 selection:text-white"
     style="
       background-image: url(&quot;https://i.ibb.co/z4bPJTy/servicio.jpg&quot;);
     "

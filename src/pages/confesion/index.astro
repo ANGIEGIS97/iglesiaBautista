@@ -1,20 +1,8 @@
 ---
-import { ViewTransitions } from "astro:transitions";
+import Layout from "../../layouts/Layout.astro";
 import Confesion from "../../components/Confesion.vue";
-import MenuInicio from "../../components/MenuInicio.vue";
 ---
 
-<html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Confesión de fe</title>
-    <ViewTransitions />
-  </head>
-  <body class="dark:bg-gray-800">
-    <MenuInicio client:load />
-    <Confesion client:load />
-  </body>
-</html>
+<Layout titulo="Confesión de fe">
+  <Confesion client:load />
+</Layout>

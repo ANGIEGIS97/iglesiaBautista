@@ -1,16 +1,18 @@
 <template>
   <section
-    class="container border-2 mt-4 rounded-lg dark:bg-slate-700 dark:border-slate-600 mx-auto transition duration-300 ease-in-out"
+    class="px-4 sm:px-44 lg:px-72 py-10 mt-4 bg-gray-100 dark:bg-slate-700 dark:border-slate-600 transition duration-300 ease-in-out selection:bg-teal-500 selection:text-white"
     id="servicio"
   >
     <article>
       <h1
-        class="text-gray-800 text-center text-2xl sm:text-3xl font-medium dark:text-white flex items-center justify-center"
+        class="text-gray-800 text-center text-2xl sm:text-3xl font-medium dark:text-white flex items-center justify-center mb-6 sm:mb-1"
       >
         <i class="fas fa-church mr-2"></i> Servicio
       </h1>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-8">
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-0 sm:p-8"
+      >
         <div>
           <img
             src="https://i.ibb.co/z4bPJTy/servicio.jpg"
@@ -50,7 +52,7 @@
       </div>
 
       <div
-        class="bg-gray-100 rounded-lg my-8 dark:bg-slate-600 dark:text-white border p-6"
+        class="bg-gray-50 rounded-lg dark:bg-slate-600 dark:text-white border mx-0 sm:mx-8 p-4"
       >
         <h3
           class="text-xl md:text-2xl text-center flex items-center justify-center"
@@ -66,7 +68,7 @@
       </div>
 
       <blockquote
-        class="border-l-4 border-teal-400 italic my-8 pl-6 text-lg dark:text-white bg-gray-50 dark:bg-slate-800 p-4 rounded-r-lg shadow flex items-start"
+        class="border-l-4 border-teal-400 italic my-8 pl-6 text-lg dark:text-white bg-gray-50 dark:bg-slate-800 p-4 rounded-r-lg shadow flex items-start mx-0 sm:mx-8"
       >
         <i class="fas fa-quote-left text-teal-400 mr-4 text-2xl"></i>
         <div id="dailyVersesWrapper"></div>
