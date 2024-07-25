@@ -9,12 +9,18 @@ import { ref, onMounted, onBeforeUnmount, computed } from "vue";
 
 export default {
   name: "ProgressBar",
-  setup() {
+  props: {
+    color: {
+      type: String,
+      default: "#4dc0b5", // Color por defecto
+    },
+  },
+  setup(props) {
     const scroll = ref(0);
     const header = ref(null);
 
     const progressStyle = computed(() => ({
-      background: `linear-gradient(to right, #4dc0b5 ${scroll.value}%, transparent 0)`,
+      background: `linear-gradient(to right, ${props.color} ${scroll.value}%, transparent 0)`,
     }));
 
     const updatePosition = () => {
