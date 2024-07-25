@@ -136,7 +136,6 @@ export default {
           versiculos: [
             "Salmos 71:5",
             "1 Timoteo 4:12",
-            "Tito 1:6-8",
             "Salmos 119:9",
           ],
         },

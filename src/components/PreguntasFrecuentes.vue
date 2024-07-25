@@ -90,7 +90,6 @@ export default {
           respuesta:
             "La salvación es un don de la gracia de Dios, no es por obras religiosas que podamos hacer. Debemos creer en Jesucristo y recibirlo como nuestro salvador.",
           versiculos: [
-            "Efesios 1:8-10",
             "Hechos 13:48",
             "Tito 3:4-7",
             "Efesios 2:8-10",
