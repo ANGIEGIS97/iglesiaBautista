@@ -164,11 +164,25 @@
             <div
               :class="[
                 'text-5xl font-bold text-black py-3 px-8 rounded-md shadow-md mr-6 mb-4 md:mb-0 relative',
-
+                proximoEvento.infoIconoTexto === 'Canasta de amor'
+                  ? 'border-t-red-500'
+                  : '',
+                proximoEvento.infoIconoTexto === 'Cena del Señor'
+                  ? 'border-t-red-700'
+                  : '',
+                proximoEvento.infoIconoTexto === 'Reunión de damas'
+                  ? 'border-t-pink-500'
+                  : '',
+                proximoEvento.infoIconoTexto === 'Domingo misionero'
+                  ? 'border-t-green-500'
+                  : '',
                 proximoEvento.infoIconoTexto === 'Culto de oración'
                   ? 'border-t-violet-500'
                   : '',
-
+                proximoEvento.infoIconoTexto !== 'Canasta de amor' &&
+                proximoEvento.infoIconoTexto !== 'Cena del Señor' &&
+                proximoEvento.infoIconoTexto !== 'Reunión de damas' &&
+                proximoEvento.infoIconoTexto !== 'Domingo misionero' &&
                 proximoEvento.infoIconoTexto !== 'Culto de oración'
                   ? 'border-t-teal-500'
                   : '',
@@ -283,7 +297,7 @@
             </div>
           </div>
           <!-- 
-  espacio organizador -->
+espacio organizador -->
         </div>
 
         <!-- Lista de eventos adicionales -->
@@ -297,11 +311,25 @@
               <div
                 :class="[
                   'text-2xl font-bold text-black border py-2 px-4 rounded-md shadow-md mr-4 relative',
-
+                  evento.infoIconoTexto === 'Canasta de amor'
+                    ? 'border-t-red-500'
+                    : '',
+                  evento.infoIconoTexto === 'Cena del Señor'
+                    ? 'border-t-red-700'
+                    : '',
+                  evento.infoIconoTexto === 'Reunión de damas'
+                    ? 'border-t-pink-500'
+                    : '',
+                  evento.infoIconoTexto === 'Domingo misionero'
+                    ? 'border-t-green-500'
+                    : '',
                   evento.infoIconoTexto === 'Culto de oración'
                     ? 'border-t-violet-500'
                     : '',
-
+                  evento.infoIconoTexto !== 'Canasta de amor' &&
+                  evento.infoIconoTexto !== 'Cena del Señor' &&
+                  evento.infoIconoTexto !== 'Reunión de damas' &&
+                  evento.infoIconoTexto !== 'Domingo misionero' &&
                   evento.infoIconoTexto !== 'Culto de oración'
                     ? 'border-t-teal-500'
                     : '',
@@ -419,6 +447,43 @@ export default {
       return eventos.value.slice(1, 4);
     });
 
+    const generarServiciosDominicales = (inicio, fin) => {
+      const servicios = [];
+      let fecha = new Date(inicio);
+      fecha.setUTCDate(fecha.getUTCDate() + ((7 - fecha.getUTCDay()) % 7));
+
+      while (fecha <= fin) {
+        const esPrimerDomingo = fecha.getUTCDate() <= 7;
+        servicios.push({
+          fecha: new Date(fecha),
+          titulo: "Servicio dominical",
+          hora: "10:00 am — 1:00 pm",
+          lugar: "Salón Comunal Asovivir",
+          descripcion: esPrimerDomingo
+            ? "Cena del Señor"
+            : "Servicio dominical semanal.",
+          infoAdicional: true,
+          banner: null,
+          dia: fecha.getUTCDate().toString().padStart(2, "0"),
+          mes: fecha.toLocaleString("es", { month: "long", timeZone: "UTC" }),
+          diaSemana: "Domingo",
+        });
+        fecha.setUTCDate(fecha.getUTCDate() + 7);
+      }
+      return servicios;
+    };
+
+    const modificarServicioDominical = (fecha, modificaciones) => {
+      const index = eventos.value.findIndex(
+        (e) =>
+          e.fecha.getTime() === fecha.getTime() &&
+          e.titulo === "Servicio dominical"
+      );
+      if (index !== -1) {
+        eventos.value[index] = { ...eventos.value[index], ...modificaciones };
+      }
+    };
+
     onMounted(async () => {
       try {
         cargando.value = true;
@@ -426,33 +491,62 @@ export default {
         if (!respuesta.ok) {
           throw new Error("Error al obtener los eventos");
         }
-        const datos = await respuesta.json();
+        const datosAPI = await respuesta.json();
+
         const hoy = new Date();
         hoy.setUTCHours(0, 0, 0, 0);
-        eventos.value = datos
-          .map((evento) => {
-            const [year, month, day] = evento.fecha.split("-").map(Number);
-            const fechaEvento = new Date(
-              Date.UTC(year, month - 1, day, 0, 0, 0, 0)
-            );
+
+        const finMes = new Date(hoy);
+        finMes.setUTCMonth(finMes.getUTCMonth() + 1, 0);
+
+        const serviciosDominicales = generarServiciosDominicales(hoy, finMes);
+
+        const eventosAPI = datosAPI.map((evento) => {
+          const [year, month, day] = evento.fecha.split("-").map(Number);
+          const fechaEvento = new Date(
+            Date.UTC(year, month - 1, day, 0, 0, 0, 0)
+          );
+          return {
+            ...evento,
+            fecha: fechaEvento,
+            dia: fechaEvento.getUTCDate().toString().padStart(2, "0"),
+            mes: fechaEvento.toLocaleString("es", {
+              month: "long",
+              timeZone: "UTC",
+            }),
+            diaSemana: obtenerDiaSemana(fechaEvento),
+          };
+        });
+
+        eventos.value = [...serviciosDominicales, ...eventosAPI]
+          .filter((evento) => {
             const diasRestantes = Math.ceil(
-              (fechaEvento - hoy) / (1000 * 60 * 60 * 24)
+              (evento.fecha - hoy) / (1000 * 60 * 60 * 24)
             );
-            return {
-              ...evento,
-              fecha: fechaEvento,
-              dia: fechaEvento.getUTCDate().toString().padStart(2, "0"),
-              mes: fechaEvento.toLocaleString("es", {
-                month: "long",
-                timeZone: "UTC",
-              }),
-              diasRestantes: diasRestantes,
-              diaSemana: obtenerDiaSemana(fechaEvento),
-            };
+            return evento.fecha >= hoy && diasRestantes >= 0;
           })
-          .filter((evento) => evento.fecha >= hoy)
           .sort((a, b) => a.fecha - b.fecha)
+          .reduce((acc, evento) => {
+            const index = acc.findIndex(
+              (e) => e.fecha.getTime() === evento.fecha.getTime()
+            );
+            if (index === -1) {
+              acc.push(evento);
+            } else if (
+              !acc[index].infoAdicional ||
+              evento.modificarServicioDominical
+            ) {
+              acc[index] = { ...acc[index], ...evento };
+            }
+            return acc;
+          }, [])
           .slice(0, 10);
+
+        eventos.value.forEach((evento) => {
+          evento.diasRestantes = Math.ceil(
+            (evento.fecha - hoy) / (1000 * 60 * 60 * 24)
+          );
+        });
       } catch (err) {
         console.error("Error al cargar los eventos:", err);
         error.value =
@@ -475,6 +569,7 @@ export default {
       toggleView,
       proximoEvento,
       eventosAdicionales,
+      modificarServicioDominical,
     };
   },
 };

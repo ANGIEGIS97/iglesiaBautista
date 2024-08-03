@@ -1,32 +1,17 @@
 [
   {
-    "fecha": "2024-07-30",
-    "titulo": "Servicio",
-    "hora": "10:00 am — 12:30 pm",
-    "lugar": "Salón Comunal Asovivir",
-    "descripcion": "Servicio dominical semanal.",
-    "banner": "https://picsum.photos/200/300"
-  },
-  {
-    "fecha": "2024-08-01",
-    "titulo": "Servicio",
+    "fecha": "2024-08-03",
+    "titulo": "Reunión casera",
     "hora": "10:00 am — 12:30 pm",
     "lugar": "Salón Comunal Asovivir",
     "descripcion": "Servicio dominical semanal.",
     "banner": null
   },
   {
-    "fecha": "2024-08-02",
-    "titulo": "Servicio ",
-    "hora": "10:00 am — 12:30 pm",
-    "lugar": "Salón Comunal Asovivir",
-    "descripcion": "Servicio dominical semanal.",
-    "banner": "https://picsum.photos/200/300"
-  },
-  {
-    "fecha": "2024-08-03",
-    "titulo": "Servicio",
-    "hora": "10:00 am — 12:30 pm",
+    "fecha": "2024-08-11",
+    "modificarServicioDominical": true,
+    "titulo": "Servicio dominical especial",
+    "hora": "9:00 am — 12:00 pm",
     "lugar": "Salón Comunal Asovivir",
     "descripcion": "Servicio dominical semanal.",
     "banner": null
