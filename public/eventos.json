@@ -8,12 +8,12 @@
     "banner": null
   },
   {
-    "fecha": "2024-08-11",
+    "fecha": "2024-08-18",
     "modificarServicioDominical": true,
-    "titulo": "Servicio dominical especial",
-    "hora": "9:00 am — 12:00 pm",
-    "lugar": "Salón Comunal Asovivir",
+    "titulo": "Servicio dominical",
+    "hora": "8:00 am — 12:00 pm",
+    "lugar": "Parque Simon Bolivar",
     "descripcion": "Servicio dominical semanal.",
-    "banner": null
+    "banner": "https://picsum.photos/id/237/200/300"
   }
 ]

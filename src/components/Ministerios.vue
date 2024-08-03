@@ -78,7 +78,7 @@ export default {
       ministerios: [
         {
           titulo: "Varones",
-          image: "https://i.ibb.co/GTx9hbH/varones.jpg",
+          image: "https://i.ibb.co/YNDPDNQ/varones.jpg",
           descripcion:
             "Dos hombres recorriendo juntos el camino, compartiendo una amistad y un propósito: guiar al otro hacia un encuentro íntimo con Cristo. Con cada paso, sus corazones se abren, las dudas se disipan y el amor se fortalece. Unidos en esta travesía espiritual, descubren la belleza de una relación profunda con el Salvador.",
           versiculos: ["Salmo 1:1", "Santiago 1:12"],
@@ -92,7 +92,7 @@ export default {
         },
         {
           titulo: "Niños",
-          image: "https://i.ibb.co/VJNnxkL/ni-os.jpg",
+          image: "https://i.ibb.co/jZQRdDZ/ninos.jpg",
           descripcion:
             "El ministerio de Niños está orientado a trabajar, educar y formar niños en el conocimiento de la Palabra de Dios; con enseñanzas y actividades de acuerdo a su edad. Es por eso que nos esforzamos por crear una atmósfera llena de diversión, risas y presencia de Dios.",
           versiculos: [
@@ -123,14 +123,14 @@ export default {
         },
         {
           titulo: "Reuniones Caseras",
-          image: "https://i.ibb.co/0Z6Fv0p/Rcaseras.jpg",
+          image: "https://i.ibb.co/ZXcCbkC/reuniones-Caseras.jpg",
           descripcion:
             '"Y perseveraban en la doctrina de los apóstoles, en la comunión unos con otros, en el partimiento del pan y en las oraciones… perseveraban unidos cada día en el templo, y partiendo el pan en las casas comían juntos con alegría y sencillez de corazón"',
           versiculos: ["Hechos 2:42,46"],
         },
         {
           titulo: "Jóvenes",
-          image: "https://i.ibb.co/BgpQ4Ry/jovenes.jpg",
+          image: "https://i.ibb.co/T4Mzsqj/jovenes.jpg",
           descripcion:
             "Un ministerio de jóvenes saludable busca estar sujeto a la visión de su iglesia. Se interesa por conocer lo que Dios ha colocado en el corazón de sus pastores, quienes tienen la tarea y compromiso de guiar a la iglesia.",
           versiculos: [
