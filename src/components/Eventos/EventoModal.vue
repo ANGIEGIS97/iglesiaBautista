@@ -1,6 +1,7 @@
 <template>
   <div
     v-if="evento"
+    @click="cerrarSiEsFondo"
     class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
   >
     <div class="bg-white p-8 rounded-lg shadow-xl max-w-xl w-full relative">
@@ -53,7 +54,7 @@
             <strong>Descripción:</strong>
             {{ evento.descripcion }}
           </p>
-          <p class="text-red-600 dark:text-teal-600">
+          <p class="text-red-600 dark:text-blue-600">
             <strong>Días restantes:</strong>
             {{
               evento.diasRestantes === 0
@@ -80,6 +81,12 @@ export default {
   methods: {
     cerrar() {
       this.$emit("cerrar");
+    },
+    cerrarSiEsFondo(event) {
+      // Cerrar solo si se hace clic en el fondo
+      if (event.target === event.currentTarget) {
+        this.cerrar();
+      }
     },
   },
 };

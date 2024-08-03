@@ -1,11 +1,10 @@
 <template>
   <div>
     <MenuInicio />
-    <Bienvenida />
+    <Bienvenida id="inicio" />
     <SobreNosotros />
-    <CarruselAnuncios />
+    <CarruselAnuncios id="anuncios" />
     <ProximosEventos />
-
     <Pastor />
     <Servicios />
     <Ministerios />

@@ -34,7 +34,7 @@
             :alt="ministerio.titulo"
           />
           <div
-            class="dark:p-0.5 dark:pt-0 dark:border-0 border-2 border-gray-200 rounded-b-lg border-t-0 bg-gray-100 dark:bg-gradient-to-tr from-teal-400 to-teal-800 dark:border-slate-600"
+            class="dark:p-0.5 dark:pt-0 dark:border-0 border-2 border-gray-200 rounded-b-lg border-t-0 bg-gray-100 dark:bg-gradient-to-tr from-teal-400 to-blue-800 dark:border-slate-600"
           >
             <div
               class="h-full w-full dark:bg-slate-600/90 rounded-b-md transition duration-300 ease-in-out"
@@ -136,6 +136,7 @@ export default {
           versiculos: [
             "Salmos 71:5",
             "1 Timoteo 4:12",
+            "Tito 1:6-8",
             "Salmos 119:9",
           ],
         },

@@ -62,7 +62,6 @@
         </button>
 
         <!-- Botón de hamburguesa para móviles -->
-        <!-- Botón de hamburguesa para móviles -->
         <button
           @click.stop="toggleMenu"
           type="button"
@@ -141,47 +140,125 @@
         <ul
           class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 nav-menu"
         >
+          <!-- Inicio -->
           <li>
             <a
               href="/#inicio"
+              @click="closeMenu"
               class="ease-in duration-150 block py-2 px-3 text-white rounded md:hover:bg-transparent md:hover:text-teal-400 md:p-0 md:dark:hover:text-teal-400 hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-              >Inicio</a
             >
+              Inicio
+            </a>
           </li>
+
+          <!-- Anuncios y eventos -->
           <li>
+            <a
+              href="/#anuncios"
+              @click="closeMenu"
+              class="ease-in duration-150 block py-2 px-3 text-white rounded md:hover:bg-transparent md:hover:text-teal-400 md:p-0 md:dark:hover:text-teal-400 hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+            >
+              Anuncios y Eventos
+            </a>
+          </li>
+
+          <!-- Conócenos (versión móvil) -->
+          <li class="md:hidden">
+            <button
+              @click="toggleConocenos"
+              class="w-full text-left ease-in duration-150 flex justify-between items-center py-2 px-3 text-white rounded hover:bg-gray-700 dark:hover:text-white"
+            >
+              Conócenos
+              <svg
+                :class="{ 'rotate-180': conocenosVisible }"
+                class="w-4 h-4 ml-2 transition-transform duration-200"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <ul v-show="conocenosVisible" class="pl-4">
+              <li>
+                <a
+                  href="/#pastor"
+                  @click="closeMenu"
+                  class="block py-2 px-3 text-white hover:bg-gray-700 dark:hover:text-white"
+                >
+                  Pastor
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/#servicio"
+                  @click="closeMenu"
+                  class="block py-2 px-3 text-white hover:bg-gray-700 dark:hover:text-white"
+                >
+                  Servicios
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/#ministerios"
+                  @click="closeMenu"
+                  class="block py-2 px-3 text-white hover:bg-gray-700 dark:hover:text-white"
+                >
+                  Ministerios
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- Enlaces para la versión de escritorio -->
+          <li class="hidden md:block">
             <a
               href="/#pastor"
               class="ease-in duration-150 block py-2 px-3 text-white rounded md:hover:bg-transparent md:hover:text-teal-400 md:p-0 md:dark:hover:text-teal-400 hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-              >Pastor</a
             >
+              Pastor
+            </a>
           </li>
-          <li>
+          <li class="hidden md:block">
             <a
               href="/#servicio"
               class="ease-in duration-150 block py-2 px-3 text-white rounded md:hover:bg-transparent md:hover:text-teal-400 md:p-0 md:dark:hover:text-teal-400 hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-              >Servicios</a
             >
+              Servicios
+            </a>
           </li>
-          <li>
+          <li class="hidden md:block">
             <a
               href="/#ministerios"
               class="ease-in duration-150 block py-2 px-3 text-white rounded md:hover:bg-transparent md:hover:text-teal-400 md:p-0 md:dark:hover:text-teal-400 hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-              >Ministerios</a
             >
+              Ministerios
+            </a>
           </li>
+
+          <!-- Confesión de fe -->
           <li>
             <a
               href="/confesion"
+              @click="closeMenu"
               class="ease-in duration-150 block py-2 px-3 text-white rounded md:hover:bg-transparent md:hover:text-teal-400 md:p-0 md:dark:hover:text-teal-400 hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-              >Confesion de fe</a
             >
+              Confesión de fe
+            </a>
           </li>
+
+          <!-- Preguntas frecuentes -->
           <li>
             <a
               href="/preguntas"
+              @click="closeMenu"
               class="ease-in duration-150 block py-2 px-3 text-white rounded md:hover:bg-transparent md:hover:text-teal-400 md:p-0 md:dark:hover:text-teal-400 hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-              >Preguntas frecuentes</a
             >
+              Preguntas frecuentes
+            </a>
           </li>
         </ul>
       </div>
@@ -201,12 +278,14 @@ export default {
   name: "MenuInicio",
   data() {
     return {
-      menuVisible: false, // Estado para controlar la visibilidad del menú en móviles
+      menuVisible: false,
+      conocenosVisible: false,
     };
   },
   methods: {
     toggleMenu() {
       this.menuVisible = !this.menuVisible;
+      document.body.classList.toggle("overflow-hidden", this.menuVisible);
     },
     toggleDarkMode() {
       const isDarkMode = !document.documentElement.classList.contains("dark");
@@ -223,6 +302,7 @@ export default {
     },
     closeMenu() {
       this.menuVisible = false;
+      document.body.classList.remove("overflow-hidden");
     },
     handleDocumentClick(event) {
       const menu = this.$refs.navbarSticky;
@@ -235,6 +315,9 @@ export default {
       ) {
         this.closeMenu();
       }
+    },
+    toggleConocenos() {
+      this.conocenosVisible = !this.conocenosVisible;
     },
   },
   mounted() {
