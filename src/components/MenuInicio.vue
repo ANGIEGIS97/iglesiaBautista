@@ -1,7 +1,7 @@
 <template>
   <!-- Barra de navegación principal -->
   <nav
-    class="bg-gray-800 bg-opacity-80 backdrop-filter backdrop-blur-sm fixed w-full z-30 top-0 start-0 border-b border-gray-600 navbar selection:bg-teal-500 selection:text-white"
+    class="bg-gray-800 bg-opacity-80 backdrop-filter fixed w-full z-30 top-0 start-0 border-b border-gray-600 navbar selection:bg-teal-500 selection:text-white"
     style="list-style-type: none"
   >
     <!-- Contenedor principal de la barra de navegación -->
