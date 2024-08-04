@@ -9,6 +9,7 @@
       :navigation="true"
       :pagination="{ clickable: true }"
       :modules="modules"
+      :loop="true"
       :grab-cursor="true"
       :autoplay="{
         delay: 3000,
