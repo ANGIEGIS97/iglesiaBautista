@@ -52,102 +52,114 @@
         >
           <swiper-slide v-for="evento in eventos" :key="evento.fecha">
             <div
-              class="bg-white py-4 px-2 sm:px-6 rounded-lg shadow mx-auto mb-10 flex flex-col h-[360px] md:h-[330px] group"
+              class="p-[2px] rounded-lg mb-10 mx-auto group relative overflow-hidden"
             >
-              <div class="flex-grow">
-                <div class="flex items-center justify-center p-4">
-                  <div
-                    :class="[
-                      'relative text-3xl font-bold text-black border py-2 px-6 rounded-md shadow-md',
-                      evento.infoIconoTexto === 'Canasta de amor'
-                        ? 'border-t-red-500'
-                        : '',
-                      evento.infoIconoTexto === 'Cena del Señor'
-                        ? 'border-t-red-700'
-                        : '',
-                      evento.infoIconoTexto === 'Reunión de damas'
-                        ? 'border-t-pink-500'
-                        : '',
-                      evento.infoIconoTexto === 'Domingo misionero'
-                        ? 'border-t-green-500'
-                        : '',
-                      evento.infoIconoTexto === 'Culto de oración'
-                        ? 'border-t-violet-500'
-                        : '',
-                      evento.infoIconoTexto !== 'Canasta de amor' &&
-                      evento.infoIconoTexto !== 'Cena del Señor' &&
-                      evento.infoIconoTexto !== 'Reunión de damas' &&
-                      evento.infoIconoTexto !== 'Domingo misionero' &&
-                      evento.infoIconoTexto !== 'Culto de oración'
-                        ? 'border-t-teal-500'
-                        : '',
-                      'border-t-4',
-                      'transition-transform duration-300 group-hover:scale-105',
-                    ]"
-                  >
+              <div
+                class="absolute inset-0 dark:bg-gradient-to-tr from-red-500 to-blue-500 rounded-lg animate-gradient"
+              ></div>
+              <div
+                class="bg-white dark:bg-slate-600/85 rounded-lg shadow flex flex-col h-[360px] md:h-[330px] relative z-10"
+              >
+                <div class="flex-grow py-4 px-2 sm:px-6">
+                  <div class="flex items-center justify-center p-4">
                     <div
-                      class="absolute top-1 left-3 w-1.5 h-1.5 bg-black rounded-full"
-                    ></div>
-                    <div
-                      class="absolute top-1 right-3 w-1.5 h-1.5 bg-black rounded-full"
-                    ></div>
-                    <div class="text-center">{{ evento.dia }}</div>
-                    <div class="text-sm text-gray-600 text-center">
-                      {{ evento.mes }}
+                      :class="[
+                        'relative text-3xl font-bold text-black border py-2 px-6 rounded-md shadow-md bg-white',
+                        evento.infoIconoTexto === 'Canasta de amor'
+                          ? 'border-t-red-500'
+                          : '',
+                        evento.infoIconoTexto === 'Cena del Señor'
+                          ? 'border-t-red-700'
+                          : '',
+                        evento.infoIconoTexto === 'Reunión de damas'
+                          ? 'border-t-pink-500'
+                          : '',
+                        evento.infoIconoTexto === 'Domingo misionero'
+                          ? 'border-t-green-500'
+                          : '',
+                        evento.infoIconoTexto === 'Culto de oración'
+                          ? 'border-t-violet-500'
+                          : '',
+                        evento.infoIconoTexto !== 'Canasta de amor' &&
+                        evento.infoIconoTexto !== 'Cena del Señor' &&
+                        evento.infoIconoTexto !== 'Reunión de damas' &&
+                        evento.infoIconoTexto !== 'Domingo misionero' &&
+                        evento.infoIconoTexto !== 'Culto de oración'
+                          ? 'border-t-teal-500'
+                          : '',
+                        'border-t-4',
+                        'transition-transform duration-300 group-hover:scale-105',
+                      ]"
+                    >
+                      <div
+                        class="absolute top-1 left-3 w-1.5 h-1.5 bg-black rounded-full"
+                      ></div>
+                      <div
+                        class="absolute top-1 right-3 w-1.5 h-1.5 bg-black rounded-full"
+                      ></div>
+                      <div class="text-center">{{ evento.dia }}</div>
+                      <div class="text-sm text-gray-600 text-center">
+                        {{ evento.mes }}
+                      </div>
+                      <InfoIcono
+                        :show="evento.infoAdiccional"
+                        size="small"
+                        :texto="evento.infoIconoTexto"
+                      />
                     </div>
-                    <InfoIcono
-                      :show="evento.infoAdiccional"
-                      size="small"
-                      :texto="evento.infoIconoTexto"
-                    />
                   </div>
-                </div>
-                <h3
-                  class="font-semibold mb-2 text-[14px] xl:text-xl flex items-center truncate"
-                >
-                  {{ evento.titulo }}
-                  <svg
-                    v-if="evento.banner !== null"
-                    class="ml-2 w-4 h-4 text-gray-600"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                  <h3
+                    class="font-semibold mb-2 text-[14px] xl:text-xl flex items-center truncate dark:text-white"
                   >
-                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-                    <circle cx="8.5" cy="8.5" r="1.5" />
-                    <polyline points="21 15 16 10 5 21" />
-                  </svg>
-                </h3>
-                <p class="text-sm text-gray-600 mb-2 flex items-center">
-                  <i class="fas fa-clock mr-2"></i
-                  >{{ obtenerDiaSemana(evento.fecha) }}, {{ evento.hora }}
-                </p>
-                <p class="text-sm text-gray-600 mb-2 flex items-center">
-                  <i class="fas fa-map-marker-alt mr-2"></i> {{ evento.lugar }}
-                </p>
-                <p
-                  class="text-sm font-semibold text-gray-600 mb-4 dark:text-teal-600"
-                >
-                  <i class="fas fa-calendar-plus mr-2"></i>
-                  {{
-                    evento.diasRestantes === 0
-                      ? "Hoy"
-                      : evento.diasRestantes === 1
-                        ? "1 día restante"
-                        : `${evento.diasRestantes} días restantes`
-                  }}
-                </p>
-              </div>
-              <div class="mt-auto">
-                <button
-                  @click="abrirModal(evento)"
-                  class="bg-teal-500 text-white px-4 py-2 rounded-lg hover:bg-teal-700 transition duration-300 dark:bg-teal-500 dark:hover:bg-teal-700 transform hover:-translate-y-1"
-                >
-                  Detalles
-                </button>
+                    {{ evento.titulo }}
+                    <svg
+                      v-if="evento.banner !== null"
+                      class="ml-2 w-4 h-4 text-gray-600"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                      <circle cx="8.5" cy="8.5" r="1.5" />
+                      <polyline points="21 15 16 10 5 21" />
+                    </svg>
+                  </h3>
+                  <p
+                    class="text-sm text-gray-600 mb-2 flex items-center dark:text-white"
+                  >
+                    <i class="fas fa-clock mr-2"></i
+                    >{{ obtenerDiaSemana(evento.fecha) }}, {{ evento.hora }}
+                  </p>
+                  <p
+                    class="text-sm text-gray-600 mb-2 flex items-center dark:text-white"
+                  >
+                    <i class="fas fa-map-marker-alt mr-2"></i>
+                    {{ evento.lugar }}
+                  </p>
+                  <p
+                    class="text-sm font-semibold text-gray-600 mb-4 dark:text-white"
+                  >
+                    <i class="fas fa-calendar-plus mr-2"></i>
+                    {{
+                      evento.diasRestantes === 0
+                        ? "Hoy"
+                        : evento.diasRestantes === 1
+                          ? "1 día restante"
+                          : `${evento.diasRestantes} días restantes`
+                    }}
+                  </p>
+                </div>
+                <div class="mt-auto pb-4 px-2 sm:px-6">
+                  <button
+                    @click="abrirModal(evento)"
+                    class="bg-teal-500 text-white px-4 py-2 rounded-lg hover:bg-teal-700 transition duration-300 dark:bg-teal-500 dark:hover:bg-teal-700 transform hover:-translate-y-1"
+                  >
+                    Detalles
+                  </button>
+                </div>
               </div>
             </div>
           </swiper-slide>
