@@ -144,7 +144,7 @@
               <div class="mt-auto">
                 <button
                   @click="abrirModal(evento)"
-                  class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition duration-300 dark:bg-teal-500 dark:hover:bg-teal-700 transform hover:-translate-y-1"
+                  class="bg-teal-500 text-white px-4 py-2 rounded-lg hover:bg-teal-700 transition duration-300 dark:bg-teal-500 dark:hover:bg-teal-700 transform hover:-translate-y-1"
                 >
                   Detalles
                 </button>
@@ -376,7 +376,7 @@ espacio organizador -->
             </div>
             <button
               @click="abrirModal(evento)"
-              class="bg-red-500 dark:bg-teal-500 text-white px-3 py-1 rounded-lg hover:bg-red-700 transition duration-300 text-sm"
+              class="bg-teal-500 text-white px-3 py-1 rounded-lg hover:bg-red-700 transition duration-300 text-sm"
             >
               Detalles
             </button>
@@ -499,7 +499,7 @@ export default {
         hoy.setUTCHours(0, 0, 0, 0);
 
         const finPeriodo = new Date(hoy);
-        finPeriodo.setUTCDate(finPeriodo.getUTCDate() + 20); //Cantidad dias eventos a mostrar
+        finPeriodo.setUTCDate(finPeriodo.getUTCDate() + 30);
 
         const serviciosDominicales = generarServiciosDominicales(
           hoy,
