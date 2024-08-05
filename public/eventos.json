@@ -8,12 +8,52 @@
     "banner": null
   },
   {
-    "fecha": "2024-08-18",
+    "fecha": "2024-08-10",
     "modificarServicioDominical": true,
     "titulo": "Servicio dominical",
     "hora": "8:00 am — 12:00 pm",
     "lugar": "Parque Simon Bolivar",
     "descripcion": "Servicio dominical semanal.",
     "banner": "https://picsum.photos/id/237/200/300"
+  },
+  {
+    "fecha": "2024-08-07",
+    "titulo": "Petición de oraciones",
+    "hora": "antes de las 4pm",
+    "lugar": "Hermano Agustin",
+    "descripcion": "Peticiones de oraciones todos los miercoles antes de las 4pm con el hermano Agustin.",
+    "banner": null
+  },
+  {
+    "fecha": "2024-08-14",
+    "titulo": "Petición de oraciones",
+    "hora": "antes de las 4pm",
+    "lugar": "Hermano Agustin",
+    "descripcion": "Peticiones de oraciones todos los miercoles antes de las 4pm con el hermano Agustin.",
+    "banner": null
+  },
+  {
+    "fecha": "2024-08-21",
+    "titulo": "Petición de oraciones",
+    "hora": "antes de las 4pm",
+    "lugar": "Hermano Agustin",
+    "descripcion": "Peticiones de oraciones todos los miercoles antes de las 4pm con el hermano Agustin.",
+    "banner": null
+  },
+  {
+    "fecha": "2024-08-28",
+    "titulo": "Petición de oraciones",
+    "hora": "antes de las 4pm",
+    "lugar": "Hermano Agustin",
+    "descripcion": "Peticiones de oraciones todos los miercoles antes de las 4pm con el hermano Agustin.",
+    "banner": null
+  },
+  {
+    "fecha": "2024-09-04",
+    "titulo": "Peticion de oraciones",
+    "hora": "antes de las 4pm",
+    "lugar": "Hermano Agustin",
+    "descripcion": "Peticiones de oraciones todos los miercoles antes de las 4pm con el hermano Agustin.",
+    "banner": null
   }
 ]
