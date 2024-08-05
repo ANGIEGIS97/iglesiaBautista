@@ -499,7 +499,7 @@ export default {
         hoy.setUTCHours(0, 0, 0, 0);
 
         const finPeriodo = new Date(hoy);
-        finPeriodo.setUTCDate(finPeriodo.getUTCDate() + 30);
+        finPeriodo.setUTCDate(finPeriodo.getUTCDate() + 20); //Cantidad dias eventos a mostrar
 
         const serviciosDominicales = generarServiciosDominicales(
           hoy,
