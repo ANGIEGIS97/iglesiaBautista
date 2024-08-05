@@ -52,101 +52,103 @@
         >
           <swiper-slide v-for="evento in eventos" :key="evento.fecha">
             <div
-              class="bg-white py-4 px-2 sm:px-6 rounded-lg shadow mx-auto mb-10"
+              class="bg-white py-4 px-2 sm:px-6 rounded-lg shadow mx-auto mb-10 flex flex-col h-[360px] md:h-[330px] group"
             >
-              <div class="flex items-center justify-center p-4">
-                <div
-                  :class="[
-                    'relative text-3xl font-bold text-black border py-2 px-6 rounded-md shadow-md',
-                    evento.infoIconoTexto === 'Canasta de amor'
-                      ? 'border-t-red-500'
-                      : '',
-                    evento.infoIconoTexto === 'Cena del Señor'
-                      ? 'border-t-red-700'
-                      : '',
-                    evento.infoIconoTexto === 'Reunión de damas'
-                      ? 'border-t-pink-500'
-                      : '',
-                    evento.infoIconoTexto === 'Domingo misionero'
-                      ? 'border-t-green-500'
-                      : '',
-                    evento.infoIconoTexto === 'Culto de oración'
-                      ? 'border-t-violet-500'
-                      : '',
-                    evento.infoIconoTexto !== 'Canasta de amor' &&
-                    evento.infoIconoTexto !== 'Cena del Señor' &&
-                    evento.infoIconoTexto !== 'Reunión de damas' &&
-                    evento.infoIconoTexto !== 'Domingo misionero' &&
-                    evento.infoIconoTexto !== 'Culto de oración'
-                      ? 'border-t-teal-500'
-                      : '',
-                    'border-t-4',
-                  ]"
-                >
+              <div class="flex-grow">
+                <div class="flex items-center justify-center p-4">
                   <div
-                    class="absolute top-1 left-3 w-1.5 h-1.5 bg-black rounded-full"
-                  ></div>
-                  <div
-                    class="absolute top-1 right-3 w-1.5 h-1.5 bg-black rounded-full"
-                  ></div>
-                  <div class="text-center">{{ evento.dia }}</div>
-                  <div class="text-sm text-gray-600 text-center">
-                    {{ evento.mes }}
+                    :class="[
+                      'relative text-3xl font-bold text-black border py-2 px-6 rounded-md shadow-md',
+                      evento.infoIconoTexto === 'Canasta de amor'
+                        ? 'border-t-red-500'
+                        : '',
+                      evento.infoIconoTexto === 'Cena del Señor'
+                        ? 'border-t-red-700'
+                        : '',
+                      evento.infoIconoTexto === 'Reunión de damas'
+                        ? 'border-t-pink-500'
+                        : '',
+                      evento.infoIconoTexto === 'Domingo misionero'
+                        ? 'border-t-green-500'
+                        : '',
+                      evento.infoIconoTexto === 'Culto de oración'
+                        ? 'border-t-violet-500'
+                        : '',
+                      evento.infoIconoTexto !== 'Canasta de amor' &&
+                      evento.infoIconoTexto !== 'Cena del Señor' &&
+                      evento.infoIconoTexto !== 'Reunión de damas' &&
+                      evento.infoIconoTexto !== 'Domingo misionero' &&
+                      evento.infoIconoTexto !== 'Culto de oración'
+                        ? 'border-t-teal-500'
+                        : '',
+                      'border-t-4',
+                      'transition-transform duration-300 group-hover:scale-105',
+                    ]"
+                  >
+                    <div
+                      class="absolute top-1 left-3 w-1.5 h-1.5 bg-black rounded-full"
+                    ></div>
+                    <div
+                      class="absolute top-1 right-3 w-1.5 h-1.5 bg-black rounded-full"
+                    ></div>
+                    <div class="text-center">{{ evento.dia }}</div>
+                    <div class="text-sm text-gray-600 text-center">
+                      {{ evento.mes }}
+                    </div>
+                    <InfoIcono
+                      :show="evento.infoAdiccional"
+                      size="small"
+                      :texto="evento.infoIconoTexto"
+                    />
                   </div>
-                  <!-- Badge -->
-                  <InfoIcono
-                    :show="evento.infoAdiccional"
-                    size="small"
-                    :texto="evento.infoIconoTexto"
-                  />
                 </div>
-              </div>
-              <!-- Indicador de banner en el titulo -->
-              <h3
-                class="font-semibold mb-2 text-[14px] xl:text-xl flex items-center"
-              >
-                {{ evento.titulo }}
-                <svg
-                  v-if="evento.banner !== null"
-                  class="ml-2 w-4 h-4 text-gray-600"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                <h3
+                  class="font-semibold mb-2 text-[14px] xl:text-xl flex items-center truncate"
                 >
-                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-                  <circle cx="8.5" cy="8.5" r="1.5" />
-                  <polyline points="21 15 16 10 5 21" />
-                </svg>
-              </h3>
-
-              <p class="text-sm text-gray-600 mb-2 flex items-center">
-                <i class="fas fa-clock mr-2"></i
-                >{{ obtenerDiaSemana(evento.fecha) }}, {{ evento.hora }}
-              </p>
-              <p class="text-sm text-gray-600 mb-2 flex items-center">
-                <i class="fas fa-map-marker-alt mr-2"></i> {{ evento.lugar }}
-              </p>
-              <p
-                class="text-sm font-semibold text-gray-600 mb-4 dark:text-teal-600"
-              >
-                <i class="fas fa-calendar-plus mr-2"></i>
-                {{
-                  evento.diasRestantes === 0
-                    ? "Hoy"
-                    : evento.diasRestantes === 1
-                      ? "1 día restante"
-                      : `${evento.diasRestantes} días restantes`
-                }}
-              </p>
-              <button
-                @click="abrirModal(evento)"
-                class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition duration-300 dark:bg-teal-500 dark:hover:bg-teal-700"
-              >
-                Detalles
-              </button>
+                  {{ evento.titulo }}
+                  <svg
+                    v-if="evento.banner !== null"
+                    class="ml-2 w-4 h-4 text-gray-600"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                    <circle cx="8.5" cy="8.5" r="1.5" />
+                    <polyline points="21 15 16 10 5 21" />
+                  </svg>
+                </h3>
+                <p class="text-sm text-gray-600 mb-2 flex items-center">
+                  <i class="fas fa-clock mr-2"></i
+                  >{{ obtenerDiaSemana(evento.fecha) }}, {{ evento.hora }}
+                </p>
+                <p class="text-sm text-gray-600 mb-2 flex items-center">
+                  <i class="fas fa-map-marker-alt mr-2"></i> {{ evento.lugar }}
+                </p>
+                <p
+                  class="text-sm font-semibold text-gray-600 mb-4 dark:text-teal-600"
+                >
+                  <i class="fas fa-calendar-plus mr-2"></i>
+                  {{
+                    evento.diasRestantes === 0
+                      ? "Hoy"
+                      : evento.diasRestantes === 1
+                        ? "1 día restante"
+                        : `${evento.diasRestantes} días restantes`
+                  }}
+                </p>
+              </div>
+              <div class="mt-auto">
+                <button
+                  @click="abrirModal(evento)"
+                  class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition duration-300 dark:bg-teal-500 dark:hover:bg-teal-700 transform hover:-translate-y-1"
+                >
+                  Detalles
+                </button>
+              </div>
             </div>
           </swiper-slide>
         </swiper>
@@ -496,10 +498,13 @@ export default {
         const hoy = new Date();
         hoy.setUTCHours(0, 0, 0, 0);
 
-        const finMes = new Date(hoy);
-        finMes.setUTCMonth(finMes.getUTCMonth() + 1, 0);
+        const finPeriodo = new Date(hoy);
+        finPeriodo.setUTCDate(finPeriodo.getUTCDate() + 30);
 
-        const serviciosDominicales = generarServiciosDominicales(hoy, finMes);
+        const serviciosDominicales = generarServiciosDominicales(
+          hoy,
+          finPeriodo
+        );
 
         const eventosAPI = datosAPI.map((evento) => {
           const [year, month, day] = evento.fecha.split("-").map(Number);
@@ -520,10 +525,7 @@ export default {
 
         eventos.value = [...serviciosDominicales, ...eventosAPI]
           .filter((evento) => {
-            const diasRestantes = Math.ceil(
-              (evento.fecha - hoy) / (1000 * 60 * 60 * 24)
-            );
-            return evento.fecha >= hoy && diasRestantes >= 0;
+            return evento.fecha >= hoy && evento.fecha <= finPeriodo;
           })
           .sort((a, b) => a.fecha - b.fecha)
           .reduce((acc, evento) => {
@@ -539,8 +541,7 @@ export default {
               acc[index] = { ...acc[index], ...evento };
             }
             return acc;
-          }, [])
-          .slice(0, 10);
+          }, []);
 
         eventos.value.forEach((evento) => {
           evento.diasRestantes = Math.ceil(
