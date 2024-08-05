@@ -1,5 +1,5 @@
 <template>
-  <div class="px-4 sm:px-14 lg:px-80 py-10 mt-20">
+  <div class="px-4 sm:px-14 2xl:px-80 py-10 mt-20">
     <h1
       class="text-3xl text-center sm:text-left sm:text-4xl font-serif mb-4 dark:text-white"
     >
@@ -89,11 +89,7 @@ export default {
           pregunta: "1. ¿Cómo se alcanza la salvación?",
           respuesta:
             "La salvación es un don de la gracia de Dios, no es por obras religiosas que podamos hacer. Debemos creer en Jesucristo y recibirlo como nuestro salvador.",
-          versiculos: [
-            "Hechos 13:48",
-            "Tito 3:4-7",
-            "Efesios 2:8-10",
-          ],
+          versiculos: ["Hechos 13:48", "Tito 3:4-7", "Efesios 2:8-10"],
           isOpen: false,
         },
         {

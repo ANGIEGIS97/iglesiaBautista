@@ -1,5 +1,5 @@
 <template>
-  <section class="px-4 sm:px-6 lg:px-80 py-10" id="pastor">
+  <section class="px-4 sm:px-6 2xl:px-80 py-10" id="pastor">
     <div
       class="grid grid-cols-1 lg:h-screen lg:grid-cols-2 selection:bg-teal-500 selection:text-white"
     >

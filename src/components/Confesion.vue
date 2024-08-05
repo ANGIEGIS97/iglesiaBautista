@@ -1,5 +1,5 @@
 <template>
-  <div class="px-4 sm:px-14 lg:px-80 py-10 mt-20">
+  <div class="px-4 sm:px-14 2xl:px-80 py-10 mt-20">
     <h1
       class="text-3xl text-center sm:text-left sm:text-4xl font-serif mb-4 dark:text-white"
     >
