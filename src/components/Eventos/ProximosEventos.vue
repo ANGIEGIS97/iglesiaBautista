@@ -55,7 +55,7 @@
               class="p-[2px] rounded-lg mb-10 mx-auto group relative overflow-hidden"
             >
               <div
-                class="absolute inset-0 dark:bg-gradient-to-tr from-red-500 to-blue-500 rounded-lg animate-gradient"
+                class="absolute inset-0 dark:bg-gradient-to-tr from-blue-500 to-teal-500 rounded-lg animate-gradient"
               ></div>
               <div
                 class="bg-white dark:bg-slate-600/85 rounded-lg shadow flex flex-col h-[360px] md:h-[330px] relative z-10"
