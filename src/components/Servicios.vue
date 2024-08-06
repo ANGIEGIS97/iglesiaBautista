@@ -52,19 +52,23 @@
       </div>
 
       <div
-        class="bg-gray-50 rounded-lg dark:bg-slate-600 dark:text-white border mx-0 sm:mx-8 p-4"
+        class="p-[1px] dark:bg-gradient-to-r from-blue-500 to-teal-500 rounded-lg mx-0 sm:mx-8"
       >
-        <h3
-          class="text-xl md:text-2xl text-center flex items-center justify-center"
+        <div
+          class="bg-gray-50 rounded-lg dark:bg-slate-600 dark:text-white p-4"
         >
-          <i class="fas fa-calendar-alt mr-2"></i>
-          Iglesia Bautista su Gracia es Mayor les invita al servicio de
-          predicación todos los domingos a las 10:00am
-        </h3>
-        <p class="text-lg text-center mt-4 flex items-center justify-center">
-          <i class="fas fa-map-marker-alt mr-2"></i>
-          En el salón comunal Asovivir de Bosa
-        </p>
+          <h3
+            class="text-xl md:text-2xl text-center flex items-center justify-center"
+          >
+            <i class="fas fa-calendar-alt mr-2"></i>
+            Iglesia Bautista su Gracia es Mayor les invita al servicio de
+            predicación todos los domingos a las 10:00am
+          </h3>
+          <p class="text-lg text-center mt-4 flex items-center justify-center">
+            <i class="fas fa-map-marker-alt mr-2"></i>
+            En el salón comunal Asovivir de Bosa
+          </p>
+        </div>
       </div>
 
       <blockquote

@@ -170,148 +170,158 @@
       <div v-else class="grid grid-cols-1 md:grid-cols-7 gap-4">
         <!-- Evento próximo destacado -->
         <div
-          class="md:col-span-4 bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+          class="md:col-span-4 p-[2px] rounded-lg group relative overflow-hidden"
         >
+          <!-- Borde gradiente -->
           <div
-            class="flex flex-col md:flex-row items-start md:items-center mb-4"
+            class="absolute inset-0 bg-white dark:bg-gradient-to-r from-teal-500 to-blue-500 rounded-lg animate-gradient"
+          ></div>
+
+          <!-- Contenido de la tarjeta -->
+          <div
+            class="dark:bg-slate-600/85 h-full p-6 rounded-lg shadow-xl relative z-10"
           >
             <div
-              :class="[
-                'text-5xl font-bold text-black py-3 px-8 rounded-md shadow-md mr-6 mb-4 md:mb-0 relative',
-                proximoEvento.infoIconoTexto === 'Canasta de amor'
-                  ? 'border-t-red-500'
-                  : '',
-                proximoEvento.infoIconoTexto === 'Cena del Señor'
-                  ? 'border-t-red-700'
-                  : '',
-                proximoEvento.infoIconoTexto === 'Reunión de damas'
-                  ? 'border-t-pink-500'
-                  : '',
-                proximoEvento.infoIconoTexto === 'Domingo misionero'
-                  ? 'border-t-green-500'
-                  : '',
-                proximoEvento.infoIconoTexto === 'Culto de oración'
-                  ? 'border-t-violet-500'
-                  : '',
-                proximoEvento.infoIconoTexto !== 'Canasta de amor' &&
-                proximoEvento.infoIconoTexto !== 'Cena del Señor' &&
-                proximoEvento.infoIconoTexto !== 'Reunión de damas' &&
-                proximoEvento.infoIconoTexto !== 'Domingo misionero' &&
-                proximoEvento.infoIconoTexto !== 'Culto de oración'
-                  ? 'border-t-teal-500'
-                  : '',
-                'border-t-4',
-              ]"
+              class="flex flex-col md:flex-row items-start md:items-center mb-4"
             >
-              <div class="text-center">{{ proximoEvento.dia }}</div>
-              <div class="text-lg text-gray-600 text-center">
-                {{ proximoEvento.mes }}
+              <div
+                :class="[
+                  'text-5xl font-bold text-black py-3 px-8 rounded-md shadow-md mr-6 mb-4 md:mb-0 relative bg-white',
+                  proximoEvento.infoIconoTexto === 'Canasta de amor'
+                    ? 'border-t-red-500'
+                    : '',
+                  proximoEvento.infoIconoTexto === 'Cena del Señor'
+                    ? 'border-t-red-700'
+                    : '',
+                  proximoEvento.infoIconoTexto === 'Reunión de damas'
+                    ? 'border-t-pink-500'
+                    : '',
+                  proximoEvento.infoIconoTexto === 'Domingo misionero'
+                    ? 'border-t-green-500'
+                    : '',
+                  proximoEvento.infoIconoTexto === 'Culto de oración'
+                    ? 'border-t-violet-500'
+                    : '',
+                  proximoEvento.infoIconoTexto !== 'Canasta de amor' &&
+                  proximoEvento.infoIconoTexto !== 'Cena del Señor' &&
+                  proximoEvento.infoIconoTexto !== 'Reunión de damas' &&
+                  proximoEvento.infoIconoTexto !== 'Domingo misionero' &&
+                  proximoEvento.infoIconoTexto !== 'Culto de oración'
+                    ? 'border-t-teal-500'
+                    : '',
+                  'border-t-4',
+                ]"
+              >
+                <div class="text-center">{{ proximoEvento.dia }}</div>
+                <div class="text-lg text-gray-600 text-center">
+                  {{ proximoEvento.mes }}
+                </div>
+                <!-- Badge -->
+                <InfoIcono
+                  :show="proximoEvento.infoAdiccional"
+                  size="medium"
+                  :texto="proximoEvento.infoIconoTexto"
+                />
               </div>
-              <!-- Badge -->
-              <InfoIcono
-                :show="proximoEvento.infoAdiccional"
-                size="medium"
-                :texto="proximoEvento.infoIconoTexto"
-              />
-            </div>
-            <div class="flex-grow">
-              <h2
-                class="font-bold text-xl md:text-2xl mb-2 text-gray-700 flex items-center"
-              >
-                {{ proximoEvento.titulo }}
-                <svg
-                  v-if="proximoEvento.banner !== null"
-                  class="ml-2 w-5 h-5 text-gray-600"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+              <div class="flex-grow">
+                <h2
+                  class="font-bold text-xl md:text-2xl mb-2 text-gray-700 flex items-center dark:text-white"
                 >
-                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-                  <circle cx="8.5" cy="8.5" r="1.5" />
-                  <polyline points="21 15 16 10 5 21" />
-                </svg>
-              </h2>
-              <p
-                class="text-base md:text-lg text-gray-600 flex items-center mb-2"
-              >
-                <i class="fas fa-calendar-alt mr-2"></i>
-                {{ obtenerDiaSemana(proximoEvento.fecha) }},
-                {{ proximoEvento.hora }}
-              </p>
-              <p
-                class="text-base md:text-lg text-gray-600 flex items-center mb-2"
-              >
-                <i class="fas fa-map-marker-alt mr-2"></i>
-                {{ proximoEvento.lugar }}
-              </p>
-              <p class="text-base md:text-lg my-2 text-gray-700 line-clamp-2">
-                {{ proximoEvento.descripcion }}
-              </p>
+                  {{ proximoEvento.titulo }}
+                  <svg
+                    v-if="proximoEvento.banner !== null"
+                    class="ml-2 w-5 h-5 text-gray-600"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                    <circle cx="8.5" cy="8.5" r="1.5" />
+                    <polyline points="21 15 16 10 5 21" />
+                  </svg>
+                </h2>
+                <p
+                  class="text-base md:text-lg text-gray-600 flex items-center mb-2 dark:text-white"
+                >
+                  <i class="fas fa-calendar-alt mr-2"></i>
+                  {{ obtenerDiaSemana(proximoEvento.fecha) }},
+                  {{ proximoEvento.hora }}
+                </p>
+                <p
+                  class="text-base md:text-lg text-gray-600 flex items-center mb-2 dark:text-white"
+                >
+                  <i class="fas fa-map-marker-alt mr-2"></i>
+                  {{ proximoEvento.lugar }}
+                </p>
+                <p
+                  class="text-base md:text-lg my-2 text-gray-700 line-clamp-2 dark:text-white"
+                >
+                  {{ proximoEvento.descripcion }}
+                </p>
 
-              <!-- Banner disponible o no disponible -->
-              <div v-if="proximoEvento.banner">
-                <a
-                  href="#"
-                  @click.prevent="abrirModal(proximoEvento)"
-                  class="text-blue-600 hover:text-blue-800 text-sm cursor-pointer flex items-center"
-                >
-                  Banner disponible
-                  <svg
-                    class="ml-2 w-4 h-4"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                <!-- Banner disponible o no disponible -->
+                <div v-if="proximoEvento.banner">
+                  <a
+                    href="#"
+                    @click.prevent="abrirModal(proximoEvento)"
+                    class="text-teal-600 hover:text-teal-800 text-sm cursor-pointer flex items-center"
                   >
-                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-                    <circle cx="8.5" cy="8.5" r="1.5" />
-                    <polyline points="21 15 16 10 5 21" />
-                  </svg>
-                </a>
-              </div>
-              <div v-else>
-                <a
-                  href="#"
-                  @click.prevent="abrirModal(proximoEvento)"
-                  class="text-red-500 text-sm cursor-pointer flex items-center"
-                >
-                  Banner no disponible
-                  <svg
-                    class="ml-2 w-4 h-4"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    Banner disponible
+                    <svg
+                      class="ml-2 w-4 h-4"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                      <circle cx="8.5" cy="8.5" r="1.5" />
+                      <polyline points="21 15 16 10 5 21" />
+                    </svg>
+                  </a>
+                </div>
+                <div v-else>
+                  <a
+                    href="#"
+                    @click.prevent="abrirModal(proximoEvento)"
+                    class="text-red-500 dark:text-white text-sm cursor-pointer flex items-center"
                   >
-                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-                    <circle cx="8.5" cy="8.5" r="1.5" />
-                    <polyline points="21 15 16 10 5 21" />
-                  </svg>
-                </a>
+                    Banner no disponible
+                    <svg
+                      class="ml-2 w-4 h-4"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                      <circle cx="8.5" cy="8.5" r="1.5" />
+                      <polyline points="21 15 16 10 5 21" />
+                    </svg>
+                  </a>
+                </div>
+                <p
+                  class="text-base md:text-lg font-semibold text-teal-600 mt-4 dark:text-white flex items-center"
+                >
+                  <i class="fas fa-hourglass-half mr-2"></i>
+                  {{
+                    proximoEvento.diasRestantes === 0
+                      ? "Hoy"
+                      : proximoEvento.diasRestantes === 1
+                        ? "1 día restante"
+                        : `${proximoEvento.diasRestantes} días restantes`
+                  }}
+                </p>
               </div>
-              <p
-                class="text-base md:text-lg font-semibold text-red-600 mt-4 dark:text-teal-600 flex items-center"
-              >
-                <i class="fas fa-hourglass-half mr-2"></i>
-                {{
-                  proximoEvento.diasRestantes === 0
-                    ? "Hoy"
-                    : proximoEvento.diasRestantes === 1
-                      ? "1 día restante"
-                      : `${proximoEvento.diasRestantes} días restantes`
-                }}
-              </p>
             </div>
           </div>
-          <!-- 
-espacio organizador -->
         </div>
 
         <!-- Lista de eventos adicionales -->
@@ -319,12 +329,20 @@ espacio organizador -->
           <div
             v-for="evento in eventosAdicionales"
             :key="evento.fecha"
-            class="bg-white p-4 rounded-lg shadow flex items-center justify-between"
+            class="bg-white p-4 rounded-lg shadow flex items-center justify-between relative overflow-hidden"
           >
-            <div class="flex items-center">
+            <!-- Borde gradiente -->
+            <div
+              class="absolute inset-0 p-[2px] rounded-lg dark:bg-gradient-to-r from-teal-500 to-blue-500 animate-gradient"
+            >
+              <div class="dark:bg-slate-600/85 h-full w-full rounded-lg"></div>
+            </div>
+
+            <!-- Contenido de la tarjeta -->
+            <div class="flex items-center relative z-10">
               <div
                 :class="[
-                  'text-2xl font-bold text-black border py-2 px-4 rounded-md shadow-md mr-4 relative',
+                  'text-2xl font-bold text-black border py-2 px-4 rounded-md shadow-md mr-4 relative bg-white',
                   evento.infoIconoTexto === 'Canasta de amor'
                     ? 'border-t-red-500'
                     : '',
@@ -363,7 +381,9 @@ espacio organizador -->
               </div>
               <div>
                 <!-- Indicador de banner en el titulo -->
-                <h3 class="text-sm font-semibold flex items-center">
+                <h3
+                  class="text-sm font-semibold flex items-center dark:text-white"
+                >
                   {{ evento.titulo }}
                   <svg
                     v-if="evento.banner !== null"
@@ -380,7 +400,7 @@ espacio organizador -->
                     <polyline points="21 15 16 10 5 21" />
                   </svg>
                 </h3>
-                <p class="text-sm text-gray-600">
+                <p class="text-sm text-gray-600 dark:text-white">
                   {{ obtenerDiaSemana(evento.fecha) }}, {{ evento.hora }} -
                   {{ evento.lugar }}
                 </p>
@@ -388,7 +408,7 @@ espacio organizador -->
             </div>
             <button
               @click="abrirModal(evento)"
-              class="bg-teal-500 text-white px-3 py-1 rounded-lg hover:bg-red-700 transition duration-300 text-sm"
+              class="bg-teal-500 text-white px-3 py-1 rounded-lg hover:bg-teal-700 transition duration-300 text-sm relative z-10"
             >
               Detalles
             </button>
