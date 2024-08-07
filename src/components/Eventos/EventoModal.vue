@@ -5,11 +5,11 @@
     class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50"
   >
     <div
-      class="max-w-xl w-full relative p-[1px] dark:bg-gradient-to-r from-teal-500 to-blue-500 rounded-lg shadow-xl animate-gradient"
+      class="max-w-xl w-full relative p-[2px] dark:bg-gradient-to-r from-teal-500 to-blue-500 rounded-lg shadow-xl animate-gradient"
     >
       <div class="bg-white dark:bg-slate-600/85 rounded-lg">
         <div
-          class="bg-teal-500 p-4 rounded-t-lg flex justify-between items-center"
+          class="bg-teal-500 dark:bg-transparent p-4 rounded-t-lg flex justify-between items-center"
         >
           <h2 class="text-xl sm:text-2xl font-bold text-white">
             {{ evento.titulo }}
