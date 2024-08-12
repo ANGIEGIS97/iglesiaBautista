@@ -38,13 +38,30 @@
           <div class="flex flex-col md:flex-row">
             <div
               v-if="evento.banner !== null"
-              class="md:w-1/2 mb-4 md:mb-0 md:mr-4 flex justify-center"
+              class="md:w-1/2 mb-4 md:mb-0 md:mr-4 flex justify-center relative"
             >
               <img
                 :src="evento.banner"
                 alt="Imagen del evento"
-                class="w-2/3 h-auto rounded-lg"
+                class="w-2/3 h-auto rounded-lg cursor-pointer"
+                @click="abrirImagenAmpliada"
               />
+              <!-- Icono de expansión -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 absolute top-2 right-2 text-white bg-teal-500 rounded-full p-1 cursor-pointer"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                @click="abrirImagenAmpliada"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10 4a6 6 0 104.472 10.312l5.2 5.2a1 1 0 001.414-1.414l-5.2-5.2A6 6 0 0010 4z"
+                />
+              </svg>
             </div>
             <div
               :class="{
@@ -77,6 +94,18 @@
         </div>
       </div>
     </div>
+    <!-- Modal para la imagen ampliada -->
+    <div
+      v-if="imagenAmpliada"
+      @click="cerrarImagenAmpliada"
+      class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-60"
+    >
+      <img
+        :src="evento.banner"
+        alt="Imagen ampliada del evento"
+        class="w-full max-w-[90%] max-h-[90%] object-contain"
+      />
+    </div>
   </div>
 </template>
 
@@ -88,6 +117,11 @@ export default {
       required: true,
     },
   },
+  data() {
+    return {
+      imagenAmpliada: false,
+    };
+  },
   methods: {
     cerrar() {
       this.$emit("cerrar");
@@ -96,6 +130,12 @@ export default {
       if (event.target === event.currentTarget) {
         this.cerrar();
       }
+    },
+    abrirImagenAmpliada() {
+      this.imagenAmpliada = true;
+    },
+    cerrarImagenAmpliada() {
+      this.imagenAmpliada = false;
     },
   },
 };

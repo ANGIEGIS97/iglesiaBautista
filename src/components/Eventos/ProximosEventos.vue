@@ -116,7 +116,7 @@
                       v-if="evento.banner !== null"
                       class="ml-2 w-4 h-4 text-gray-600"
                       viewBox="0 0 24 24"
-                      fill="none"
+                      fill="white"
                       stroke="currentColor"
                       stroke-width="2"
                       stroke-linecap="round"

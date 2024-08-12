@@ -1,14 +1,14 @@
 [
   {
-    "fecha": "2024-08-03",
+    "fecha": "2024-08-13",
     "titulo": "Reunión casera",
     "hora": "10:00 am — 12:30 pm",
     "lugar": "Salón Comunal Asovivir",
     "descripcion": "Servicio dominical semanal.",
-    "banner": null
+    "banner": "https://picsum.photos/id/237/200/300"
   },
   {
-    "fecha": "2024-08-01",
+    "fecha": "2024-08-12",
     "modificarServicioDominical": true,
     "titulo": "Servicio dominical",
     "hora": "8:00 am — 12:00 pm",
