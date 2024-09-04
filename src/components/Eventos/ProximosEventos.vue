@@ -480,7 +480,7 @@ export default {
         "Viernes",
         "Sábado",
       ];
-      return dias[fecha.getUTCDay()];
+      return dias[fecha.getDay()];
     };
 
     const proximoEvento = computed(() => {
@@ -494,10 +494,10 @@ export default {
     const generarServiciosDominicales = (inicio, fin) => {
       const servicios = [];
       let fecha = new Date(inicio);
-      fecha.setUTCDate(fecha.getUTCDate() + ((7 - fecha.getUTCDay()) % 7));
+      fecha.setDate(fecha.getDate() + ((7 - fecha.getDay()) % 7));
 
       while (fecha <= fin) {
-        const esPrimerDomingo = fecha.getUTCDate() <= 7;
+        const esPrimerDomingo = fecha.getDate() <= 7;
         servicios.push({
           fecha: new Date(fecha),
           titulo: "Servicio dominical",
@@ -508,11 +508,11 @@ export default {
             : "Servicio dominical semanal.",
           infoAdicional: true,
           banner: null,
-          dia: fecha.getUTCDate().toString().padStart(2, "0"),
-          mes: fecha.toLocaleString("es", { month: "long", timeZone: "UTC" }),
+          dia: fecha.getDate().toString().padStart(2, "0"),
+          mes: fecha.toLocaleString("es-CO", { month: "long" }),
           diaSemana: "Domingo",
         });
-        fecha.setUTCDate(fecha.getUTCDate() + 7);
+        fecha.setDate(fecha.getDate() + 7);
       }
       return servicios;
     };
@@ -538,10 +538,10 @@ export default {
         const datosAPI = await respuesta.json();
 
         const hoy = new Date();
-        hoy.setUTCHours(0, 0, 0, 0);
+        hoy.setHours(0, 0, 0, 0);
 
         const finPeriodo = new Date(hoy);
-        finPeriodo.setUTCDate(finPeriodo.getUTCDate() + 27); //Cantidad dias en el calendario
+        finPeriodo.setDate(finPeriodo.getDate() + 27); //Cantidad dias en el calendario
 
         const serviciosDominicales = generarServiciosDominicales(
           hoy,
@@ -550,17 +550,12 @@ export default {
 
         const eventosAPI = datosAPI.map((evento) => {
           const [year, month, day] = evento.fecha.split("-").map(Number);
-          const fechaEvento = new Date(
-            Date.UTC(year, month - 1, day, 0, 0, 0, 0)
-          );
+          const fechaEvento = new Date(year, month - 1, day, 0, 0, 0, 0);
           return {
             ...evento,
             fecha: fechaEvento,
-            dia: fechaEvento.getUTCDate().toString().padStart(2, "0"),
-            mes: fechaEvento.toLocaleString("es", {
-              month: "long",
-              timeZone: "UTC",
-            }),
+            dia: fechaEvento.getDate().toString().padStart(2, "0"),
+            mes: fechaEvento.toLocaleString("es-CO", { month: "long" }),
             diaSemana: obtenerDiaSemana(fechaEvento),
           };
         });
