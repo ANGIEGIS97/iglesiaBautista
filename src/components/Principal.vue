@@ -5,6 +5,7 @@
     <SobreNosotros />
     <CarruselAnuncios id="anuncios" />
     <ProximosEventos />
+    <RedesSociales />
     <Pastor />
     <Servicios />
     <Ministerios />
@@ -26,6 +27,7 @@ import CarruselAnuncios from "./CarruselAnuncios.vue";
 import Ministerios from "./Ministerios.vue";
 import BotonTop from "./BotonTop.vue";
 import SobreNosotros from "./SobreNosotros.vue";
+import RedesSociales from "./RedesSociales.vue";
 
 export default {
   components: {
@@ -33,6 +35,7 @@ export default {
     Ubicacion,
     Ministerios,
     Servicios,
+    RedesSociales,
     Pastor,
     CarruselAnuncios,
     Bienvenida,
@@ -40,6 +43,7 @@ export default {
     SobreNosotros,
     ProximosEventos,
     BotonTop,
+    RedesSociales,
   },
   data() {
     return {};
