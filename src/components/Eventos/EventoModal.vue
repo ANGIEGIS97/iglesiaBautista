@@ -74,7 +74,10 @@
                 {{ evento.mes }}
               </p>
               <p class="mb-2"><strong>Hora:</strong> {{ evento.hora }}</p>
-              <p class="mb-2"><strong>Lugar:</strong> {{ evento.lugar }}</p>
+              <p class="mb-2">
+                <strong>{{ evento.lugar ? "Lugar" : "Link" }}:</strong>
+                {{ evento.lugar || evento.link }}
+              </p>
               <p class="mb-2">
                 <strong>Descripción:</strong>
                 {{ evento.descripcion }}
