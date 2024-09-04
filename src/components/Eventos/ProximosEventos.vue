@@ -52,7 +52,7 @@
         >
           <swiper-slide v-for="evento in eventos" :key="evento.fecha">
             <div
-              class="p-[2px] rounded-lg mb-10 mx-auto group relative overflow-hidden"
+              class="p-[1px] rounded-lg mb-10 mx-auto group relative overflow-hidden"
             >
               <div
                 class="absolute inset-0 dark:bg-gradient-to-tr from-blue-500 to-teal-500 rounded-lg animate-gradient"
