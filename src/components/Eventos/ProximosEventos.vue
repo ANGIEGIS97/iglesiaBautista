@@ -58,13 +58,13 @@
                 class="absolute inset-0 dark:bg-gradient-to-tr from-blue-500 to-teal-500 rounded-lg animate-gradient"
               ></div>
               <div
-                class="bg-white dark:bg-slate-600/85 rounded-lg shadow flex flex-col h-[360px] md:h-[330px] relative z-10"
+                class="bg-white dark:bg-slate-600/85 rounded-lg shadow flex flex-col h-[340px] md:h-[330px] relative z-10"
               >
-                <div class="flex-grow py-4 px-2 sm:px-6">
+                <div class="flex-grow py-2 px-2 sm:px-6">
                   <div class="flex items-center justify-center p-4">
                     <div
                       :class="[
-                        'relative text-3xl font-bold text-black border py-2 px-6 rounded-md shadow-md bg-white',
+                        'relative text-3xl font-bold text-black border py-2 px-6 rounded-md shadow-md bg-white folded-corner',
                         evento.infoIconoTexto === 'Canasta de amor'
                           ? 'border-t-red-500'
                           : '',
@@ -133,14 +133,18 @@
                     <i class="fas fa-clock mr-2"></i
                     >{{ obtenerDiaSemana(evento.fecha) }}, {{ evento.hora }}
                   </p>
-                  <p
-                    class="text-sm text-gray-600 mb-2 flex items-center dark:text-white"
-                  >
-                    <i class="fas fa-map-marker-alt mr-2"></i>
-                    {{ evento.lugar }}
+                  <p class="text-sm text-gray-600 dark:text-white mb-2 flex">
+                    <i
+                      :class="{
+                        'fas fa-map-marker-alt': evento.lugar,
+                        'fas fa-link': evento.link,
+                      }"
+                      class="mr-2 mt-1 flex-shrink-0"
+                    ></i>
+                    <span class="mr-2">{{ evento.lugar || evento.link }}</span>
                   </p>
                   <p
-                    class="text-sm font-semibold text-gray-600 mb-4 dark:text-white"
+                    class="text-sm font-semibold text-gray-600 mb-2 dark:text-white"
                   >
                     <i class="fas fa-calendar-plus mr-2"></i>
                     {{
@@ -152,7 +156,7 @@
                     }}
                   </p>
                 </div>
-                <div class="mt-auto pb-4 px-2 sm:px-6">
+                <div class="mt-auto pb-3 px-2 sm:px-6">
                   <button
                     @click="abrirModal(evento)"
                     class="bg-teal-500 text-white px-4 py-2 rounded-lg hover:bg-teal-700 transition duration-300 dark:bg-teal-500 dark:hover:bg-teal-700 transform hover:-translate-y-1"
@@ -186,7 +190,7 @@
             >
               <div
                 :class="[
-                  'text-5xl font-bold text-black py-3 px-8 rounded-md shadow-md mr-6 mb-4 md:mb-0 relative bg-white',
+                  'text-5xl font-bold text-black py-3 px-8 rounded-md shadow-md mr-6 mb-4 md:mb-0 relative bg-white folded-corner',
                   proximoEvento.infoIconoTexto === 'Canasta de amor'
                     ? 'border-t-red-500'
                     : '',
@@ -232,7 +236,7 @@
                     v-if="proximoEvento.banner !== null"
                     class="ml-2 w-5 h-5 text-gray-600"
                     viewBox="0 0 24 24"
-                    fill="none"
+                    fill="white"
                     stroke="currentColor"
                     stroke-width="2"
                     stroke-linecap="round"
@@ -251,10 +255,16 @@
                   {{ proximoEvento.hora }}
                 </p>
                 <p
-                  class="text-base md:text-lg text-gray-600 flex items-center mb-2 dark:text-white"
+                  class="text-base md:text-lg text-gray-600 dark:text-white flex items-center mb-2"
                 >
-                  <i class="fas fa-map-marker-alt mr-2"></i>
-                  {{ proximoEvento.lugar }}
+                  <i
+                    :class="{
+                      'fas fa-map-marker-alt': proximoEvento.lugar,
+                      'fas fa-link': proximoEvento.link,
+                    }"
+                    class="mr-2"
+                  ></i>
+                  {{ proximoEvento.lugar || proximoEvento.link }}
                 </p>
                 <p
                   class="text-base md:text-lg my-2 text-gray-700 line-clamp-2 dark:text-white"
@@ -267,7 +277,7 @@
                   <a
                     href="#"
                     @click.prevent="abrirModal(proximoEvento)"
-                    class="text-teal-600 hover:text-teal-800 text-sm cursor-pointer flex items-center"
+                    class="text-teal-600 hover:text-teal-800 dark:text-white text-sm cursor-pointer flex items-center"
                   >
                     Banner disponible
                     <svg
@@ -408,7 +418,7 @@
             </div>
             <button
               @click="abrirModal(evento)"
-              class="bg-teal-500 text-white px-3 py-1 rounded-lg hover:bg-teal-700 transition duration-300 text-sm relative z-10"
+              class="bg-teal-500 text-white px-3 py-1 rounded-lg hover:bg-teal-700 transition duration-300 text-sm relative z-10 transform hover:-translate-y-1"
             >
               Detalles
             </button>
@@ -531,7 +541,7 @@ export default {
         hoy.setUTCHours(0, 0, 0, 0);
 
         const finPeriodo = new Date(hoy);
-        finPeriodo.setUTCDate(finPeriodo.getUTCDate() + 30);
+        finPeriodo.setUTCDate(finPeriodo.getUTCDate() + 27); //Cantidad dias en el calendario
 
         const serviciosDominicales = generarServiciosDominicales(
           hoy,
@@ -628,27 +638,21 @@ export default {
   }
 }
 
-.custom-swiper {
-  .swiper-button-next,
-  .swiper-button-prev {
-    @apply text-teal-500;
-  }
+.folded-corner {
+  position: relative;
+}
 
-  .swiper-button-next:hover,
-  .swiper-button-prev:hover {
-    @apply text-teal-400;
-  }
-
-  .swiper-pagination-bullet {
-    @apply bg-teal-400;
-    width: 10px;
-    height: 10px;
-  }
-
-  .swiper-pagination-bullet-active {
-    @apply bg-teal-500;
-    width: 10px;
-    height: 10px;
-  }
+.folded-corner::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-radius: 0 0 5px 0;
+  border-width: 0 0 17px 17px;
+  border-color: transparent transparent #e0e0e0 transparent;
+  box-shadow: -2px -2px 3px rgba(0, 0, 0, 0.1);
 }
 </style>

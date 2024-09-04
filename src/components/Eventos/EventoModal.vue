@@ -2,7 +2,7 @@
   <div
     v-if="evento"
     @click="cerrarSiEsFondo"
-    class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50"
+    class="fixed inset-0 backdrop-blur-sm bg-gray-900/50 flex items-center justify-center z-50"
   >
     <div
       class="max-w-xl w-full relative p-[2px] dark:bg-gradient-to-r from-teal-500 to-blue-500 rounded-lg shadow-xl animate-gradient"
@@ -124,6 +124,7 @@ export default {
   },
   methods: {
     cerrar() {
+      document.body.classList.remove("modal-open");
       this.$emit("cerrar");
     },
     cerrarSiEsFondo(event) {
@@ -138,7 +139,17 @@ export default {
       this.imagenAmpliada = false;
     },
   },
+  mounted() {
+    document.body.classList.add("modal-open");
+  },
+  beforeUnmount() {
+    document.body.classList.remove("modal-open");
+  },
 };
 </script>
 
-<style scoped></style>
+<style>
+.modal-open {
+  overflow: hidden;
+}
+</style>
