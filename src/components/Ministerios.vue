@@ -34,7 +34,7 @@
             :alt="ministerio.titulo"
           />
           <div
-            class="dark:p-0.5 dark:pt-0 dark:border-0 border-2 border-gray-200 rounded-b-lg border-t-0 bg-gray-100 dark:bg-gradient-to-tr from-teal-400 to-blue-800 dark:border-slate-600"
+            class="dark:p-0.5 dark:pt-0 dark:border-0 border-2 border-gray-200 rounded-b-lg border-t-0 bg-gray-100 dark:bg-gradient-to-tr from-teal-400 to-blue-800 dark:border-slate-600 animate-gradient"
           >
             <div
               class="h-full w-full dark:bg-slate-600/90 rounded-b-md transition duration-300 ease-in-out"
@@ -78,7 +78,7 @@ export default {
       ministerios: [
         {
           titulo: "Varones",
-          image: "https://i.ibb.co/YNDPDNQ/varones.jpg",
+          image: "https://i.ibb.co/Jd0NP99/varones.jpg",
           descripcion:
             "Dos hombres recorriendo juntos el camino, compartiendo una amistad y un propósito: guiar al otro hacia un encuentro íntimo con Cristo. Con cada paso, sus corazones se abren, las dudas se disipan y el amor se fortalece. Unidos en esta travesía espiritual, descubren la belleza de una relación profunda con el Salvador.",
           versiculos: ["Salmo 1:1", "Santiago 1:12"],
@@ -111,7 +111,7 @@ export default {
         },
         {
           titulo: "Evangelismo",
-          image: "https://i.ibb.co/5ssh4wn/evangelismo.jpg",
+          image: "https://i.ibb.co/wcyTNdV/evangelismo.jpg",
           descripcion:
             "Por tanto, id, y haced discípulos a todas las naciones, bautizándolos en el nombre del Padre, y del Hijo, y del Espíritu Santo; enseñándoles que guarden todas las cosas que os he mandado; y he aquí yo estoy con vosotros todos los días, hasta el fin del mundo. Amén.",
           versiculos: [
@@ -123,14 +123,14 @@ export default {
         },
         {
           titulo: "Reuniones Caseras",
-          image: "https://i.ibb.co/ZXcCbkC/reuniones-Caseras.jpg",
+          image: "https://i.ibb.co/PQF8nqk/reuniones-Caseras.jpg",
           descripcion:
             '"Y perseveraban en la doctrina de los apóstoles, en la comunión unos con otros, en el partimiento del pan y en las oraciones… perseveraban unidos cada día en el templo, y partiendo el pan en las casas comían juntos con alegría y sencillez de corazón"',
           versiculos: ["Hechos 2:42,46"],
         },
         {
           titulo: "Jóvenes",
-          image: "https://i.ibb.co/T4Mzsqj/jovenes.jpg",
+          image: "https://i.ibb.co/MZ1Z92q/jovenes.jpg",
           descripcion:
             "Un ministerio de jóvenes saludable busca estar sujeto a la visión de su iglesia. Se interesa por conocer lo que Dios ha colocado en el corazón de sus pastores, quienes tienen la tarea y compromiso de guiar a la iglesia.",
           versiculos: [
