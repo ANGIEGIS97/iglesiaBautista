@@ -1,36 +1,92 @@
 <template>
-  <div
-    class="mx-auto sm:px-6 2xl:px-80 py-10 bg-gray-100 dark:bg-slate-600 transition duration-300 ease-in-out"
-  >
-    <h2 class="text-3xl px-4 font-bold dark:text-white mb-8">Anuncios</h2>
-    <swiper
-      :slides-per-view="1"
-      :space-between="30"
-      :navigation="true"
-      :pagination="{ clickable: true }"
-      :modules="modules"
-      :loop="true"
-      :grab-cursor="true"
-      :autoplay="{
-        delay: 3000,
-        disableOnInteraction: false,
-      }"
-      :effect="'fade'"
-      :fade-effect="{ crossFade: true }"
-      class="custom-swiper sm:rounded-lg overflow-hidden"
+  <section class="bg-gris">
+    <div
+      class="container mx-auto px-2 py-8 lg:px-32 transition duration-300 ease-in-out font-asap"
     >
-      <swiper-slide v-for="(image, index) in images" :key="index">
-        <img
-          :src="image"
-          :alt="`Slide ${index + 1}`"
-          class="w-full h-auto object-cover sm:rounded-lg mb-10"
-        />
-      </swiper-slide>
-    </swiper>
-  </div>
+      <div class="flex justify-between items-center mb-2">
+        <h2 class="text-3xl font-semibold text-morado ml-1">Anuncios</h2>
+      </div>
+
+      <div v-if="error" class="text-red-500 text-center mb-4">{{ error }}</div>
+      <div
+        v-else-if="isLoading"
+        class="flex flex-col justify-center items-center h-64"
+      >
+        <div class="loader mb-4"></div>
+        <p class="text-gray-700 dark:text-gray-300">Cargando anuncios...</p>
+      </div>
+      <swiper
+        v-else-if="slides.length"
+        :slides-per-view="1"
+        :space-between="30"
+        :navigation="{
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+          hideOnMobile: true,
+        }"
+        :pagination="{ clickable: true }"
+        :modules="modules"
+        :loop="true"
+        :grab-cursor="true"
+        :autoplay="{
+          delay: 5000,
+          disableOnInteraction: false,
+        }"
+        :effect="'creative'"
+        :fade-effect="{ crossFade: true }"
+        class="custom-swiper rounded-lg overflow-hidden"
+      >
+        <swiper-slide v-for="(slide, index) in slides" :key="index">
+          <div class="relative">
+            <img
+              :src="slide.image"
+              :alt="`Slide ${index + 1}`"
+              class="w-full h-[250px] sm:h-[600px] rounded-lg mb-10 object-cover"
+            />
+            <div
+              v-if="slide.titulo || slide.descripcion || slide.textoBoton"
+              class="absolute inset-0 flex flex-col items-center justify-center text-white bg-black bg-opacity-50 rounded-lg"
+            >
+              <div class="w-full max-w-4xl sm:px-6 text-center sm:space-y-6">
+                <h3
+                  v-if="slide.titulo"
+                  class="text-3xl sm:text-5xl font-asap font-bold mb-2 sm:mb-4 text-center animate-fade-in-up text-white"
+                >
+                  {{ slide.titulo }}
+                </h3>
+                <p
+                  v-if="slide.descripcion"
+                  class="text-md sm:text-2xl mb-2 sm:mb-6 px-4 sm:px-24 text-center text-white sm:leading-relaxed animate-fade-in-up delay-100"
+                  style="text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5)"
+                >
+                  {{ slide.descripcion }}
+                </p>
+                <button
+                  v-if="slide.textoBoton"
+                  class="bg-rojo transition duration-300 transform hover:-translate-y-1 text-white font-bold py-2 px-4 rounded-lg text-sm sm:text-base"
+                  @click="handleButtonClick(slide.linkBoton)"
+                >
+                  {{ slide.textoBoton }}
+                </button>
+              </div>
+            </div>
+          </div>
+        </swiper-slide>
+        <div class="swiper-button-next custom-swiper-button">
+          <i class="fas fa-chevron-right"></i>
+        </div>
+        <div class="swiper-button-prev custom-swiper-button">
+          <i class="fas fa-chevron-left"></i>
+        </div>
+      </swiper>
+
+      <div v-else class="text-center py-4">No hay anuncios disponibles</div>
+    </div>
+  </section>
 </template>
 
 <script>
+import { ref, onMounted } from "vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Navigation, Pagination, Autoplay, EffectFade } from "swiper/modules";
 import "swiper/css";
@@ -38,58 +94,129 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import "swiper/css/effect-fade";
+import { eventos } from "../lib/api";
 
 export default {
   components: {
     Swiper,
     SwiperSlide,
   },
-  data() {
+  setup() {
+    const slides = ref([]);
+    const error = ref("");
+    const isLoading = ref(false);
+    const modules = [Navigation, Pagination, Autoplay, EffectFade];
+
+    const loadEvents = async () => {
+      try {
+        isLoading.value = true;
+        const response = await eventos.getAll();
+        const sortedEvents = response.data.sort((a, b) => b.id - a.id);
+        slides.value = sortedEvents.map((evento) => ({
+          image: evento.image,
+          titulo: evento.titulo,
+          descripcion: evento.descripcion,
+          textoBoton: evento.textoBoton,
+          linkBoton: evento.linkBoton || "#",
+        }));
+      } catch (err) {
+        error.value = "Error al cargar los anuncios";
+        console.error(err);
+      } finally {
+        isLoading.value = false;
+      }
+    };
+
+    const handleButtonClick = (link) => {
+      if (link && link !== "#") {
+        window.location.href = link;
+      }
+    };
+
+    onMounted(loadEvents);
+
     return {
-      modules: [Navigation, Pagination, Autoplay, EffectFade],
-      images: [
-        "https://i.ibb.co/NjvBjLQ/anuncios.jpg",
-        "https://i.ibb.co/PwxJT0Z/oracion.jpg",
-        "https://i.ibb.co/ystVFCq/reto-de-gracia.jpg",
-        "https://i.ibb.co/VqSbkhp/versiculo.jpg",
-        "https://i.ibb.co/Mc8jBkR/viaje.jpg",
-        "https://i.ibb.co/VjYm3zf/bbn.jpg",
-        "https://i.ibb.co/0Fj83nZ/colosenses.jpg",
-        "https://i.ibb.co/1RKYYmm/curso-membresia.jpg",
-        "https://i.ibb.co/KD073px/escuela-dominical.jpg",
-        "https://i.ibb.co/6WzMC76/mujeres-de-gracia.jpg",
-        "https://i.ibb.co/jVc0YrX/ofrenda.jpg",
-        // "https://i.ibb.co/RzRrTRX/1.jpg",
-        // "https://i.ibb.co/bKfVw1Y/2.jpg",
-        // "https://i.ibb.co/k8SpDdf/3.jpg",
-        // "https://i.ibb.co/q0378j2/4.jpg",
-        // "https://i.ibb.co/HFh8qjT/5.jpg",
-        // "https://i.ibb.co/gP4F0Mn/6.jpg",
-      ],
+      slides,
+      error,
+      isLoading,
+      modules,
+      handleButtonClick,
     };
   },
 };
 </script>
 
 <style lang="postcss">
-.custom-swiper {
-  .swiper-button-next,
-  .swiper-button-prev {
-    @apply text-teal-500;
+.loader {
+  width: 50px;
+  padding: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #3b82f6;
+  --_m: conic-gradient(#0000 10%, #000), linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+  mask: var(--_m);
+  -webkit-mask-composite: source-out;
+  mask-composite: subtract;
+  animation: l3 1s infinite linear;
+}
+
+@keyframes l3 {
+  to {
+    transform: rotate(1turn);
   }
-  .swiper-button-next:hover,
-  .swiper-button-prev:hover {
-    @apply text-teal-400;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+.delay-100 {
+  animation-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.custom-swiper {
+  .custom-swiper-button {
+    @apply text-black bg-[#ffc845] rounded-full w-12 h-12 flex items-center justify-center opacity-75 transition-all duration-300;
+    &:hover {
+      @apply opacity-100 scale-110;
+    }
+    &::after {
+      content: none;
+    }
+    @apply hidden sm:flex;
+  }
+
+  .swiper-button-next {
+    @apply right-6;
+  }
+  .swiper-button-prev {
+    @apply left-6;
   }
   .swiper-pagination-bullet {
-    @apply bg-teal-400;
+    @apply bg-yellow-700;
     width: 10px;
     height: 10px;
   }
   .swiper-pagination-bullet-active {
-    @apply bg-teal-500;
-    width: 10px;
-    height: 10px;
+    @apply bg-yellow-500;
+    width: 12px;
+    height: 12px;
   }
 }
 </style>
